@@ -1,29 +1,28 @@
-Set-StrictMode -Version Latest
-$ErrorActionPreference = 'Stop'
+Set-StrictMode -Version Latest;
+$ErrorActionPreference = 'Stop';
 
-$Utf8NoBom   = New-Object System.Text.UTF8Encoding $false
-$NavBegin    = '<!-- SJAWATDH-NAV:BEGIN -->'
-$NavEnd      = '<!-- SJAWATDH-NAV:END -->'
-$HeadBegin   = '<!-- SJAWATDH-HEAD:BEGIN -->'
-$HeadEnd     = '<!-- SJAWATDH-HEAD:END -->'
-$Arrow       = [string][char]0x2192
-$LeftArrow   = [string][char]0x2190
-$DownArrow   = [string][char]0x2193
-$EmDash      = [string][char]0x2014
-$EnDash      = [string][char]0x2013
-$MidDot      = [string][char]0x00B7
-$BlackSquare = [string][char]0x25A0
+$Utf8NoBom   = New-Object System.Text.UTF8Encoding $false;
+$NavBegin    = '<!-- SJAWATDH-NAV:BEGIN -->';
+$NavEnd      = '<!-- SJAWATDH-NAV:END -->';
+$HeadBegin   = '<!-- SJAWATDH-HEAD:BEGIN -->';
+$HeadEnd     = '<!-- SJAWATDH-HEAD:END -->';
+$Arrow       = [string][char]0x2192;
+$LeftArrow   = [string][char]0x2190;
+$DownArrow   = [string][char]0x2193;
+$EmDash      = [string][char]0x2014;
+$EnDash      = [string][char]0x2013;
+$MidDot      = [string][char]0x00B7;
+$BlackSquare = [string][char]0x25A0;
 
 function Write-Utf8File {
     param([string]$Path, [string]$Content)
-    [System.IO.File]::WriteAllText($Path, $Content, $Utf8NoBom)
+    [System.IO.File]::WriteAllText($Path, $Content,$Utf8NoBom)
 }
 
 function Repair-MojibakeText {
     param([string]$Text)
-    $t = $Text
-    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)
-    $t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
+    $t =$Text
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)$t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
     $t = [regex]::Replace($t, '\u00E2\u20AC\u00A6', '...')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u0153', '"')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u009D', '"')
@@ -41,27 +40,80 @@ function Repair-MojibakeText {
 
 function Remove-GeneratedWrappers {
     param([string]$Raw)
-    $c = $Raw
+    $c =$Raw
     $c = [regex]::Replace($c, "(?s)^$([regex]::Escape($HeadBegin)).*?$([regex]::Escape($HeadEnd))\r?\n*", '')
     $c = [regex]::Replace($c, "(?s)\r?\n?$([regex]::Escape($NavBegin)).*?$([regex]::Escape($NavEnd))\r?\n?", '')
     $c = [regex]::Replace($c, '(?s)\r?\n?<!-- LMS-NAV:BEGIN -->.*?<!-- LMS-NAV:END -->\r?\n?', '')
-    $c = [regex]::Replace($c, '(?s)\r?\n---\r?\n> \[!info\] \*\*Navigasi Sesi LMS\*\*.*$', '')
+    $c = [regex]::Replace($c, '(?s)\r?\n---\r?\n> [!info] \*\*Navigasi Sesi LMS\*\*.*$', '')
     $c = [regex]::Replace($c, '(?m)^==NILAI PRETEST[^\r\n]*\r?\n*', '')
+    $c = [regex]::Replace($c, '(?s)<details class=[''"]sj-spoiler[''"]>\s*<summary>.*?</summary>\s*(.*?)\s*</details>', '$1')
     return $c.Trim()
+}
+
+function Split-LongParagraphs {
+    param([string]$Paragraph)
+    if ($Paragraph.Length -lt 520) { return$Paragraph }
+    if ($Paragraph -match '^(#|>|\||-|\*|\d+\.|```|<)') { return $Paragraph }
+
+    $sentences = [regex]::Split($Paragraph, '(?<=(?<!\b(?:Dr|Mr|Mrs|Ms|Prof|Fig|Chap|Chaps|vs|et\s+al|e\.g|i\.e|approx))\.)\s+(?=[A-Z0-9"(\[])')
+    if ($sentences.Count -le 3) { return $Paragraph }
+
+    $chunks = @()
+    for ($i = 0; $i -lt $sentences.Count; $i += 3) {
+        $end = [Math]::Min($i + 2, $sentences.Count - 1)
+        $chunks += ($sentences[$i..$end] -join ' ')
+    }
+    return ($chunks -join "`n`n")
 }
 
 function Format-MaterialBody {
     param([string]$Body)
     $clean = Repair-MojibakeText -Text $Body
-    $pattern = '\s*\u25A0\s*([A-Z][A-Z0-9\s,\-\(\)\/]{3,65})(?=\s+[A-Z][a-z])'
-    $replacement = "`n`n## " + '$1' + "`n`n"
-    $clean = [regex]::Replace($clean, $pattern, $replacement)
-    return $clean.Trim()
+
+    $sqPattern = '\s*\u25A0\s*([A-Z][A-Z0-9\s,\-\(\)\/]{3,65})(?=\s+[A-Z][a-z])'
+    $clean = [regex]::Replace($clean, $sqPattern, ("`n`n## " + '$1' + "`n`n"))
+
+    $clean = [regex]::Replace($clean, '\s+(TABLE\s+\d+[\-\.]\d+[^\r\n]{0,90})', ("`n`n> **" + '$1' + "**`n`n"))
+    $clean = [regex]::Replace($clean, '\s+(Abbreviations:\s+)', "`n`n> *Abbreviations:* ")
+
+    $blocks = [regex]::Split($clean, '\r?\n\s*\r?\n')
+    $formattedBlocks = foreach ($blk in $blocks) {
+        $trimmed = $blk.Trim()
+        if ($trimmed) { Split-LongParagraphs -Paragraph $trimmed }
+    }
+
+    return ($formattedBlocks -join "`n`n").Trim()
+}
+
+function Format-TestBodyWithSpoiler {
+    param([string]$Body)
+    $clean = Repair-MojibakeText -Text $Body
+    $splitMatch = [regex]::Match($clean, '(?im)^(#{1,4}\s*|\*\*)?Kunci\s*Jawaban\b.*$')
+    if (-not $splitMatch.Success) { return $clean }
+
+    $idx = $splitMatch.Index
+    $questionsPart = $clean.Substring(0, $idx).Trim()
+    $answersPart   = $clean.Substring($idx).Trim()
+
+    return "$questionsPart`n`n<details class='sj-spoiler'>`n<summary>Lihat kunci jawaban &amp; pembahasan</summary>`n`n$answersPart`n`n</details>"
 }
 
 function Get-SharedCss {
+    param(
+        [string]$AccentColor = '#3F6212',
+        [bool]$AllowToc = $false
+    )
+
+    $fontUrl = '[https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap](https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap)'
+
+    $tocHideRule = if ($AllowToc) {
+        "[class*='backlinks'], [class*='footer'] { display: none !important; }"
+    } else {
+        "aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] { display: none !important; }"
+    }
+
     return "<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
+@import url('$fontUrl');
 
 :root {
   --bg-paper: #FAF7F2;
@@ -70,13 +122,11 @@ function Get-SharedCss {
   --ink: #1C1917;
   --ink-soft: #57534E;
   --ink-muted: #78716C;
-  --accent: #3F6212;
+  --accent: $AccentColor;
   --line: #E7E0D5;
 }
 
-aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] {
-  display: none !important;
-}
+$tocHideRule
 
 body, main {
   background-color: var(--bg-paper) !important;
@@ -84,19 +134,50 @@ body, main {
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
+article, .prose, main > div {
+  max-width: 760px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  line-height: 1.75 !important;
+  font-size: 1.02rem !important;
+}
+
+article h1, article h2, article h3, .prose h1, .prose h2, .prose h3 {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-weight: 500 !important;
+  color: var(--ink) !important;
+  letter-spacing: -0.015em !important;
+}
+
+article h2, .prose h2 {
+  margin-top: 2.35rem !important;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.42rem !important;
+}
+
+article blockquote, .prose blockquote {
+  background: var(--surface) !important;
+  border-left: 3px solid var(--accent) !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0 8px 8px 0;
+  color: var(--ink-soft) !important;
+  font-size: 0.94rem !important;
+}
+
 .sj-wrap {
   max-width: 880px;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 4rem;
+  padding: 1.25rem 1rem 3.5rem;
 }
 
 .sj-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1.1rem;
+  padding-bottom: 1.05rem;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .sj-logo {
@@ -122,12 +203,28 @@ body, main {
   color: var(--accent) !important;
 }
 
+.sj-crumb {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+}
+
+.sj-crumb a {
+  color: var(--ink-soft) !important;
+  text-decoration: none !important;
+}
+
+.sj-crumb a:hover {
+  color: var(--accent) !important;
+}
+
 .sj-hero {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 2.5rem;
   align-items: end;
-  margin-bottom: 3.75rem;
+  margin-bottom: 3.5rem;
 }
 
 @media (max-width: 720px) {
@@ -139,21 +236,21 @@ body, main {
 
 .sj-h1 {
   font-family: 'Newsreader', Georgia, serif !important;
-  font-size: clamp(2.25rem, 4.6vw, 3.25rem) !important;
-  line-height: 1.1 !important;
+  font-size: clamp(2.15rem, 4.4vw, 3.1rem) !important;
+  line-height: 1.12 !important;
   font-weight: 400 !important;
   letter-spacing: -0.02em !important;
   color: var(--ink) !important;
-  margin: 0 0 1rem 0 !important;
+  margin: 0 0 0.85rem 0 !important;
   border: none !important;
 }
 
 .sj-lead {
-  font-size: 1.05rem;
+  font-size: 1.04rem;
   line-height: 1.55;
   color: var(--ink-soft);
-  margin: 0 0 1.5rem 0;
-  max-width: 42ch;
+  margin: 0 0 1.4rem 0;
+  max-width: 44ch;
 }
 
 .sj-btn {
@@ -203,7 +300,7 @@ body, main {
 
 .sj-h2 {
   font-family: 'Newsreader', Georgia, serif !important;
-  font-size: 1.5rem !important;
+  font-size: 1.45rem !important;
   font-weight: 400 !important;
   margin: 0 !important;
   border: none !important;
@@ -217,7 +314,7 @@ body, main {
 
 .sj-index-list {
   border-top: 1px solid var(--line);
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 .sj-index-row {
@@ -240,7 +337,7 @@ body, main {
 .sj-row-num {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.82rem;
-  color: var(--accent);
+  font-weight: 500;
 }
 
 .sj-row-title {
@@ -264,6 +361,51 @@ body, main {
 .sj-index-row:hover .sj-row-arrow {
   transform: translateX(3px);
   color: var(--accent);
+}
+
+.sj-stepper {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.sj-stepper a {
+  color: var(--accent) !important;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+.sj-stepper a:hover {
+  text-decoration: underline !important;
+}
+
+.sj-spoiler {
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.85rem 1.15rem;
+}
+
+.sj-spoiler summary {
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.84rem;
+  color: var(--accent);
+  font-weight: 500;
+  list-style: none;
+}
+
+.sj-spoiler[open] summary {
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .sj-foot {
@@ -310,17 +452,32 @@ function Get-BrotySvg {
 
 function Get-BlockStructure {
     param([string]$WebpageRoot)
+
+    $accents = @{
+        'Endokrin'         = '#9A3412'
+        'Gastrointestinal' = '#854D0E'
+        'Hematoimmuno'     = '#9F1239'
+        'Intergumen'       = '#7C2D12'
+        'Kardiovaskular'   = '#B91C1C'
+        'Nefro'            = '#1D4ED8'
+        'Neuro'            = '#4338CA'
+        'ObsGyn'           = '#86198F'
+        'Pulmo'            = '#0F766E'
+    }
+
     $blocks = @()
     $idx = 1
     Get-ChildItem -Path $WebpageRoot -Directory | Sort-Object Name | ForEach-Object {
         $landing = Get-ChildItem -Path $_.FullName -Filter '*Landing*.md' | Select-Object -First 1
         if (-not $landing) { return }
+        $name = $_.Name
         $blocks += [pscustomobject]@{
             Number      = $idx.ToString('00')
-            Name        = $_.Name
+            Name        = $name
             Path        = $_.FullName
             LandingFile = $landing
             LandingBase = $landing.BaseName
+            Accent      = if ($accents.ContainsKey($name)) { $accents[$name] } else { '#3F6212' }
         }
         $idx++
     }
@@ -399,42 +556,95 @@ function Get-LearningSessions {
 function Update-SessionFiles {
     param([pscustomobject]$Block, [array]$Sessions)
 
+    $testCss = Get-SharedCss -AccentColor $Block.Accent -AllowToc $false
+    $matCss  = Get-SharedCss -AccentColor $Block.Accent -AllowToc $true
+
     for ($i = 0; $i -lt $Sessions.Count; $i++) {
         $s       = $Sessions[$i]
         $nextSes = if (($i + 1) -lt $Sessions.Count) { $Sessions[$i + 1] } else { $null }
         $sesCode = $s.SessionNum.ToString('00')
 
-        $nextText = if ($nextSes) {
-            "[[$($nextSes.EntryTarget)|Sesi berikutnya $Arrow]]"
+        $nextLink = if ($nextSes) {
+            "<a href='$($nextSes.EntryTarget)'>Sesi berikutnya $Arrow</a>"
         } else {
-            "[[$($Block.LandingBase)|Kembali ke blok]]"
+            "<a href='$($Block.LandingBase)'>Kembali ke blok $Arrow</a>"
         }
 
         if ($s.HasTest) {
-            $rawTest   = [System.IO.File]::ReadAllText($s.Test.FullName)
-            $cleanTest = Repair-MojibakeText -Text (Remove-GeneratedWrappers -Raw $rawTest)
+            $rawTest     = [System.IO.File]::ReadAllText($s.Test.FullName)
+            $cleanTest   = Remove-GeneratedWrappers -Raw $rawTest
+            $spoilerTest = Format-TestBodyWithSpoiler -Body $cleanTest
 
-            $testHeader = "$HeadBegin`n[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / Sesi $sesCode`n`n# Sebelum belajar`n**$($s.DisplayTitle)** $MidDot ``$($s.QuestionCount) soal`` $MidDot ``Pretest```n`nCoba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.`n`n---`n$HeadEnd"
+            $testHeader = "$HeadBegin
+$testCss
 
-            $testFooter = "$NavBegin`n`n---`n`n### Satu sesi selesai.`n**$($s.DisplayTitle)**`n`n- **Baru selesai pretest?** [[$($s.Material.BaseName)|Lanjut ke materi inti $Arrow]]`n- **Baru selesai posttest?** $nextText$MidDot [[$($Block.LandingBase)|Kembali ke blok]]`n`n$NavEnd"
+<div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
 
-            Write-Utf8File -Path $s.Test.FullName -Content ($testHeader + "`n`n" + $cleanTest + "`n`n" + $testFooter)
+# Sebelum belajar
+**$($s.DisplayTitle)** $MidDot ``$($s.QuestionCount) soal`` $MidDot ``Pretest / Posttest``
+
+Coba kerjakan sebelum membaca materi. Setelah selesai membaca materi, buka kembali halaman ini sebagai **posttest**.
+
+---
+$HeadEnd"
+
+            $testFooter = "$NavBegin
+
+<div class='sj-stepper'>
+  <a href='$($s.Material.BaseName)'>Lanjut ke materi inti $Arrow</a>
+  <div>$nextLink $MidDot <a href='$($Block.LandingBase)'>Daftar sesi</a></div>
+</div>
+$NavEnd"
+
+            Write-Utf8File -Path $s.Test.FullName -Content ($testHeader + "`n`n" + $spoilerTest + "`n`n" + $testFooter)
 
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
-            $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw$rawMat)
+            $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw $rawMat)
 
-            $matHeader = "$HeadBegin`n[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / Sesi $sesCode`n`n# $($s.DisplayTitle)`n``$($s.Category)`` $MidDot ``Sesi $sesCode dari $($s.TotalCount.ToString('00'))```n`n---`n$HeadEnd"
+            $matHeader = "$HeadBegin
+$matCss
 
-            $matFooter = "$NavBegin`n`n---`n`n[[$($s.Test.BaseName)|$LeftArrow Pretest]] $MidDot **Materi inti** $MidDot [[$($s.Test.BaseName)|Lanjut posttest $Arrow]]`n`n$NavEnd"
+<div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
+
+# $($s.DisplayTitle)
+``$($s.Category)`` $MidDot ``Sesi $sesCode dari $($s.TotalCount.ToString('00'))``
+
+---
+$HeadEnd"
+
+            $matFooter = "$NavBegin
+
+<div class='sj-stepper'>
+  <a href='$($s.Test.BaseName)'>$LeftArrow Pretest</a>
+  <span class='sj-mono'>MATERI INTI</span>
+  <a href='$($s.Test.BaseName)'>Lanjut posttest $Arrow</a>
+</div>
+$NavEnd"
 
             Write-Utf8File -Path $s.Material.FullName -Content ($matHeader + "`n`n" + $cleanMat + "`n`n" + $matFooter)
         } else {
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
             $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw $rawMat)
 
-            $matHeader = "$HeadBegin`n[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / Sesi $sesCode`n`n# $($s.DisplayTitle)`n``$($s.Category)`` $MidDot ``Materi inti```n`n---`n$HeadEnd"
+            $matHeader = "$HeadBegin
+$matCss
 
-            $matFooter = "$NavBegin`n`n---`n`n**Materi inti** $MidDot $nextText $MidDot [[$($Block.LandingBase)|Kembali ke blok]]`n`n$NavEnd"
+<div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
+
+# $($s.DisplayTitle)
+``$($s.Category)`` $MidDot ``Materi inti``
+
+---
+$HeadEnd"
+
+            $matFooter = "$NavBegin
+
+<div class='sj-stepper'>
+  <a href='$($Block.LandingBase)'>$LeftArrow Kembali ke blok</a>
+  <span class='sj-mono'>MATERI INTI</span>
+  $nextLink
+</div>
+$NavEnd"
 
             Write-Utf8File -Path $s.Material.FullName -Content ($matHeader + "`n`n" + $cleanMat + "`n`n" + $matFooter)
         }
@@ -449,17 +659,17 @@ function New-BlockLandingContent {
         ($skdiMatch.Value -replace '(?s)---\s*> \[!abstract\].*Progress Bar.*$', '').Trim()
     } else { '' }
 
-    $css  = Get-SharedCss
+    $css  = Get-SharedCss -AccentColor $Block.Accent -AllowToc $false
     $rows = @()
 
     foreach ($s in $Sessions) {
         $sesCode  = $s.SessionNum.ToString('00')
-        $subLabel = if ($s.DisplayTitle -ne $s.FileTitle) { "$($s.Category) $MidDot $($s.DisplayTitle)" } else { $s.Category }
+        $metaLine = "$($s.Category) $MidDot $($s.FileTitle)"
         $rows += "<a class='sj-index-row' href='$($s.EntryTarget)'>
-  <span class='sj-row-num'>$sesCode</span>
+  <span class='sj-row-num' style='color:$($Block.Accent);'>$sesCode</span>
   <div>
-    <div class='sj-row-title'>$($s.FileTitle)</div>
-    <div class='sj-mono'>$subLabel</div>
+    <div class='sj-row-title'>$($s.DisplayTitle)</div>
+    <div class='sj-mono'>$metaLine</div>
   </div>
   <span class='sj-row-meta'>$(if ($s.HasTest) { "$($s.QuestionCount) soal" } else { "materi" })</span>
   <span class='sj-row-arrow'>$Arrow</span>
@@ -485,9 +695,9 @@ $css
     </nav>
   </header>
 
-  <div style='margin-bottom:2.25rem;'>
-    <span class='sj-mono'>$($Block.Name.ToUpper()) $MidDot $($Block.Number)</span>
-    <h1 class='sj-h1' style='margin-top:0.35rem !important;'>$($Block.Name)</h1>
+  <div style='margin-bottom:2.25rem; border-left:3px solid $($Block.Accent); padding-left:1rem;'>
+    <span class='sj-mono' style='color:$($Block.Accent);'>$($Block.Name.ToUpper()) $MidDot $($Block.Number)</span>
+    <h1 class='sj-h1' style='margin-top:0.25rem !important;'>$($Block.Name)</h1>
     <span class='sj-mono'>$($Sessions.Count) sesi</span>
   </div>
 
@@ -507,13 +717,13 @@ function New-HomepageContent {
 
     $totalSessions = ($BlockItems | Measure-Object -Property SessionCount -Sum).Sum
     $brotySvg      = Get-BrotySvg
-    $css           = Get-SharedCss
+    $css           = Get-SharedCss -AccentColor '#3F6212' -AllowToc $false
     $rows          = @()
 
     foreach ($item in $BlockItems) {
         $b = $item.Block
         $rows += "<a class='sj-index-row' href='$($b.LandingBase)'>
-  <span class='sj-row-num'>$($b.Number)</span>
+  <span class='sj-row-num' style='color:$($b.Accent);'>$($b.Number)</span>
   <span class='sj-row-title'>$($b.Name)</span>
   <span class='sj-row-meta'>$($item.SessionCount) sesi</span>
   <span class='sj-row-arrow'>$Arrow</span>
@@ -567,6 +777,43 @@ $($rows -join "`n")
 </div>"
 }
 
+function Update-AboutPage {
+    param([string]$WebpageRoot)
+    $aboutPath = Join-Path $WebpageRoot 'Untuk Sjawatdh (Landing).md'
+    if (-not (Test-Path $aboutPath)) { return }
+
+    $raw = Remove-GeneratedWrappers -Raw ([System.IO.File]::ReadAllText($aboutPath))
+    $bodyOnly = [regex]::Replace($raw, '(?s)^---.*?---\s*', '').Trim()
+    $css = Get-SharedCss -AccentColor '#3F6212' -AllowToc $false
+
+    $content = "---
+title: tentang $EmDash sjawatdh.
+showToc: false
+showLinkPreviews: false
+---
+
+$css
+
+<div class='sj-wrap'>
+  <header class='sj-nav'>
+    <a class='sj-logo' href='./'>sjawatdh.</a>
+    <nav class='sj-nav-right'>
+      <a href='./'>blok</a>
+      <a href='Untuk%20Sjawatdh%20(Landing)'>tentang</a>
+    </nav>
+  </header>
+
+$bodyOnly
+
+  <div class='sj-stepper'>
+    <a href='./'>$LeftArrow Kembali ke daftar blok</a>
+    <span class='sj-mono'>sjawatdh.</span>
+  </div>
+</div>"
+
+    Write-Utf8File -Path $aboutPath -Content $content
+}
+
 function Test-InternalLinks {
     param([string]$WebpageRoot)
     $allFiles = Get-ChildItem -Path $WebpageRoot -Recurse -Filter '*.md'
@@ -588,9 +835,9 @@ function Test-InternalLinks {
 }
 
 # === EKSEKUSI UTAMA ===
-$webpageRoot  = 'E:\sayabacalagi\Webpage'
-$blocks       = @(Get-BlockStructure -WebpageRoot $webpageRoot)
-$blockSummary = @()
+$webpageRoot  = 'E:\sayabacalagi\Webpage';
+$blocks       = @(Get-BlockStructure -WebpageRoot $webpageRoot);
+$blockSummary = @();
 
 foreach ($b in $blocks) {
     $sessions    = @(Get-LearningSessions -Block $b)
@@ -604,20 +851,18 @@ foreach ($b in $blocks) {
         Block        = $b
         SessionCount = $sessions.Count
     }
-    Write-Host "[OK] [$($b.Number)] $($b.Name): $($sessions.Count) sesi diperbarui" -ForegroundColor Green
+    Write-Host "[OK] [$($b.Number)] $($b.Name): $($sessions.Count) sesi ditingkatkan" -ForegroundColor Green
 }
 
-$homepageMd = New-HomepageContent -BlockItems $blockSummary
-Write-Utf8File -Path (Join-Path $webpageRoot 'index.md') -Content $homepageMd
-Write-Host "[OK] Homepage Webpage\index.md diperbarui" -ForegroundColor Green
+Update-AboutPage -WebpageRoot $webpageRoot;
+$homepageMd = New-HomepageContent -BlockItems $blockSummary;
+Write-Utf8File -Path (Join-Path $webpageRoot 'index.md') -Content $homepageMd;
+Write-Host "[OK] Homepage & Halaman Tentang diperbarui" -ForegroundColor Green;
 
-$brokenLinks = @(Test-InternalLinks -WebpageRoot $webpageRoot)
+$brokenLinks = @(Test-InternalLinks -WebpageRoot $webpageRoot);
 if ($brokenLinks.Count -gt 0) {
     Write-Warning "Ditemukan $($brokenLinks.Count) tautan internal yang perlu diperiksa:"
     $brokenLinks | ForEach-Object { Write-Warning " - $_" }
 } else {
     Write-Host "[OK] Validasi tautan selesai: 0 tautan rusak di seluruh Webpage/" -ForegroundColor Cyan
 }
-
-Write-Host "`n--- Status Git ---" -ForegroundColor Yellow
-git status -sb
