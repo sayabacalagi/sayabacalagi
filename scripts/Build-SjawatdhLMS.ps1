@@ -22,7 +22,8 @@ function Write-Utf8File {
 function Repair-MojibakeText {
     param([string]$Text)
     $t =$Text
-    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)$t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash);
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
     $t = [regex]::Replace($t, '\u00E2\u20AC\u00A6', '...')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u0153', '"')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u009D', '"')
@@ -104,7 +105,7 @@ function Get-SharedCss {
         [bool]$AllowToc = $false
     )
 
-    $fontUrl = '[https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap](https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap)'
+    $fontUrl = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap'
 
     $tocHideRule = if ($AllowToc) {
         "[class*='backlinks'], [class*='footer'] { display: none !important; }"

@@ -14,13 +14,11 @@ showLinkPreviews: false
   --ink: #1C1917;
   --ink-soft: #57534E;
   --ink-muted: #78716C;
-  --accent: #3F6212;
+  --accent: #854D0E;
   --line: #E7E0D5;
 }
 
-aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] {
-  display: none !important;
-}
+aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] { display: none !important; }
 
 body, main {
   background-color: var(--bg-paper) !important;
@@ -28,19 +26,50 @@ body, main {
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
+article, .prose, main > div {
+  max-width: 760px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  line-height: 1.75 !important;
+  font-size: 1.02rem !important;
+}
+
+article h1, article h2, article h3, .prose h1, .prose h2, .prose h3 {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-weight: 500 !important;
+  color: var(--ink) !important;
+  letter-spacing: -0.015em !important;
+}
+
+article h2, .prose h2 {
+  margin-top: 2.35rem !important;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.42rem !important;
+}
+
+article blockquote, .prose blockquote {
+  background: var(--surface) !important;
+  border-left: 3px solid var(--accent) !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 0 8px 8px 0;
+  color: var(--ink-soft) !important;
+  font-size: 0.94rem !important;
+}
+
 .sj-wrap {
   max-width: 880px;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 4rem;
+  padding: 1.25rem 1rem 3.5rem;
 }
 
 .sj-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1.1rem;
+  padding-bottom: 1.05rem;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .sj-logo {
@@ -66,12 +95,28 @@ body, main {
   color: var(--accent) !important;
 }
 
+.sj-crumb {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+}
+
+.sj-crumb a {
+  color: var(--ink-soft) !important;
+  text-decoration: none !important;
+}
+
+.sj-crumb a:hover {
+  color: var(--accent) !important;
+}
+
 .sj-hero {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 2.5rem;
   align-items: end;
-  margin-bottom: 3.75rem;
+  margin-bottom: 3.5rem;
 }
 
 @media (max-width: 720px) {
@@ -83,21 +128,21 @@ body, main {
 
 .sj-h1 {
   font-family: 'Newsreader', Georgia, serif !important;
-  font-size: clamp(2.25rem, 4.6vw, 3.25rem) !important;
-  line-height: 1.1 !important;
+  font-size: clamp(2.15rem, 4.4vw, 3.1rem) !important;
+  line-height: 1.12 !important;
   font-weight: 400 !important;
   letter-spacing: -0.02em !important;
   color: var(--ink) !important;
-  margin: 0 0 1rem 0 !important;
+  margin: 0 0 0.85rem 0 !important;
   border: none !important;
 }
 
 .sj-lead {
-  font-size: 1.05rem;
+  font-size: 1.04rem;
   line-height: 1.55;
   color: var(--ink-soft);
-  margin: 0 0 1.5rem 0;
-  max-width: 42ch;
+  margin: 0 0 1.4rem 0;
+  max-width: 44ch;
 }
 
 .sj-btn {
@@ -147,7 +192,7 @@ body, main {
 
 .sj-h2 {
   font-family: 'Newsreader', Georgia, serif !important;
-  font-size: 1.5rem !important;
+  font-size: 1.45rem !important;
   font-weight: 400 !important;
   margin: 0 !important;
   border: none !important;
@@ -161,7 +206,7 @@ body, main {
 
 .sj-index-list {
   border-top: 1px solid var(--line);
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 .sj-index-row {
@@ -184,7 +229,7 @@ body, main {
 .sj-row-num {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.82rem;
-  color: var(--accent);
+  font-weight: 500;
 }
 
 .sj-row-title {
@@ -208,6 +253,51 @@ body, main {
 .sj-index-row:hover .sj-row-arrow {
   transform: translateX(3px);
   color: var(--accent);
+}
+
+.sj-stepper {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.sj-stepper a {
+  color: var(--accent) !important;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+
+.sj-stepper a:hover {
+  text-decoration: underline !important;
+}
+
+.sj-spoiler {
+  margin-top: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.85rem 1.15rem;
+}
+
+.sj-spoiler summary {
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.84rem;
+  color: var(--accent);
+  font-weight: 500;
+  list-style: none;
+}
+
+.sj-spoiler[open] summary {
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .sj-foot {
@@ -240,18 +330,18 @@ body, main {
     </nav>
   </header>
 
-  <div style='margin-bottom:2.25rem;'>
-    <span class='sj-mono'>GASTROINTESTINAL · 02</span>
-    <h1 class='sj-h1' style='margin-top:0.35rem !important;'>Gastrointestinal</h1>
+  <div style='margin-bottom:2.25rem; border-left:3px solid #854D0E; padding-left:1rem;'>
+    <span class='sj-mono' style='color:#854D0E;'>GASTROINTESTINAL · 02</span>
+    <h1 class='sj-h1' style='margin-top:0.25rem !important;'>Gastrointestinal</h1>
     <span class='sj-mono'>1 sesi</span>
   </div>
 
   <div class='sj-index-list'>
 <a class='sj-index-row' href='Gastrointestinal Pre-postest 1'>
-  <span class='sj-row-num'>01</span>
+  <span class='sj-row-num' style='color:#854D0E;'>01</span>
   <div>
     <div class='sj-row-title'>Gastrointestinal 1</div>
-    <div class='sj-mono'>Dasar</div>
+    <div class='sj-mono'>Dasar · Gastrointestinal 1</div>
   </div>
   <span class='sj-row-meta'>15 soal</span>
   <span class='sj-row-arrow'>→</span>
@@ -311,6 +401,12 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
   <footer class='sj-footer'>
     <span><a href='./'>← Kembali ke semua blok</a></span>
     <span>sjawatdh. · personal medical study space</span>
+  </footer>
+</div>
+
+  <footer class='sj-foot'>
+    <a href='./'>← kembali ke blok</a>
+    <span>sjawatdh.</span>
   </footer>
 </div>
 
