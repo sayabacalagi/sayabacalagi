@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { pickBrotyMidReading, type BrotyInjection } from "./broty-copy";
 
 export interface Question {
   id: string;
@@ -14,14 +15,14 @@ export interface Question {
 export interface StudySlide {
   heading: string;
   paragraphs: string[];
+  broty?: BrotyInjection;
 }
 
 export interface LessonNode {
   id: string;
   unitId: string;
   title: string;
-  category: "Dasar" | "Patofisiologi" | "Pre/Post-Test";
-  xpReward: number;
+  category: "Dasar" | "Patofisiologi";
   slides: StudySlide[];
   questions: Question[];
 }
@@ -30,23 +31,22 @@ export interface SystemUnit {
   id: string;
   name: string;
   description: string;
-  color: string;
+  accentColor: string;
   lessons: LessonNode[];
 }
 
-const COLORS = [
-  "bg-emerald-500 border-emerald-700",
-  "bg-sky-500 border-sky-700",
-  "bg-violet-500 border-violet-700",
-  "bg-amber-500 border-amber-700",
-  "bg-rose-500 border-rose-700",
-  "bg-teal-500 border-teal-700",
+const ACCENTS = [
+  "border-teal-500 bg-teal-50/60 text-teal-900",
+  "border-cyan-500 bg-cyan-50/60 text-cyan-900",
+  "border-emerald-500 bg-emerald-50/60 text-emerald-900",
+  "border-sky-500 bg-sky-50/60 text-sky-900",
+  "border-indigo-500 bg-indigo-50/60 text-indigo-900",
 ];
 
 function fixMojibakeAndClean(raw: string): string {
   return raw
     .replace(/\r\n/g, "\n")
-    .replace(/^==NILAI PRETEST[^\n]*\n*/i, "") // Hapus header internal
+    .replace(/^==NILAI PRETEST[^\n]*\n*/i, "")
     .replace(/â€”|â€“/g, "—")
     .replace(/â€™|â€˜/g, "'")
     .replace(/â€œ|â€/g, '"')
@@ -59,18 +59,16 @@ function fixMojibakeAndClean(raw: string): string {
     .replace(/Î³/g, "γ")
     .replace(/Â/g, "")
     .replace(/!\[\[([^\]]+)\]\]/g, "")
-    .replace(/\[\[([^|\]]+)|([^\]]+)\]\]/g, "$2")
+    .replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, "$2")
     .replace(/\[\[([^\]]+)\]\]/g, "$1")
     .replace(/---+\s*\[?← Back to[^\n]*/gi, "")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .trim();
 }
 
-function splitChapterIntoSlides(cleaned: string, fallbackTitle: string): StudySlide[] {
-  // Potong bagian Further Reading / daftar pustaka ber-encoding rusak di akhir
+function splitChapterIntoSlides(cleaned: string, fallbackTitle: string, seedIdx: number): StudySlide[] {
   const mainBody = cleaned.split(/■\s*FURTHER READING/i)[0].trim();
 
-  // Pecah berdasarkan simbol ■ atau heading Markdown # / ##
   const rawSections = mainBody
     .split(/(?=■\s*[A-Z0-9][^\n]{3,80}|^#{1,3}\s+[^\n]+)/gm)
     .map((s) => s.trim())
@@ -93,7 +91,6 @@ function splitChapterIntoSlides(cleaned: string, fallbackTitle: string): StudySl
       content = squareMatch[2].trim();
     }
 
-    // Rapikan spasi terputus hasil PDF (mis. "under standing" -> biarkan terbaca, pecah per 3-4 kalimat jadi paragraf nyaman)
     const sentences = content
       .replace(/\s+/g, " ")
       .split(/(?<=[.!?])\s+(?=[A-Z0-9■(])/)
@@ -104,7 +101,6 @@ function splitChapterIntoSlides(cleaned: string, fallbackTitle: string): StudySl
       paragraphs.push(sentences.slice(i, i + 4).join(" "));
     }
 
-    // Jika satu bagian terlalu panjang (> 4 paragraf), bagi menjadi beberapa slide
     for (let p = 0; p < paragraphs.length; p += 3) {
       const partNum = Math.floor(p / 3) + 1;
       const totalParts = Math.ceil(paragraphs.length / 3);
@@ -115,18 +111,25 @@ function splitChapterIntoSlides(cleaned: string, fallbackTitle: string): StudySl
     }
   });
 
-  return slides.length > 0
-    ? slides
-    : [{ heading: fallbackTitle, paragraphs: [mainBody.slice(0, 1200)] }];
+  const finalSlides =
+    slides.length > 0
+      ? slides
+      : [{ heading: fallbackTitle, paragraphs: [mainBody.slice(0, 1200)] }];
+
+  // Aturan Placement Broty: max 1 bubble per chapter, di tengah (bukan slide 1 & bukan slide terakhir)
+  if (finalSlides.length >= 3) {
+    const midIndex = Math.floor(finalSlides.length / 2);
+    finalSlides[midIndex].broty = pickBrotyMidReading(seedIdx);
+  }
+
+  return finalSlides;
 }
 
 function parsePrePostTestQuestions(cleaned: string, lessonId: string): Question[] {
-  // Pisahkan bagian soal dan bagian **Kunci Jawaban:**
   const parts = cleaned.split(/Kunci Jawaban\s*:/i);
   const questionSection = parts[0] || "";
   const answerSection = parts[1] || "";
 
-  // Peta nomor soal -> indeks opsi (A=0, B=1, C=2, D=3, E=4)
   const answerMap: Record<number, number> = {};
   const ansMatches = answerSection.matchAll(/(\d+)\.\s*([A-E])\b/gi);
   for (const m of ansMatches) {
@@ -135,7 +138,6 @@ function parsePrePostTestQuestions(cleaned: string, lessonId: string): Question[
     answerMap[qNum] = letter.charCodeAt(0) - 65;
   }
 
-  // Pecah per blok nomor soal "1. ...", "2. ..."
   const qBlocks = questionSection
     .split(/\n(?=\d+\.\s+)/g)
     .map((b) => b.trim())
@@ -175,7 +177,7 @@ function parsePrePostTestQuestions(cleaned: string, lessonId: string): Question[
         options,
         answerIndex: ansIdx,
         answerText: options[ansIdx],
-        explanation: `Kunci jawaban soal #${qNum} adalah ${ansLetter}. ${options[ansIdx]}`,
+        explanation: `Jawaban tepat: ${ansLetter}. ${options[ansIdx]}`,
       });
     }
   });
@@ -184,7 +186,7 @@ function parsePrePostTestQuestions(cleaned: string, lessonId: string): Question[
 }
 
 export function loadVaultUnits(): SystemUnit[] {
-  const webpagePath = "E:\\sayabacalagi\\Webpage";
+  const webpagePath = path.resolve(process.cwd(), "..", "Webpage");
   const units: SystemUnit[] = [];
 
   if (!fs.existsSync(webpagePath)) return units;
@@ -207,18 +209,15 @@ export function loadVaultUnits(): SystemUnit[] {
         .filter((f) => f.endsWith(".md") && !f.toLowerCase().includes("landing"))
         .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
-      // Pasangkan file materi dengan file Pre-postest di folder yang sama
       const testFiles = mdFiles.filter((f) => f.toLowerCase().includes("pre-postest"));
       const materialFiles = mdFiles.filter((f) => !f.toLowerCase().includes("pre-postest"));
 
-      // Buat node materi terlebih dahulu, lalu node Pre/Post-Test setelahnya
       materialFiles.forEach((file, mIdx) => {
         const raw = fs.readFileSync(path.join(targetDir, file), "utf-8");
         const cleaned = fixMojibakeAndClean(raw);
         const title = file.replace(/\.md$/i, "");
-        const lessonId = `${sysName.toLowerCase()}-${sub || "core"}-mat-${mIdx + 1}`;
+        const lessonId = `${sysName.toLowerCase()}-${sub || "core"}-mod-${mIdx + 1}`;
 
-        // Cari file Pre-postest yang sesuai nomornya (mis. Endokrin 1 -> Endokrin Pre-postest 1)
         const numMatch = title.match(/(\d+)\s*$/);
         const matchingTestFile = numMatch
           ? testFiles.find((tf) => tf.includes(numMatch[1]))
@@ -235,31 +234,9 @@ export function loadVaultUnits(): SystemUnit[] {
           unitId: sysName.toLowerCase(),
           title,
           category: sub === "Pato" ? "Patofisiologi" : "Dasar",
-          xpReward: 20,
-          slides: splitChapterIntoSlides(cleaned, title),
-          questions: linkedQuestions.slice(0, 5), // 5 soal cepat setelah baca slide materi
+          slides: splitChapterIntoSlides(cleaned, title, idx * 10 + mIdx),
+          questions: linkedQuestions,
         });
-      });
-
-      // Tambahkan juga node khusus Pre/Post-Test penuh (15 soal lengkap)
-      testFiles.forEach((file, tIdx) => {
-        const raw = fs.readFileSync(path.join(targetDir, file), "utf-8");
-        const cleaned = fixMojibakeAndClean(raw);
-        const title = file.replace(/\.md$/i, "");
-        const lessonId = `${sysName.toLowerCase()}-${sub || "core"}-test-${tIdx + 1}`;
-        const questions = parsePrePostTestQuestions(cleaned, lessonId);
-
-        if (questions.length > 0) {
-          lessons.push({
-            id: lessonId,
-            unitId: sysName.toLowerCase(),
-            title,
-            category: "Pre/Post-Test",
-            xpReward: 35,
-            slides: [],
-            questions,
-          });
-        }
       });
     });
 
@@ -267,8 +244,8 @@ export function loadVaultUnits(): SystemUnit[] {
       units.push({
         id: sysName.toLowerCase(),
         name: sysName,
-        description: `${lessons.length} modul belajar & kuis klinis sistem ${sysName}`,
-        color: COLORS[idx % COLORS.length],
+        description: `${lessons.length} modul terstruktur (Pretest → Materi → Posttest)`,
+        accentColor: ACCENTS[idx % ACCENTS.length],
         lessons,
       });
     }

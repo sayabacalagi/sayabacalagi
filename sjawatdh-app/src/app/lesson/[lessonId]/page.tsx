@@ -2,7 +2,12 @@ import { loadVaultUnits } from "@/lib/vault-parser";
 import LessonPlayer from "@/components/LessonPlayer";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-dynamic";
+export function generateStaticParams() {
+  const units = loadVaultUnits();
+  return units.flatMap((u) => u.lessons).map((l) => ({
+    lessonId: l.id,
+  }));
+}
 
 export default function LessonPage({ params }: { params: { lessonId: string } }) {
   const decodedId = decodeURIComponent(params.lessonId);

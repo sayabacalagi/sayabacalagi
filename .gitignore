@@ -28,3 +28,5 @@ sjawatdh-app/.DS_Store
 # Root-level build cache
 .next/
 node_modules/
+
+sjawatdh-app/out/
