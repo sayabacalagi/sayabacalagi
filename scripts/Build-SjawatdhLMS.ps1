@@ -8,7 +8,6 @@ $HeadBegin   = '<!-- SJAWATDH-HEAD:BEGIN -->';
 $HeadEnd     = '<!-- SJAWATDH-HEAD:END -->';
 $Arrow       = [string][char]0x2192;
 $LeftArrow   = [string][char]0x2190;
-$DownArrow   = [string][char]0x2193;
 $EmDash      = [string][char]0x2014;
 $EnDash      = [string][char]0x2013;
 $MidDot      = [string][char]0x00B7;
@@ -23,7 +22,6 @@ function Repair-LanguageAndTypography {
     param([string]$Text)
     $t = $Text
 
-    # 1. Pemulihan karakter UTF-8 rusak (mojibake)
     $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)
     $t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
     $t = [regex]::Replace($t, '\u00E2\u20AC\u00A6', '...')
@@ -39,10 +37,7 @@ function Repair-LanguageAndTypography {
     $t = [regex]::Replace($t, '\u00CE\u00B3', ([string][char]0x03B3))
     $t = [regex]::Replace($t, '\u00C2[\u00A0 ]', ' ')
 
-    # 2. Perbaikan pemenggalan kata akibat ekstraksi PDF
     $t = [regex]::Replace($t, '([a-z]{3,})-\s+([a-z]{3,})', '$1$2')
-
-    # 3. Perbaikan spasi tanda baca & penyeragaman istilah
     $t = [regex]::Replace($t, '[ \t]+([,\.;:\?\!])', '$1')
     $t = [regex]::Replace($t, '(?i)\bpre-?post\s*test\b', 'Pretest & Posttest')
     $t = [regex]::Replace($t, '(?i)\bpre-?test\b', 'Pretest')
@@ -54,6 +49,7 @@ function Repair-LanguageAndTypography {
 function Remove-GeneratedWrappers {
     param([string]$Raw)
     $c = $Raw
+    $c = [regex]::Replace($c, '(?s)^---.*?---\s*', '')
     $c = [regex]::Replace($c, "(?s)^$([regex]::Escape($HeadBegin)).*?$([regex]::Escape($HeadEnd))\r?\n*", '')
     $c = [regex]::Replace($c, "(?s)\r?\n?$([regex]::Escape($NavBegin)).*?$([regex]::Escape($NavEnd))\r?\n?", '')
     $c = [regex]::Replace($c, '(?s)\r?\n?<!-- LMS-NAV:BEGIN -->.*?<!-- LMS-NAV:END -->\r?\n?', '')
@@ -98,16 +94,13 @@ function Split-LongParagraphs {
 function Add-UpToDateBoldLeadIns {
     param([string]$Paragraph)
     if ($Paragraph -match '^(#|>|\||-|\*|\d+\.|```|<|\*\*)') { return $Paragraph }
-    # Tebalkan frasa definisi/kunci di awal kalimat jika mengikuti pola "Istilah — penjelasan" atau "Istilah is defined as..."
-    $p = [regex]::Replace($Paragraph, '^([A-Z][A-Za-z0-9\s\-\(\)]{3,42})(\s+(?:—|–|is defined as|refers to|adalah|merupakan)\b)', '**$1**$2')
-    return $p
+    return [regex]::Replace($Paragraph, '^([A-Z][A-Za-z0-9\s\-\(\)]{3,42})(\s+(?:—|–|is defined as|refers to|adalah|merupakan)\b)', '**$1**$2')
 }
 
 function Format-MaterialBody {
     param([string]$Body)
     $clean = Repair-LanguageAndTypography -Text $Body
 
-    # 1. Ekstrak penanda bagian utama (■) menjadi subbab H2
     $sqRegex = [regex]'\s*\u25A0\s*([A-Z][A-Z0-9\s,\-\(\)\/]{3,70})(?=\s+[A-Z][a-z])'
     $clean = $sqRegex.Replace($clean, {
         param($m)
@@ -115,12 +108,10 @@ function Format-MaterialBody {
         return "`n`n## $headingTitle`n`n"
     })
 
-    # 2. Pisahkan blok Referensi Tabel, Gambar, dan Singkatan
     $clean = [regex]::Replace($clean, '\s+(TABLE\s+\d+[\-\.]\d+[^\r\n]{0,100})', ("`n`n> **Referensi Tabel:** " + '$1' + "`n`n"))
     $clean = [regex]::Replace($clean, '\s+(FIGURE\s+\d+[\-\.]\d+[^\r\n]{0,100})', ("`n`n> **Referensi Gambar:** " + '$1' + "`n`n"))
     $clean = [regex]::Replace($clean, '\s+(Abbreviations:\s+)', "`n`n> **Keterangan Singkatan:** ")
 
-    # 3. Pecah paragraf panjang & terapkan bold lead-ins ala UpToDate
     $blocks = [regex]::Split($clean, '\r?\n\s*\r?\n')
     $formattedBlocks = foreach ($blk in $blocks) {
         $trimmed = $blk.Trim()
@@ -138,8 +129,7 @@ function Format-MaterialBody {
 function Get-EstimatedReadingMinutes {
     param([string]$Text)
     $words = ([regex]::Matches($Text, '\b\w+\b')).Count
-    $mins = [Math]::Max(3, [Math]::Ceiling($words / 210))
-    return $mins
+    return [Math]::Max(3, [Math]::Ceiling($words / 210))
 }
 
 function Format-TestBodyWithSpoiler {
@@ -154,428 +144,11 @@ function Format-TestBodyWithSpoiler {
     $questionsPart = $clean.Substring(0, $idx).Trim()
     $answersPart   = $clean.Substring($idx).Trim()
 
-    return "$questionsPart`n`n<details class='sj-spoiler'>`n<summary>Buka Kunci Jawaban &amp; Pembahasan</summary>`n`n$answersPart`n`n</details>"
-}
-
-function Get-SharedCss {
-    param(
-        [string]$AccentColor = '#3F6212',
-        [bool]$AllowToc = $false
-    )
-
-    $fontUrl = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap'
-
-    $tocRule = if ($AllowToc) {
-        "[class*='backlinks'], [class*='footer'] { display: none !important; }
-aside, nav[aria-label='Table of contents'], .toc {
-  font-size: 0.82rem !important;
-  color: var(--ink-soft) !important;
-  border-left: 1px solid var(--line) !important;
-  padding-left: 1rem !important;
-}
-aside a:hover, nav[aria-label='Table of contents'] a:hover, .toc a:hover {
-  color: var(--accent) !important;
-}"
-    } else {
-        "aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] { display: none !important; }"
-    }
-
-    return "<style>
-@import url('$fontUrl');
-
-:root {
-  --bg-paper: #FAF7F2;
-  --surface: #FFFFFF;
-  --surface-subtle: #F3EDE2;
-  --ink: #1C1917;
-  --ink-soft: #57534E;
-  --ink-muted: #78716C;
-  --accent: $AccentColor;
-  --line: #E7E0D5;
-}
-
-$tocRule
-
-body, main {
-  background-color: var(--bg-paper) !important;
-  color: var(--ink) !important;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-}
-
-article, .prose, main > div {
-  max-width: 740px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  line-height: 1.78 !important;
-  font-size: 1.02rem !important;
-}
-
-article p, .prose p {
-  margin-bottom: 1.25rem !important;
-  text-align: left !important;
-}
-
-article h1, article h2, article h3, .prose h1, .prose h2, .prose h3 {
-  font-family: 'Newsreader', Georgia, serif !important;
-  font-weight: 500 !important;
-  color: var(--ink) !important;
-  letter-spacing: -0.015em !important;
-}
-
-article h2, .prose h2 {
-  margin-top: 2.5rem !important;
-  margin-bottom: 0.9rem !important;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--line);
-  font-size: 1.42rem !important;
-}
-
-article blockquote, .prose blockquote {
-  background: var(--surface) !important;
-  border-left: 3px solid var(--accent) !important;
-  padding: 0.85rem 1.1rem !important;
-  margin: 1.35rem 0 !important;
-  border-radius: 0 8px 8px 0;
-  color: var(--ink-soft) !important;
-  font-size: 0.93rem !important;
-  line-height: 1.6 !important;
-}
-
-.sj-utd-meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.75rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--accent);
-  border-radius: 0 0 10px 10px;
-  padding: 0.95rem 1.15rem;
-  margin: 1rem 0 1.75rem;
-  font-size: 0.84rem;
-}
-
-.sj-utd-meta-label {
-  display: block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ink-muted);
-}
-
-.sj-utd-meta-val {
-  font-weight: 500;
-  color: var(--ink);
-}
-
-.sj-wrap {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 1.25rem 1rem 3.5rem;
-}
-
-.sj-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1.05rem;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 2.5rem;
-}
-
-.sj-logo {
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--ink) !important;
-  text-decoration: none !important;
-}
-
-.sj-nav-right {
-  display: flex;
-  gap: 1.4rem;
-  font-size: 0.9rem;
-}
-
-.sj-nav-right a {
-  color: var(--ink-soft) !important;
-  text-decoration: none !important;
-}
-
-.sj-nav-right a:hover {
-  color: var(--accent) !important;
-}
-
-.sj-crumb {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-  margin-bottom: 0.75rem;
-}
-
-.sj-crumb a {
-  color: var(--ink-soft) !important;
-  text-decoration: none !important;
-}
-
-.sj-crumb a:hover {
-  color: var(--accent) !important;
-}
-
-.sj-hero {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 2.5rem;
-  align-items: end;
-  margin-bottom: 3.5rem;
-}
-
-@media (max-width: 720px) {
-  .sj-hero {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-}
-
-.sj-h1 {
-  font-family: 'Newsreader', Georgia, serif !important;
-  font-size: clamp(2.15rem, 4.4vw, 3.1rem) !important;
-  line-height: 1.12 !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.02em !important;
-  color: var(--ink) !important;
-  margin: 0 0 0.85rem 0 !important;
-  border: none !important;
-}
-
-.sj-lead {
-  font-size: 1.04rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  margin: 0 0 1.4rem 0;
-  max-width: 44ch;
-}
-
-.sj-btn {
-  display: inline-block;
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--ink) !important;
-  border-bottom: 1.5px solid var(--ink);
-  padding-bottom: 0.2rem;
-  text-decoration: none !important;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.sj-btn:hover {
-  color: var(--accent) !important;
-  border-color: var(--accent);
-}
-
-.sj-broty-note {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  padding: 0.95rem 1.1rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-}
-
-.sj-broty-copy {
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: var(--ink-soft);
-  margin: 0;
-}
-
-.sj-broty-copy strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.sj-index-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.75rem;
-}
-
-.sj-h2 {
-  font-family: 'Newsreader', Georgia, serif !important;
-  font-size: 1.45rem !important;
-  font-weight: 400 !important;
-  margin: 0 !important;
-  border: none !important;
-}
-
-.sj-mono {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-}
-
-.sj-index-list {
-  border-top: 1px solid var(--line);
-  margin-bottom: 2.75rem;
-}
-
-.sj-index-row {
-  display: grid;
-  grid-template-columns: 3.2rem 1fr auto auto;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.05rem 0.4rem;
-  border-bottom: 1px solid var(--line);
-  text-decoration: none !important;
-  color: inherit !important;
-  transition: background-color 0.15s ease, padding-left 0.15s ease;
-}
-
-.sj-index-row:hover {
-  background-color: var(--surface-subtle);
-  padding-left: 0.85rem;
-}
-
-.sj-row-num {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.82rem;
-  font-weight: 500;
-}
-
-.sj-row-title {
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 1.25rem;
-  color: var(--ink);
-}
-
-.sj-row-meta {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-}
-
-.sj-row-arrow {
-  font-size: 0.95rem;
-  color: var(--ink-muted);
-  transition: transform 0.15s ease, color 0.15s ease;
-}
-
-.sj-index-row:hover .sj-row-arrow {
-  transform: translateX(3px);
-  color: var(--accent);
-}
-
-.sj-orient {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 10px 10px 0;
-  padding: 1.15rem 1.35rem;
-  margin-bottom: 2.25rem;
-}
-
-.sj-stepper {
-  margin-top: 3rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  font-size: 0.9rem;
-}
-
-.sj-stepper a {
-  color: var(--accent) !important;
-  font-weight: 500;
-  text-decoration: none !important;
-}
-
-.sj-stepper a:hover {
-  text-decoration: underline !important;
-}
-
-.sj-spoiler {
-  margin-top: 2rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 0.9rem 1.2rem;
-}
-
-.sj-spoiler summary {
-  cursor: pointer;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.84rem;
-  color: var(--accent);
-  font-weight: 500;
-  list-style: none;
-}
-
-.sj-spoiler[open] summary {
-  margin-bottom: 1rem;
-  padding-bottom: 0.65rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.sj-foot {
-  border-top: 1px solid var(--line);
-  padding-top: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  font-size: 0.84rem;
-  color: var(--ink-muted);
-}
-
-.sj-foot a {
-  color: var(--ink-soft) !important;
-  text-decoration: none !important;
-}
-
-.sj-foot a:hover {
-  color: var(--accent) !important;
-}
-</style>"
-}
-
-function Get-BrotySvg {
-    return "<svg width='44' height='44' viewBox='0 0 100 100' aria-hidden='true' style='flex-shrink:0;'>
-  <ellipse cx='50' cy='55' rx='32' ry='28' fill='#FBCFE8' />
-  <ellipse cx='50' cy='62' rx='20' ry='15' fill='#FDF2F8' />
-  <ellipse cx='18' cy='38' rx='7' ry='3' fill='#F9A8D4' transform='rotate(-30 18 38)' />
-  <ellipse cx='15' cy='45' rx='7' ry='3' fill='#F9A8D4' transform='rotate(-10 15 45)' />
-  <ellipse cx='16' cy='52' rx='7' ry='3' fill='#F9A8D4' transform='rotate(10 16 52)' />
-  <ellipse cx='82' cy='38' rx='7' ry='3' fill='#F9A8D4' transform='rotate(30 82 38)' />
-  <ellipse cx='85' cy='45' rx='7' ry='3' fill='#F9A8D4' transform='rotate(10 85 45)' />
-  <ellipse cx='84' cy='52' rx='7' ry='3' fill='#F9A8D4' transform='rotate(-10 84 52)' />
-  <circle cx='40' cy='48' r='4.5' fill='#1C1917' />
-  <circle cx='60' cy='48' r='4.5' fill='#1C1917' />
-  <circle cx='41.5' cy='46.5' r='1.5' fill='#FFFFFF' />
-  <circle cx='61.5' cy='46.5' r='1.5' fill='#FFFFFF' />
-  <circle cx='30' cy='58' r='3' fill='#FB7185' opacity='0.45' />
-  <circle cx='70' cy='58' r='3' fill='#FB7185' opacity='0.45' />
-  <path d='M45 60 Q50 64 55 60' stroke='#1C1917' stroke-width='1.8' fill='none' stroke-linecap='round' />
-</svg>"
+    return "$questionsPart`n`n---`n`n<details>`n<summary><strong>Buka Kunci Jawaban &amp; Pembahasan</strong></summary>`n`n$answersPart`n`n</details>"
 }
 
 function Get-BlockStructure {
     param([string]$WebpageRoot)
-
-    $accents = @{
-        'Endokrin'         = '#9A3412'
-        'Gastrointestinal' = '#854D0E'
-        'Hematoimmuno'     = '#9F1239'
-        'Intergumen'       = '#7C2D12'
-        'Kardiovaskular'   = '#B91C1C'
-        'Nefro'            = '#1D4ED8'
-        'Neuro'            = '#4338CA'
-        'ObsGyn'           = '#86198F'
-        'Pulmo'            = '#0F766E'
-    }
 
     $blocks = @()
     $idx = 1
@@ -589,7 +162,6 @@ function Get-BlockStructure {
             Path        = $_.FullName
             LandingFile = $landing
             LandingBase = $landing.BaseName
-            Accent      = if ($accents.ContainsKey($name)) { $accents[$name] } else { '#3F6212' }
         }
         $idx++
     }
@@ -668,18 +240,15 @@ function Get-LearningSessions {
 function Update-SessionFiles {
     param([pscustomobject]$Block, [array]$Sessions)
 
-    $testCss = Get-SharedCss -AccentColor $Block.Accent -AllowToc $false
-    $matCss  = Get-SharedCss -AccentColor $Block.Accent -AllowToc $true
-
     for ($i = 0; $i -lt $Sessions.Count; $i++) {
         $s       = $Sessions[$i]
         $nextSes = if (($i + 1) -lt $Sessions.Count) { $Sessions[$i + 1] } else { $null }
         $sesCode = $s.SessionNum.ToString('00')
 
         $nextLink = if ($nextSes) {
-            "<a href='$($nextSes.EntryTarget)'>Sesi berikutnya $Arrow</a>"
+            "[[$($nextSes.EntryTarget)|Sesi Berikutnya $Arrow]]"
         } else {
-            "<a href='$($Block.LandingBase)'>Kembali ke blok $Arrow</a>"
+            "[[$($Block.LandingBase)|Kembali ke Blok $Arrow]]"
         }
 
         if ($s.HasTest) {
@@ -687,94 +256,101 @@ function Update-SessionFiles {
             $cleanTest   = Remove-GeneratedWrappers -Raw $rawTest
             $spoilerTest = Format-TestBodyWithSpoiler -Body $cleanTest
 
-            $testHeader = "$HeadBegin
-$testCss
+            $testContent = "---
+title: `"Pretest & Posttest $EmDash $($s.DisplayTitle)`"
+showToc: false
+showLinkPreviews: false
+---
 
-<div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
+[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / **Sesi $sesCode**
 
 # Evaluasi Awal & Akhir Sesi
-<div class='sj-utd-meta'>
-  <div><span class='sj-utd-meta-label'>Topik Bahasan</span><span class='sj-utd-meta-val'>$($s.DisplayTitle)</span></div>
-  <div><span class='sj-utd-meta-label'>Jumlah Butir</span><span class='sj-utd-meta-val'>$($s.QuestionCount) Soal Pilihan Ganda</span></div>
-  <div><span class='sj-utd-meta-label'>Fungsi Evaluasi</span><span class='sj-utd-meta-val'>Pretest &amp; Posttest</span></div>
-</div>
 
-Kerjakan seluruh soal secara mandiri sebelum membaca materi inti. Setelah selesai mempelajari materi inti, buka kembali halaman ini sebagai **Posttest**.
+| Topik Bahasan | Jumlah Butir | Fungsi Evaluasi |
+| :--- | :--- | :--- |
+| **$($s.DisplayTitle)** | $($s.QuestionCount) Soal Pilihan Ganda | Pretest & Posttest |
+
+> **Petunjuk Pengerjaan:** Kerjakan seluruh soal secara mandiri sebelum membaca materi inti untuk mengukur pemahaman awal. Setelah selesai mempelajari materi inti, buka kembali halaman ini sebagai **Posttest**.
 
 ---
-$HeadEnd"
 
-            $testFooter = "$NavBegin
+$spoilerTest
 
-<div class='sj-stepper'>
-  <a href='$($s.Material.BaseName)'>Lanjut ke materi inti $Arrow</a>
-  <div>$nextLink $MidDot <a href='$($Block.LandingBase)'>Daftar sesi</a></div>
-</div>
+$NavBegin
+
+---
+
+**Navigasi Sesi:** [[$($s.Material.BaseName)|Lanjut ke Materi Inti $Arrow]] $MidDot $nextLink $MidDot [[$($Block.LandingBase)|Daftar Sesi]]
+
 $NavEnd"
 
-            Write-Utf8File -Path $s.Test.FullName -Content ($testHeader + "`n`n" + $spoilerTest + "`n`n" + $testFooter)
+            Write-Utf8File -Path $s.Test.FullName -Content $testContent
 
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
             $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw $rawMat)
             $readMins = Get-EstimatedReadingMinutes -Text $cleanMat
 
-            $matHeader = "$HeadBegin
-$matCss
+            $matContent = "---
+title: `"$($s.DisplayTitle) $EmDash $($Block.Name)`"
+showToc: true
+showLinkPreviews: false
+---
 
-<div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
+[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / **Sesi $sesCode**
 
 # $($s.DisplayTitle)
-<div class='sj-utd-meta'>
-  <div><span class='sj-utd-meta-label'>Blok Sistem</span><span class='sj-utd-meta-val'>$($Block.Name) $MidDot $($s.Category)</span></div>
-  <div><span class='sj-utd-meta-label'>Urutan Sesi</span><span class='sj-utd-meta-val'>Sesi $sesCode dari $($s.TotalCount.ToString('00'))</span></div>
-  <div><span class='sj-utd-meta-label'>Estimasi Baca</span><span class='sj-utd-meta-val'>~$readMins menit</span></div>
-</div>
 
-> **Panduan Fokus Baca:** Gunakan daftar isi (*Topic Outline*) di sisi halaman untuk melompat antar-subbab, perhatikan istilah kunci yang dicetak tebal di awal paragraf, lalu uji pemahaman melalui **Posttest** di akhir sesi.
+| Blok Sistem | Kategori | Urutan Sesi | Estimasi Baca |
+| :--- | :--- | :--- | :--- |
+| **$($Block.Name)** | $($s.Category) | Sesi $sesCode dari $($s.TotalCount.ToString('00')) | ~$readMins menit |
+
+> **Panduan Fokus Baca (UpToDate Style):** Gunakan daftar isi (*Topic Outline*) di sisi halaman untuk melompat antar-subbab, perhatikan istilah kunci yang dicetak tebal di awal paragraf, lalu uji pemahaman melalui **Posttest** di akhir sesi.
 
 ---
-$HeadEnd"
 
-            $matFooter = "$NavBegin
+$cleanMat
 
-<div class='sj-stepper'>
-  <a href='$($s.Test.BaseName)'>$LeftArrow Pretest</a>
-  <span class='sj-mono'>MATERI INTI</span>
-  <a href='$($s.Test.BaseName)'>Lanjut Posttest $Arrow</a>
-</div>
+$NavBegin
+
+---
+
+**Navigasi Sesi:** [[$($s.Test.BaseName)|$LeftArrow Pretest]] $MidDot **Materi Inti** $MidDot [[$($s.Test.BaseName)|Lanjut Posttest $Arrow]] $MidDot $nextLink
+
 $NavEnd"
 
-            Write-Utf8File -Path $s.Material.FullName -Content ($matHeader + "`n`n" + $cleanMat + "`n`n" + $matFooter)
+            Write-Utf8File -Path $s.Material.FullName -Content $matContent
         } else {
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
             $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw $rawMat)
             $readMins = Get-EstimatedReadingMinutes -Text $cleanMat
 
-            $matHeader = "$HeadBegin
-$matCss
+            $matContent = "---
+title: `"$($s.DisplayTitle) $EmDash $($Block.Name)`"
+showToc: true
+showLinkPreviews: false
+---
 
-<div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
+[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / **Sesi $sesCode**
 
 # $($s.DisplayTitle)
-<div class='sj-utd-meta'>
-  <div><span class='sj-utd-meta-label'>Blok Sistem</span><span class='sj-utd-meta-val'>$($Block.Name) $MidDot $($s.Category)</span></div>
-  <div><span class='sj-utd-meta-label'>Urutan Sesi</span><span class='sj-utd-meta-val'>Sesi $sesCode dari $($s.TotalCount.ToString('00'))</span></div>
-  <div><span class='sj-utd-meta-label'>Estimasi Baca</span><span class='sj-utd-meta-val'>~$readMins menit</span></div>
-</div>
+
+| Blok Sistem | Kategori | Urutan Sesi | Estimasi Baca |
+| :--- | :--- | :--- | :--- |
+| **$($Block.Name)** | $($s.Category) | Sesi $sesCode dari $($s.TotalCount.ToString('00')) | ~$readMins menit |
 
 ---
-$HeadEnd"
 
-            $matFooter = "$NavBegin
+$cleanMat
 
-<div class='sj-stepper'>
-  <a href='$($Block.LandingBase)'>$LeftArrow Kembali ke blok</a>
-  <span class='sj-mono'>MATERI INTI</span>
-  $nextLink
-</div>
+$NavBegin
+
+---
+
+**Navigasi Sesi:** [[$($Block.LandingBase)|$LeftArrow Kembali ke Blok]] $MidDot $nextLink
+
 $NavEnd"
 
-            Write-Utf8File -Path $s.Material.FullName -Content ($matHeader + "`n`n" + $cleanMat + "`n`n" + $matFooter)
+            Write-Utf8File -Path $s.Material.FullName -Content $matContent
         }
     }
 }
@@ -788,129 +364,82 @@ function New-BlockLandingContent {
         Repair-LanguageAndTypography -Text $rawClin
     } else { '' }
 
-    $css  = Get-SharedCss -AccentColor $Block.Accent -AllowToc $false
-    $rows = @()
-
+    $tableRows = @()
     foreach ($s in $Sessions) {
-        $sesCode  = $s.SessionNum.ToString('00')
-        $metaLine = "$($s.Category) $MidDot $($s.FileTitle)"
-        $rows += "<a class='sj-index-row' href='$($s.EntryTarget)'>
-  <span class='sj-row-num' style='color:$($Block.Accent);'>$sesCode</span>
-  <div>
-    <div class='sj-row-title'>$($s.DisplayTitle)</div>
-    <div class='sj-mono'>$metaLine</div>
-  </div>
-  <span class='sj-row-meta'>$(if ($s.HasTest) { "$($s.QuestionCount) soal" } else { "materi" })</span>
-  <span class='sj-row-arrow'>$Arrow</span>
-</a>"
+        $sesCode = $s.SessionNum.ToString('00')
+        $evalCol = if ($s.HasTest) { "$($s.QuestionCount) soal (Pre/Posttest)" } else { "Materi inti" }
+        $matLink = "[[$($s.Material.BaseName)|Baca Materi]]"
+        $entryLink = "[[$($s.EntryTarget)|$($s.DisplayTitle)]]"
+        $tableRows += "| **$sesCode** | $entryLink | $($s.Category) | $evalCol | $matLink |"
     }
 
     $orientPart = if ($clinicalSection) {
-        "`n<div class='sj-orient'>`n`n$clinicalSection`n`n</div>`n"
+        "`n---`n`n$clinicalSection`n"
     } else { '' }
 
     return "---
-title: $($Block.Name) $EmDash sjawatdh.
-showToc: false
+title: `"$($Block.Name) $EmDash sjawatdh.`"
+showToc: true
 showLinkPreviews: false
 ---
 
-$css
+[[index|sjawatdh.]] / **Blok $($Block.Number)**
 
-<div class='sj-wrap'>
-  <header class='sj-nav'>
-    <a class='sj-logo' href='./'>sjawatdh.</a>
-    <nav class='sj-nav-right'>
-      <a href='./'>blok</a>
-      <a href='Untuk%20Sjawatdh%20(Landing)'>tentang</a>
-    </nav>
-  </header>
+# $($Block.Name)
 
-  <div style='margin-bottom:2rem; border-left:3px solid $($Block.Accent); padding-left:1rem;'>
-    <span class='sj-mono' style='color:$($Block.Accent);'>$($Block.Name.ToUpper()) $MidDot $($Block.Number)</span>
-    <h1 class='sj-h1' style='margin-top:0.25rem !important;'>$($Block.Name)</h1>
-    <span class='sj-mono'>$($Sessions.Count) sesi terstruktur</span>
-  </div>
+| Kode Blok | Jumlah Sesi | Alur Belajar Standar |
+| :--- | :--- | :--- |
+| **Blok $($Block.Number)** | $($Sessions.Count) Sesi Terstruktur | Pretest $Arrow Materi Inti $Arrow Posttest |
 $orientPart
-  <div class='sj-index-head'>
-    <h2 class='sj-h2'>Daftar Sesi Belajar</h2>
-    <span class='sj-mono'>Pretest $Arrow Materi Inti $Arrow Posttest</span>
-  </div>
+---
 
-  <div class='sj-index-list'>
-$($rows -join "`n")
-  </div>
+## Daftar Sesi & Topik Klinis
 
-  <footer class='sj-foot'>
-    <a href='./'>$LeftArrow kembali ke daftar blok</a>
-    <span>sjawatdh.</span>
-  </footer>
-</div>"
+| Sesi | Topik Bahasan (Mulai Evaluasi) | Kategori | Evaluasi | Akses Langsung |
+| :--- | :--- | :--- | :--- | :--- |
+$($tableRows -join "`n")
+
+---
+
+[[index|$LeftArrow Kembali ke Daftar Blok]] $MidDot [[Untuk Sjawatdh (Landing)|Tentang Ruang Belajar]]"
 }
 
 function New-HomepageContent {
     param([array]$BlockItems)
 
     $totalSessions = ($BlockItems | Measure-Object -Property SessionCount -Sum).Sum
-    $brotySvg      = Get-BrotySvg
-    $css           = Get-SharedCss -AccentColor '#3F6212' -AllowToc $false
-    $rows          = @()
+    $rows = @()
 
     foreach ($item in $BlockItems) {
         $b = $item.Block
-        $rows += "<a class='sj-index-row' href='$($b.LandingBase)'>
-  <span class='sj-row-num' style='color:$($b.Accent);'>$($b.Number)</span>
-  <span class='sj-row-title'>$($b.Name)</span>
-  <span class='sj-row-meta'>$($item.SessionCount) sesi</span>
-  <span class='sj-row-arrow'>$Arrow</span>
-</a>"
+        $rows += "| **$($b.Number)** | [[$($b.LandingBase)|$($b.Name)]] | $($item.SessionCount) sesi terstruktur |"
     }
 
     return "---
-title: sjawatdh.
-description: belajar blok, pelan-pelan sampai paham.
+title: `"sjawatdh. $EmDash Belajar Blok, Pelan-pelan Sampai Paham`"
+description: `"Materi inti dan evaluasi terstruktur untuk pembelajaran kedokteran.`"
 showToc: false
 showLinkPreviews: false
 ---
 
-$css
+# sjawatdh.
+**belajar blok, pelan-pelan sampai paham.**
 
-<div class='sj-wrap'>
-  <header class='sj-nav'>
-    <a class='sj-logo' href='./'>sjawatdh.</a>
-    <nav class='sj-nav-right'>
-      <a href='#blok'>blok</a>
-      <a href='Untuk%20Sjawatdh%20(Landing)'>tentang</a>
-    </nav>
-  </header>
+Materi inti dan evaluasi terstruktur untuk pembelajaran kedokteran (*Pretest $Arrow Materi Inti $Arrow Posttest*).
 
-  <section class='sj-hero'>
-    <div>
-      <h1 class='sj-h1'>belajar blok,<br>pelan-pelan sampai paham.</h1>
-      <p class='sj-lead'>Materi inti dan evaluasi terstruktur untuk pembelajaran kedokteran.</p>
-      <a class='sj-btn' href='#blok'>mulai belajar $DownArrow</a>
-    </div>
+> **Hai, aku Broty.** Mau mulai belajar blok sistem organ yang mana hari ini?
 
-    <div class='sj-broty-note'>
-      $brotySvg
-      <p class='sj-broty-copy'><strong>hai, aku Broty.</strong><br>mau belajar apa hari ini?</p>
-    </div>
-  </section>
+---
 
-  <div id='blok' class='sj-index-head'>
-    <h2 class='sj-h2'>pilih blok.</h2>
-    <span class='sj-mono'>$($BlockItems.Count) blok $MidDot $totalSessions sesi</span>
-  </div>
+## Pilih Blok Sistem Organ ($($BlockItems.Count) Blok $MidDot $totalSessions Sesi)
 
-  <div class='sj-index-list'>
+| No | Blok Sistem Organ | Cakupan Materi |
+| :--- | :--- | :--- |
 $($rows -join "`n")
-  </div>
 
-  <footer class='sj-foot'>
-    <span>sjawatdh. $MidDot catatan belajar kedokteran</span>
-    <a href='Untuk%20Sjawatdh%20(Landing)'>tentang ruang belajar ini $Arrow</a>
-  </footer>
-</div>"
+---
+
+**sjawatdh.** $MidDot Catatan belajar kedokteran $MidDot [[Untuk Sjawatdh (Landing)|Tentang ruang belajar ini $Arrow]]"
 }
 
 function Update-AboutPage {
@@ -919,33 +448,21 @@ function Update-AboutPage {
     if (-not (Test-Path $aboutPath)) { return }
 
     $raw = Remove-GeneratedWrappers -Raw ([System.IO.File]::ReadAllText($aboutPath))
-    $bodyOnly = Repair-LanguageAndTypography -Text ([regex]::Replace($raw, '(?s)^---.*?---\s*', '').Trim())
-    $css = Get-SharedCss -AccentColor '#3F6212' -AllowToc $false
+    $bodyOnly = Repair-LanguageAndTypography -Text $raw
 
     $content = "---
-title: tentang $EmDash sjawatdh.
+title: `"Tentang $EmDash sjawatdh.`"
 showToc: false
 showLinkPreviews: false
 ---
 
-$css
-
-<div class='sj-wrap'>
-  <header class='sj-nav'>
-    <a class='sj-logo' href='./'>sjawatdh.</a>
-    <nav class='sj-nav-right'>
-      <a href='./'>blok</a>
-      <a href='Untuk%20Sjawatdh%20(Landing)'>tentang</a>
-    </nav>
-  </header>
+[[index|sjawatdh.]] / **Tentang**
 
 $bodyOnly
 
-  <div class='sj-stepper'>
-    <a href='./'>$LeftArrow Kembali ke daftar blok</a>
-    <span class='sj-mono'>sjawatdh.</span>
-  </div>
-</div>"
+---
+
+[[index|$LeftArrow Kembali ke Daftar Blok]]"
 
     Write-Utf8File -Path $aboutPath -Content $content
 }
@@ -987,7 +504,7 @@ foreach ($b in $blocks) {
         Block        = $b
         SessionCount = $sessions.Count
     }
-    Write-Host "[OK] [$($b.Number)] $($b.Name): $($sessions.Count) sesi diperbarui (UpToDate clinical format)" -ForegroundColor Green
+    Write-Host "[OK] [$($b.Number)] $($b.Name): $($sessions.Count) sesi diperbarui (UpToDate format + MDX-safe)" -ForegroundColor Green
 }
 
 Update-AboutPage -WebpageRoot $webpageRoot;
