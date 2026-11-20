@@ -1,5 +1,41 @@
-we gonna belajar tabel 10x10 // YOU CAN OPEN YOUR harrison 20th 
-Tabel 14. Daftar Penyakit Sistem Saraf No Daftar Penyakit Genetik & Kongenital Tingkat Kemampuan 1 Spina bifida 2 2 Fenil ketonuria 1 3 Hidrosefalus kongenital 2 4 Ensefalokel 2 5 Anensefali 2 6 Mikrosefali Gangguan Neurologik Pediatrik 2 7 Duchene muscular dystrophy 2 8 Kejang demam 4 9 Kejang pada neonatus 10 Cerebral palsy Infeksi 3B 2 11 Infeksi sitomegalovirus 12 Meningitis 3B 3B 13 Ensefalitis 14 Malaria serebral 3B 3B 15 Tetanus 16 Neuritis vestibularis 3B 3A 17 Tetanus neonatorum 18 Toxoplasmosis serebral 3B 2 19 Abses otak 20 HIV AIDS tanpa komplikasi 2 4 21 HIV AIDS tanpa komplikasi pada 3A anak 22 AIDS dengan komplikasi 23 Hidrosefalus 3A 2 24 Myelitis 25 Poliomielitis 2 3B 26 Rabies 3A Tumor Sistem Saraf Pusat 131 26 Tumor otak primer No 2 Daftar Penyakit 27 Tumor otak sekunder Tingkat Kemampuan Penurunan Kesadaran 2 28 Ensefalopati 29 Koma 3B 3B 30 Mati batang otak 2 Sakit Kepala 31 Tension headache 32 Migren 4 4 33 Migren tidak spesifik 34 Arteritis kranial 3A 1 35 Neuralgia trigeminal 36 Cluster headache Penyakit Neurovaskuler 3A 3A 37 TIA 38 Infark serebral 3B 3B 39 Hematom intraserebral 40 Perdarahan subarachnoid 3B 3B 41 Ensefalopati hipertensi 3B Lesi Saraf Kranial dan Batang Otak 42 Bells’ palsy 43 Lesi batang otak Gangguan Sistem Vestibular 4 2 44 Meniere's disease 3A 45 Vertigo (Benign paroxysmal 4 positional vertigo) 46 Vertigo sentral Defisit Memori 48 Demensia 3A 49 Penyakit Alzheimer Gangguan Pergerakan 3A 2 50 Parkinson 51 Tics facialis 3A 3A 132 52 Gangguan pergerakan lainnya Epilepsi dan Kejang lainnya 1 54 Kejang No 3B Daftar Penyakit 55 Epilepsi Tingkat Kemampuan 56 Epilepsi Rujuk Balik 3A 4 57 Status epilepticus 3B Penyakit Demielinisasi 58 Sklerosis multipel Penyakit pada Tulang Belakang dan Sumsum Tulang Belakang 2 59 Amyotrophic lateral sclerosis (ALS) 60 Complete spinal transection 2 3B 61 Sindroma kauda equina 62 Neurogenic bladder 2 3B 63 Siringomielia 64 Mielopati 1 2 65 Dorsal root syndrome 66 Acute medulla compression 2 3B 67 Radicular syndrome 68 Hernia nucleus pulposus (HNP) Trauma 3A 3A 69 Hematom/ perdarahan epidural 70 Hematom/ perdarahan subdural 3B 3B 71 Trauma Medula Spinalis 72 Fraktur Basis Krani Nyeri 3B 3B 73 Nyeri nosiseptik, nyeri campur, 3A nyeri rujukan (referred pain) 74 Nyeri neuropatik Penyakit Neuromuskuler dan Neuropati 75 Sindroma Horner 3A 2 76 Neuropati jeratan (Carpal tunnel syndrome, tarsal tunnel syndrome, ulnar neuropati, peroneal palsy) 3A 133 77 Neuropati simetris 78 Pleksopati 3A 79 Peroneal palsy 3A 3A 80 Guillain Barre syndrome No Daftar Penyakit 3A Tingkat Kemampuan 81 Guillain Barre syndrome dengan 3B gagal napas 82 Miastenia gravis 83 Krisis miastenik 3A 3B 84 Krisis kolinergik 3B 85 Neurofibromatosis (Von Recklaing Hausen disease) Gangguan Neurobehaviour 2 86 Amnesia pasca trauma 3A 87 Gangguan Kognitif Ringan (Mild 3A Cognitive Impairment-MCI) 88 Demensia Gangguan Tidur 89 Insomnia 2 3B
+---
+title: Blok Neuro — Neuroanatomy, Localization & Clinical Neurology
+description: Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan neuromuskuler.
+---
 
-PReface:
-Fig 10.1 Sir Roger Bannister CBE (1929– 2018) ran the first ever sub- 4- minute mile on 6 May 1954 at the age of 25. At that time he was a medical student at Oxford University, and graduated the following year. He went on to become a prominent academic neurologist, conducting research into the autonomic nervous system, which he regarded as his greatest achievement. Autonomic activity and running are, of course, in timately linked, as Bannister reflected in a more poetic manner than the usual ‘fight or flight’ cliché: ‘As a child I ran barefoot along damp, fresh sand by the seashore. The air there had a special quality. . . The sound of breakers shut out all others, and I was startled, almost frightened, by the tremendous excitement a few steps could create. It was an intense moment of discovery of a source of power and beauty that one previously hardly dreamt existed.’ In 2014, Bannister spoke publicly of his sense of irony at being diagnosed with Parkinson’s disease. Photo by Keystone/ Getty Images. We thank Thomas Hughes and Marc Edwards, our Specialist Readers for this chapter. 441 I think, therefore I am It is the brain, more than any other organ, that marks Homo sapiens apart from other animals. Our ability to be self- aware, to think, and to reason has formed the basis of scientific inquiry and philosophical speculation for millennia, as we attempt to rationalize and define this cognitive capability. What is the mind? Less tangible than other aspects of our being, throughout time humans have looked to explanations from philosophy, folklore, religion, and now science. The concept of the sense of self and being that defines us all— whether it be called the ego, nous, or the soul— remains intriguing yet elusive to explain. Aristotle held that the psyche (Greek: ψυχή= soul) was not separate to its housing body, as one could not exist without the other. This view was directly contradicted by the 17th- century French philosopher René Descartes. He proposed the theory of ‘mind– body dualism’ in which the mind, located in the pineal gland, is an entirely separate entity to the material being, and controls the avatar of the physical body like a puppeteer. These conflicting viewpoints well illustrate the spectrum of neurological dis ease and its blurred boundaries with psychiatry and psychology. Jean Martin Charcot (1825– 1893), often credited as the father of neurology, appeared to be more interested in this crossover than neuronal dysfunction: he spent two decades of his career studying hysteria in Paris, initially attributing symptoms of crying, fainting, and temporary blindness to an organic, inherited cause, before revising his view in later life to conclude that this was a psychological disease. His con troversial work in this field inspired his student Sigmund Freud’s psychoanalytical theories, and illustrated the very real power of the conscious, or subconscious, to produce physical symptoms, a phenomenon familiar to all physicians. Perhaps re flecting our frustration with this challenging area as much as his limited success, we remember Charcot for his more tangible outputs, for example, in giving the in augural description of, among other things, multiple sclerosis, Parkinson’s disease, amyotrophic lateral sclerosis (ALS), Charcot– Marie– Tooth disease, and of course his eponymous misshapen joint resulting from proprioceptive loss. However, both Aristotle and Charcot would have surely agreed with Descartes’ proposition of ‘cogito ergo sum’: I think, therefore I am. Whether mind and brain are dual or one, they are inextricably linked and the very nature of awareness proves its existence.
+<div align="center">
+
+# 🧠 Blok Neuro — Neuroanatomy, Localization & Clinical Neurology
+*Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan neuromuskuler.*
+
+[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+
+</div>
+
+---
+
+## 📚 Daftar Bab & Pre/Post-Test
+
+> [!tip] Cara Belajar Blok Ini
+> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+
+| No | Kategori | Materi & Evaluasi |
+| :-: | :---: | :--- |
+| **1** | 🟢 Dasar | [[Neuro 1\|📖 Baca Bab: Neuro 1]] |
+| **2** | 📝 Kuis | [[Neuro Pre-postest 1\|⚡ Kerjakan: Neuro Pre-postest 1]] |
+
+---
+
+## 🎯 Target Kompetensi & Clinical Pearl
+
+
+
+
+
+---
+
+<div align="center">
+
+[[index|← Kembali ke Direktori Sistem Organ]]
+
+</div>

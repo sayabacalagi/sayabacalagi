@@ -1,5 +1,45 @@
-we gonna belajar tabel 10x10 // YOU CAN OPEN YOUR harrison 20th 
-Tabel 22. Daftar Penyakit Sistem Endokrin, Metabolik dan Nutrisi No Daftar Penyakit Tingkat Kemampuan Endocrine Glands 1 Diabetes melitus tipe 1 tanpa komplikasi 4 2 Diabetes melitus tipe 1 pada anak 2 3 Diabetes melitus tipe 2 4 4 Diabetes melitus tipe 2 pada anak 2 5 Diabetes melitus tipe lain (intoleransi glukosa akibat penyakit lain atau obat-obatan) 3A 6 Abses diabetik 3A 7 Gangren diabetik 3A 8 Ketoasidosis diabetikum 3B 9 Hiperglikemi hiperosmolar non ketotik 10 Hipoglikemia ringan 3B 4 11 Hipoglikemia berat 12 Diabetes insipidus 3B 2 13 Akromegali, gigantisme 14 Defisiensi hormon pertumbuhan 15 hiponatremia) 2 2 Gangguan elektrolit dengan penyebab endokrin (neonatal 16 Hiperparatiroid hipokalsemia, neonatal 2 17 Hipoparatiroid 2 2 18 Hipertiroid 19 Hipertiroid pada anak 3A 2 20 Rujuk balik Hipertiroid 21 Tirotoksikosis 4 3B 22 Hipotiroid 23 Hipotiroid pada bayi / anak 3A 2 24 Goiter 25 Goiter pada anak 3A 2 26 Rujuk balik Goiter 27 Tiroiditis 4 3A 28 Cushing's disease 3B 158 29 Cushing's disease pada anak 30 Krisis adrenal 2 3B No Daftar Penyakit Tingkat Kemampuan 31 Addison's disease 32 Pubertas prekoks 1 2 33 Hipogonadisme 34 Prolaktinemia 2 1 35 Adenoma tiroid 36 Karsinoma tiroid Gizi dan Metabolisme 2 2 37 Malnutrisi energi-protein 38 Defisiensi vitamin 4 4 39 Defisiensi mineral 40 Dislipidemia 4 4 41 Dislipidemia pada anak 42 Porfiria 2 1 43 Hiperurisemia 44 Hiperurisemia pada anak 4 2 45 Obesitas 46 Obesitas pada anak 4 3A 47 Sindroma metabolic 48 Stunting (perawakan pendek) 4 4
+---
+title: Blok Endokrin — Hormones, Metabolism & Clinical Approach
+description: Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — pahami feedback loop-nya biar nggak ketuker.
+---
 
-PREFACE:
-portant Egyptian pharaoh of the 18th dynasty, reigning from 1365 to 1348 BC. Akhenaten made radical changes in Egypt including establishing a new capital and forming a new religion associated with a pacifist philosophy and a deep respect for nature. He also en couraged a new concept of art in which sculptures or reliefs portraying the pharaoh were no longer highly idealized. Akhenaten was then often portrayed as a person with a prominent jaw, sunken chest, bulky ab domen, and gynecoid fat distribution. Several authors have suggested that Akhenaten su ered from ac romegaly, with or without hypogonadism, isolated hypogonadism, or rickets. His sometimes androgynous portrayal, with wide hips, an elongated head, almond eyes, square jaw, gynaecomastia, and no male genitalia have also led some to suggest possible diagnoses of Klinefelter’s syndrome or even gender dysphoria. Artwork by Gillian Turner. We thank Helen Turner, Rustam Rea, and Michael Matheou, our Specialist Readers and Oliver Mowforth, our Junior Reader for this chapter. We also thank Michael Matheou for contributing to this chapter. 197 The essence of endocrinology For scientists • Define a syndrome, and match it to a gland malfunction. • Measure the gland’s output in the peripheral blood. Define clinical syndromes associated with too much or too little secretion (hyper- and hypo- syndromes, respectively; eu- means normal, neither  nor , as in euthyroid). Note factors that may make measurement variable, eg diurnal release of cortisol. • If suspecting hormone deficiency, test by stimulating the gland that produces it (eg short ACTH stimulation test or Synacthen® test in Addison’s). If the gland is not functioning normally, there will be a blunted response to stimulation. • If suspecting hormone excess, test by inhibiting the gland that produces it (eg dexamethasone suppression test in Cushing’s). If there is a hormone- secreting tumour then this will fail to suppress via normal feedback mechanisms. • Find a way to image the gland. NB: non- functioning tumours or ‘incidentalomas’ may be found in health, see p218. Imaging alone does not make the diagnosis. • Aim to halt disease progression; diet and exercise can stop progression of im paired fasting glucose to frank diabetes. 1, 2 For other glands, halting progression will depend on understanding autoimmunity, and the interaction of genes and environment. In thyroid autoimmunity (an archetypal autoimmune disease), it is possible to track interactions between genes and environment (eg smoking and stress) via expression of immunologically active molecules (HLA class I and II, adhesion molecules, cytokines, CD40, and complement regulatory proteins). 3 Endocrinologists love this reductionist approach, but have been less successful at understanding emergent phenomena— those properties and performances of ours that cannot be predicted from full knowledge of our perturbed parts. We under stand the diurnal nature of cortisol secretion, for example, but the science of re lating this to dreams, the consolidation of memory, and the psychopathology of families and other groups (such as the endocrinology ward round you may be about to join) is in its infancy. But as doctors we are steeped in the hormonal lives of pa tients (as they are in ours)— and we may as well start by recognizing this now. For those doing exams ‘What’s wrong with him?’ your examiner asks, boldly. While you apologize to the patient for this rudeness by asking, ‘Is it alright if we speak about you as if you weren’t here?’, think to yourself that if you were a betting person you would wager that the diagnosis will be endocrinological. In no other discipline are ge stalt impressions so characteristic. To get good at recognizing these conditions, spend time in endocrinology outpatients and looking at collections of clinical photographs. Also, specific cutaneous signs are important, as follows. Thyrotoxicosis: hair loss; pretibial myxoedema (confusing term, p212); onycholysis (nail separation from the nailbed); bulging eyes (exophthalmos/ proptosis). Hypothyroidism: hair loss; eyebrow loss; cold, pale skin; characteristic face. You might, perhaps should, fail your exam if you blurt out ‘Toad- like face’. Cushing’s syndrome: central obesity and wasted limbs (= ‘lemon on sticks’ see fig 5.2); proximal myopathy; moon face; bu alo hump; supraclavicular fat pads; striae. Addison’s disease: hyperpigmentation (face, neck, palmar cre ases), postural hypotension. Acromegaly: acral (distal) + soft tissue overgrowth; big jaws (macrognathia), hands, and feet; the skin is thick; facial features are coarse. Hyperandrogenism (): hirsutism; temporal balding; acne. Hypopituitarism: pale or yellow- tinged thinned skin, resulting in fine wrinkling around the eyes and mouth, making the patient look older. Hypoparathyroidism: dry, scaly, pu y skin; brittle nails; coarse hair. Pseudohypoparathyroidism: short stature, short neck, and short 4th and 5th metacarpals. Fig 5.2 ‘Lemon on sticks.’
+<div align="center">
+
+# 🧠 Blok Endokrin — Hormones, Metabolism & Clinical Approach
+*Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — pahami feedback loop-nya biar nggak ketuker.*
+
+[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+
+</div>
+
+---
+
+## 📚 Daftar Bab & Pre/Post-Test
+
+> [!tip] Cara Belajar Blok Ini
+> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+
+| No | Kategori | Materi & Evaluasi |
+| :-: | :---: | :--- |
+| **1** | 🟢 Dasar | [[Endokrin 1\|📖 Baca Bab: Endokrin 1]] |
+| **2** | 🟢 Dasar | [[Endokrin 2\|📖 Baca Bab: Endokrin 2]] |
+| **3** | 🟢 Dasar | [[Endokrin 3\|📖 Baca Bab: Endokrin 3]] |
+| **4** | 📝 Kuis | [[Endokrin Pre-postest 1\|⚡ Kerjakan: Endokrin Pre-postest 1]] |
+| **5** | 📝 Kuis | [[Endokrin Pre-postest 2\|⚡ Kerjakan: Endokrin Pre-postest 2]] |
+| **6** | 📝 Kuis | [[Endokrin Pre-postest 3\|⚡ Kerjakan: Endokrin Pre-postest 3]] |
+
+---
+
+## 🎯 Target Kompetensi & Clinical Pearl
+
+
+
+
+
+---
+
+<div align="center">
+
+[[index|← Kembali ke Direktori Sistem Organ]]
+
+</div>

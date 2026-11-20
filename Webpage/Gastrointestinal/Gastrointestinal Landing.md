@@ -1,5 +1,41 @@
-we gonna belajar tabel 10x10 // YOU CAN OPEN YOUR harrison 20th 
-Tabel 19. Daftar Penyakit Sistem Gastrointestinal, Hepatobilier, dan Pankreas No Daftar Penyakit Tingkat Kemampuan Mulut 1 Sumbing pada bibir dan palatum 2 2 Micrognatia and macrognatia 2 3 Kandidiasis mulut 4 4 Ulkus mulut (aptosa, herpes) 4 5 Glositis 3A 6 Leukoplakia 2 7 Angina Ludwig 3A 8 Parotitis 4 9 Karies gigi 10 Infeksi gusi 3A 3A 11 Tumor lidah 12 Tumor rongga/dasar mulut 2 1 13 Sumbing bibir (labiopalatognatoschizis) 14 Macrostomia and microstomia Esofagus 2 2 15 Atresia esofagus 16 Akalasia 2 2 17 Esofagitis refluks 18 Lesi korosif pada esofagus 3A 3B 19 Varises esophagus 20 Ruptur esophagus 2 1 21 Tumor esophagus 2 Dinding, Rongga Abdomen dan Hernia 22 Hernia (inguinalis, femoralis, skrotalis) reponibilis, irreponibilis 23 Hernia (inguinalis, femoralis, skrotalis) 2 3B strangulata, inkarserata 24 Hernia (diaframatika, hiatus) 25 Hernia umbilikalis 2 3A 26 Peritonitis 3B 148 27 Perforasi usus 3B No Daftar Penyakit Tingkat Kemampuan 28 Malrotasi traktus gastro-intestinal 29 Infeksi pada umbilikus 2 4 30 Sindroma Reye 1 Lambung, Duodenum, Jejunum, Ileum 31 Gastritis 32 Gastroenteritis (termasuk kolera, giardiasis) 4 4 33 Refluks gastro-esofagus 34 Tumor gaster 4 2 35 Ulkus (gaster, duodenum) 36 Stenosis pilorik 3A 2 37 Atresia intestinal 38 Divertikulum Meckel 2 2 39 Fistula umbilikal, omphalocoele-gastroschisis 40 Ileus Obstruksi 2 3B 41 Ileus Paralitik 42 Apendisitis akut 3A 3B 43 Abses apendiks 44 Demam tifoid 3B 4 45 Demam tifoid dengan komplikasi 46 Perdarahan gastrointestinal 3B 3B 47 Malabsorbsi 48 Intoleransi makanan 3A 4 49 Alergi makanan 50 Keracunan makanan 4 4 51 Keracunan racun alam 52 Keracunan insektisida 3B 3B 53 Botulisme 3B Infestasi Cacing dan lainnya 54 Penyakit cacing tambang 55 Strongiloidiasis 4 4 56 Askariasis 57 Skistosomiasis 4 4 58 Taeniasis 4 149 59 Trichuriasis 4 No Daftar Penyakit Tingkat Kemampuan 60 Oxyuriasis 61 Pes Hepar 4 1 62 Hepatitis A 63 Hepatitis B 4 3A 64 Rujuk balik Hepatitis B 65 Hepatitis C 4 3A 66 Rujuk balik Hepatitis C 67 Abses hepar amoeba 4 3A 68 Perlemakan hepar 69 Sirosis hepatis 3A 2 70 Gagal hepar 71 Neoplasma hepar 2 2 72 Kolesistitis Kandung Empedu, Saluran Empedu, dan Pankreas 3B 73 Kole(doko)litiasis 74 Empiema dan hidrops kandung empedu 2 2 75 Atresia biliaris 76 Kista duktus koledokus 2 2 77 Cholangiocarcinoma 78 Pankreatitis 2 3B 79 Karsinoma pancreas 2 Kolon 80 Divertikulosis/divertikulitis 81 Kolitis 2 3A 82 Disentri basiler, amuba 83 Penyakit Crohn 4 1 84 Kolitis ulseratif 85 Irritable Bowel Syndrome 1 3A 86 Polip/adenoma 87 Karsinoma kolon 2 2 88 Penyakit Hirschsprung 2 150 89 Enterokolitis nekrotik 90 Intususepsi atau invaginasi 1 3B No Daftar Penyakit Tingkat Kemampuan 91 Atresia anus 92 Proktitis 2 3A 93 Abses (peri)anal 94 Hemoroid grade 1-2 3A 4 95 Hemoroid grade 3-4 96 Fistula 3A 2 97 Fisura anus 98 Prolaps rektum, anus Neoplasma Gatrointestinal 3A 3A 99 Limfoma 10 0 2 Gastrointestinal Stromal Tumor (GIST) 2
+---
+title: Blok Gastrointestinal — Lumen, Hepatobilier & Pankreas
+description: Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags perdarahan GI secara sistematis.
+---
 
-preface
-Fig 6.1 Su ering in silence: Ludwig van Beethoven’s gastrointestinal symptoms began in his late teens, soon after the death of his mother from tuberculosis and the lapse of his father into alcoholism. Like the stark rhythmic motifs that increasingly characterized his compositions, a pattern of recurrent abdominal cramping and alternating bouts of severe diarrhoea and constipation emerged as an underlying constant in his life. The a iction rose to a stifling crescendo with prostration, anorexia, a host of rheumatic prob lems, and even jaundice and ascites proving debili tating modulations. His renowned deafness began with high- frequency loss and tinnitus at the age of 28, becoming relentlessly progressive. Multiple the ories to explain his hearing loss have been proposed. Beethoven’s own supposition that his deafness had its root in the abdomen may well have been correct, des pite his physicians’ uniform dismissal. Bilateral sen sorineural hearing loss in the context of immunopathy is well described. Inflammatory bowel disease, with its weaving counterpoint of extra- intestinal manifest ations and the oft- associated primary sclerosing chol angitis provides an all- encompassing source. A source not only of his symptoms but quite possibly the suf fering as a wellspring of his genius, bubbling with emotion and gushing with harmonious floods of the most profound and inspiring sounds yet conceived. Reproduced from Baldwin A. Oxford Handbook of Clinical Specialties (2020), with permission from Oxford University Press. We thank Simon Campbell, our Specialist Reader for this chapter. 237 Lumen We learn about gastroenterological diseases as if they were separate entities, in dependent species collected by naturalists, each kept in its own dark matchbox— collectors’ items collecting dust in a desiccated world on a library shelf. But this is not how illness works. Otto had diabetes, but refused to see a doctor until it was far advanced, and an amputation was needed. He needed looking after by his wife Aurelia. But she had her children Warren and Sylvia to look after too. And when Otto was no longer the bread- winner, she forced herself to work as a teacher, an accountant, and at any other job she could get. Otto’s illness manifested in Aurelia’s duodenum— as an ulcer. The gut often bears the brunt of other people’s worries. Inside every piece of a gut is a lumen1— the world is in the gut, and the gut is in the world. But the light does not always shine. So when the lumen filled with Aurelia’s blood, we can expect the illness to impact the whole family. Her daughter knows where blood comes from (‘straight from the heart . . . pink fizz’). After Otto died, Sylvia needed long- term psychiatric care, and Aurelia moved to be near her daughter. The bleeding duodenal ulcer got worse when Sylvia needed electroconvulsive therapy. The therapy worked and now, briefly, Sylvia, before her own premature death, is able to look after Aurelia, as she prepares for a gastrectomy. The story of each illness told separately misses something; but even taken in its social context, this story is missing something vital: the poetry, in most of our patients lived rather than written— tragic, comic, human, and usually obscure— but in the case of this family not so obscure. Welling up, as unstoppable as the bleeding from her mother’s ulcer came the poetry of Sylvia Plath. 1 Lumen is Latin for light (hence its medical meaning of a tubular cavity open to the world at both ends), as well as being the SI unit of light flux falling on an object— ie the power to illuminate. All doctors have this power, whether by insightfully interpreting patients’ lives and illnesses to them, or by acts of kindness— even something so simple as bringing a cup of tea
+<div align="center">
+
+# 🧠 Blok Gastrointestinal — Lumen, Hepatobilier & Pankreas
+*Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags perdarahan GI secara sistematis.*
+
+[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+
+</div>
+
+---
+
+## 📚 Daftar Bab & Pre/Post-Test
+
+> [!tip] Cara Belajar Blok Ini
+> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+
+| No | Kategori | Materi & Evaluasi |
+| :-: | :---: | :--- |
+| **1** | 🟢 Dasar | [[Gastrointestinal 1\|📖 Baca Bab: Gastrointestinal 1]] |
+| **2** | 📝 Kuis | [[Gastrointestinal Pre-postest 1\|⚡ Kerjakan: Gastrointestinal Pre-postest 1]] |
+
+---
+
+## 🎯 Target Kompetensi & Clinical Pearl
+
+
+
+
+
+---
+
+<div align="center">
+
+[[index|← Kembali ke Direktori Sistem Organ]]
+
+</div>
