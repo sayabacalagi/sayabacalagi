@@ -9,3 +9,22 @@ Thumbs.db
 .DS_Store
 *.tmp
 *.lock
+
+# === sjawatdh-app (Next.js) ===
+sjawatdh-app/node_modules/
+sjawatdh-app/.next/
+sjawatdh-app/out/
+sjawatdh-app/build/
+sjawatdh-app/dist/
+sjawatdh-app/.env
+sjawatdh-app/.env.local
+sjawatdh-app/.env.*.local
+sjawatdh-app/npm-debug.log*
+sjawatdh-app/yarn-debug.log*
+sjawatdh-app/yarn-error.log*
+sjawatdh-app/.vercel/
+sjawatdh-app/.DS_Store
+
+# Root-level build cache
+.next/
+node_modules/
