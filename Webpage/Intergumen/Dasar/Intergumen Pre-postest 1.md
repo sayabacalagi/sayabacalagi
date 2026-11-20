@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Intergumen Landing|Intergumen]] / Sesi 01
+
+# Sebelum belajar
+**Intergumen 1** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Pretest (jangan nyontek) // POSTEst boleh nyontek dikit2
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan Bab 1 *Foundations of Clinical Dermatology*.
 
@@ -129,11 +140,10 @@ E. Tinea korporis dan tinea versikolor
 
 ---
 
-> [!info] Sesi 01 / 06 · Blok Intergumen
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 1|Materi: Intergumen 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 2|Sesi 02 — Intergumen 2 →]]
-> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Intergumen 1**
+
+- **Baru selesai pretest?** [[Intergumen 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Intergumen Pre-postest 2|Sesi berikutnya →]]· [[Intergumen Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

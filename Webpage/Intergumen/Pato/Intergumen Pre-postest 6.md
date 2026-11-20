@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Intergumen Landing|Intergumen]] / Sesi 06
+
+# Sebelum belajar
+**Intergumen 6** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Pretest (jangan nyontek) // POSTEst boleh nyontek dikit2
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 22: Atopic Dermatitis**.
 
@@ -129,11 +140,10 @@ E. Tidak menimbulkan efek samping sistemik
 
 ---
 
-> [!info] Sesi 06 / 06 · Blok Intergumen
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 6|Materi: Intergumen 6 →]]
-> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Intergumen Landing|Blok Intergumen →]]
-> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Intergumen 6**
+
+- **Baru selesai pretest?** [[Intergumen 6|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Intergumen Landing|Kembali ke blok]]· [[Intergumen Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

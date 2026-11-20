@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Kardiovaskular Landing|Kardiovaskular]] / Sesi 02
+
+# Sebelum belajar
+**Kardiovaskular 2** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 235: Electrocardiography**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. ST elevasi difus
 
 ---
 
-> [!info] Sesi 02 / 02 · Blok Kardiovaskular
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Kardiovaskular 2|Materi: Kardiovaskular 2 →]]
-> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Kardiovaskular Landing|Blok Kardiovaskular →]]
-> - [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Kardiovaskular 2**
+
+- **Baru selesai pretest?** [[Kardiovaskular 2|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Kardiovaskular Landing|Kembali ke blok]]· [[Kardiovaskular Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

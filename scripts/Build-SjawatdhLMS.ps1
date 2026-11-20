@@ -1,40 +1,77 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$Utf8NoBom = New-Object System.Text.UTF8Encoding $false
-$NavBegin  = '<!-- SJAWATDH-NAV:BEGIN -->'
-$NavEnd    = '<!-- SJAWATDH-NAV:END -->'
-$Arrow     = [string][char]0x2192
-$LeftArrow = [string][char]0x2190
-$EmDash    = [string][char]0x2014
-$MidDot    = [string][char]0x00B7
+$Utf8NoBom   = New-Object System.Text.UTF8Encoding $false
+$NavBegin    = '<!-- SJAWATDH-NAV:BEGIN -->'
+$NavEnd      = '<!-- SJAWATDH-NAV:END -->'
+$HeadBegin   = '<!-- SJAWATDH-HEAD:BEGIN -->'
+$HeadEnd     = '<!-- SJAWATDH-HEAD:END -->'
+$Arrow       = [string][char]0x2192
+$LeftArrow   = [string][char]0x2190
+$DownArrow   = [string][char]0x2193
+$EmDash      = [string][char]0x2014
+$EnDash      = [string][char]0x2013
+$MidDot      = [string][char]0x00B7
+$BlackSquare = [string][char]0x25A0
 
 function Write-Utf8File {
     param([string]$Path, [string]$Content)
     [System.IO.File]::WriteAllText($Path, $Content, $Utf8NoBom)
 }
 
-function Remove-ExistingNav {
-    param([string]$Raw)
-    $clean = [regex]::Replace($Raw, "(?s)\r?\n?$([regex]::Escape($NavBegin)).*?$([regex]::Escape($NavEnd))\r?\n?", '')
-    $clean = [regex]::Replace($clean, '(?s)\r?\n?<!-- LMS-NAV:BEGIN -->.*?<!-- LMS-NAV:END -->\r?\n?', '')
-    $clean = [regex]::Replace($clean, '(?s)\r?\n---\r?\n> \[!info\] \*\*Navigasi Sesi LMS\*\*.*$', '')
-    return $clean.TrimEnd()
+function Repair-MojibakeText {
+    param([string]$Text)
+    $t = $Text
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u00A6', '...')
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u0153', '"')
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u009D', '"')
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u2122', "'")
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u02DC', "'")
+    $t = [regex]::Replace($t, '\u00E2\u2030\u00A5', ([string][char]0x2265))
+    $t = [regex]::Replace($t, '\u00E2\u2030\u00A4', ([string][char]0x2264))
+    $t = [regex]::Replace($t, '\u00E2\u2013\u00A0', $BlackSquare)
+    $t = [regex]::Replace($t, '\u00CE\u00B1', ([string][char]0x03B1))
+    $t = [regex]::Replace($t, '\u00CE\u00B2', ([string][char]0x03B2))
+    $t = [regex]::Replace($t, '\u00CE\u00B3', ([string][char]0x03B3))
+    $t = [regex]::Replace($t, '\u00C2[\u00A0 ]', ' ')
+    return $t
 }
 
-function Get-SharedEditorialCss {
+function Remove-GeneratedWrappers {
+    param([string]$Raw)
+    $c = $Raw
+    $c = [regex]::Replace($c, "(?s)^$([regex]::Escape($HeadBegin)).*?$([regex]::Escape($HeadEnd))\r?\n*", '')
+    $c = [regex]::Replace($c, "(?s)\r?\n?$([regex]::Escape($NavBegin)).*?$([regex]::Escape($NavEnd))\r?\n?", '')
+    $c = [regex]::Replace($c, '(?s)\r?\n?<!-- LMS-NAV:BEGIN -->.*?<!-- LMS-NAV:END -->\r?\n?', '')
+    $c = [regex]::Replace($c, '(?s)\r?\n---\r?\n> \[!info\] \*\*Navigasi Sesi LMS\*\*.*$', '')
+    $c = [regex]::Replace($c, '(?m)^==NILAI PRETEST[^\r\n]*\r?\n*', '')
+    return $c.Trim()
+}
+
+function Format-MaterialBody {
+    param([string]$Body)
+    $clean = Repair-MojibakeText -Text $Body
+    $pattern = '\s*\u25A0\s*([A-Z][A-Z0-9\s,\-\(\)\/]{3,65})(?=\s+[A-Z][a-z])'
+    $replacement = "`n`n## " + '$1' + "`n`n"
+    $clean = [regex]::Replace($clean, $pattern, $replacement)
+    return $clean.Trim()
+}
+
+function Get-SharedCss {
     return "<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
 
 :root {
   --bg-paper: #FAF7F2;
-  --surface-card: #FFFFFF;
-  --surface-tint: #F3EDE2;
-  --ink-primary: #1C1917;
-  --ink-secondary: #57534E;
+  --surface: #FFFFFF;
+  --surface-subtle: #F3EDE2;
+  --ink: #1C1917;
+  --ink-soft: #57534E;
   --ink-muted: #78716C;
-  --accent-teal: #115E59;
-  --border-hairline: #E7E0D5;
+  --accent: #3F6212;
+  --line: #E7E0D5;
 }
 
 aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] {
@@ -43,328 +80,216 @@ aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backl
 
 body, main {
   background-color: var(--bg-paper) !important;
-  color: var(--ink-primary) !important;
+  color: var(--ink) !important;
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
-.sj-shell {
-  max-width: 960px;
+.sj-wrap {
+  max-width: 880px;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 4rem;
 }
 
-.sj-topbar {
+.sj-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border-hairline);
-  margin-bottom: 2.75rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3rem;
 }
 
-.sj-brand {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink-primary) !important;
+.sj-logo {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink) !important;
   text-decoration: none !important;
 }
 
-.sj-navlinks {
+.sj-nav-right {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.4rem;
   font-size: 0.9rem;
 }
 
-.sj-navlinks a {
-  color: var(--ink-secondary) !important;
+.sj-nav-right a {
+  color: var(--ink-soft) !important;
   text-decoration: none !important;
-  transition: color 0.15s ease;
 }
 
-.sj-navlinks a:hover {
-  color: var(--accent-teal) !important;
+.sj-nav-right a:hover {
+  color: var(--accent) !important;
 }
 
 .sj-hero {
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 3.5rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: end;
+  margin-bottom: 3.75rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .sj-hero {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 }
 
-.sj-eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--accent-teal);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.75rem;
-  display: block;
-}
-
-.sj-hero-title {
-  font-family: 'Fraunces', Georgia, serif !important;
-  font-size: clamp(2.1rem, 4.2vw, 3.1rem) !important;
-  line-height: 1.12 !important;
-  font-weight: 500 !important;
-  letter-spacing: -0.025em !important;
-  color: var(--ink-primary) !important;
+.sj-h1 {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: clamp(2.25rem, 4.6vw, 3.25rem) !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ink) !important;
   margin: 0 0 1rem 0 !important;
   border: none !important;
 }
 
-.sj-hero-desc {
+.sj-lead {
   font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--ink-secondary);
+  line-height: 1.55;
+  color: var(--ink-soft);
   margin: 0 0 1.5rem 0;
-  max-width: 46ch;
+  max-width: 42ch;
 }
 
-.sj-cta-primary {
+.sj-btn {
   display: inline-block;
-  background-color: var(--ink-primary);
-  color: var(--bg-paper) !important;
-  padding: 0.65rem 1.25rem;
-  border-radius: 6px;
   font-size: 0.92rem;
   font-weight: 500;
+  color: var(--ink) !important;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 0.2rem;
   text-decoration: none !important;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.sj-cta-primary:hover {
-  background-color: var(--accent-teal);
-  transform: translateY(-1px);
+.sj-btn:hover {
+  color: var(--accent) !important;
+  border-color: var(--accent);
 }
 
-.sj-broty-card {
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-hairline);
-  border-radius: 12px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 10px rgba(28, 25, 23, 0.03);
-}
-
-.sj-broty-header {
+.sj-broty-note {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 0.65rem;
+  gap: 0.9rem;
+  padding: 0.95rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
 }
 
-.sj-broty-name {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-}
-
-.sj-broty-text {
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: var(--ink-secondary);
+.sj-broty-copy {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
   margin: 0;
 }
 
-.sj-section-head {
+.sj-broty-copy strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.sj-index-head {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-bottom: 1px solid var(--border-hairline);
-  padding-bottom: 0.65rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.sj-section-title {
-  font-family: 'Fraunces', Georgia, serif !important;
-  font-size: 1.35rem !important;
-  font-weight: 500 !important;
+.sj-h2 {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
   margin: 0 !important;
   border: none !important;
 }
 
-.sj-section-meta {
+.sj-mono {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.78rem;
   color: var(--ink-muted);
 }
 
-.sj-block-grid {
+.sj-index-list {
+  border-top: 1px solid var(--line);
+  margin-bottom: 3.5rem;
+}
+
+.sj-index-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.9rem;
-  margin-bottom: 3rem;
-}
-
-@media (max-width: 820px) {
-  .sj-block-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 540px) {
-  .sj-block-grid { grid-template-columns: 1fr; }
-}
-
-.sj-block-tile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: var(--surface-card);
-  border: 1px solid var(--border-hairline);
-  border-radius: 10px;
-  padding: 1.1rem 1.15rem;
-  text-decoration: none !important;
-  color: inherit !important;
-  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.sj-block-tile:hover {
-  border-color: var(--accent-teal);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(17, 94, 89, 0.07);
-}
-
-.sj-tile-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.55rem;
-}
-
-.sj-tile-num {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--accent-teal);
-}
-
-.sj-tile-count {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.74rem;
-  color: var(--ink-muted);
-  background: var(--surface-tint);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-}
-
-.sj-tile-name {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.18rem;
-  font-weight: 500;
-  color: var(--ink-primary);
-  margin-bottom: 0.35rem;
-}
-
-.sj-tile-desc {
-  font-size: 0.85rem;
-  line-height: 1.45;
-  color: var(--ink-secondary);
-  margin-bottom: 0.85rem;
-}
-
-.sj-tile-action {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--accent-teal);
-}
-
-.sj-session-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  margin-bottom: 2.5rem;
-}
-
-.sj-session-row {
-  display: flex;
-  justify-content: space-between;
+  grid-template-columns: 3.2rem 1fr auto auto;
   align-items: center;
   gap: 1rem;
-  background: var(--surface-card);
-  border: 1px solid var(--border-hairline);
-  border-radius: 9px;
-  padding: 0.95rem 1.15rem;
+  padding: 1.05rem 0.4rem;
+  border-bottom: 1px solid var(--line);
   text-decoration: none !important;
   color: inherit !important;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: background-color 0.15s ease, padding-left 0.15s ease;
 }
 
-.sj-session-row:hover {
-  border-color: var(--accent-teal);
-  background: #FFFEFC;
+.sj-index-row:hover {
+  background-color: var(--surface-subtle);
+  padding-left: 0.85rem;
 }
 
-@media (max-width: 600px) {
-  .sj-session-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.sj-session-left {
-  display: flex;
-  align-items: baseline;
-  gap: 0.85rem;
-}
-
-.sj-session-idx {
+.sj-row-num {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.82rem;
-  color: var(--accent-teal);
+  color: var(--accent);
 }
 
-.sj-session-title {
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--ink-primary);
+.sj-row-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--ink);
 }
 
-.sj-session-sub {
-  font-size: 0.82rem;
+.sj-row-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
   color: var(--ink-muted);
-  margin-top: 0.15rem;
 }
 
-.sj-session-cta {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
-  color: var(--accent-teal);
-  white-space: nowrap;
+.sj-row-arrow {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  transition: transform 0.15s ease, color 0.15s ease;
 }
 
-.sj-footer {
-  border-top: 1px solid var(--border-hairline);
+.sj-index-row:hover .sj-row-arrow {
+  transform: translateX(3px);
+  color: var(--accent);
+}
+
+.sj-foot {
+  border-top: 1px solid var(--line);
   padding-top: 1.25rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem;
   font-size: 0.84rem;
   color: var(--ink-muted);
 }
 
-.sj-footer a {
-  color: var(--ink-secondary) !important;
+.sj-foot a {
+  color: var(--ink-soft) !important;
   text-decoration: none !important;
 }
 
-.sj-footer a:hover {
-  color: var(--accent-teal) !important;
+.sj-foot a:hover {
+  color: var(--accent) !important;
 }
 </style>"
 }
 
 function Get-BrotySvg {
-    param([int]$Size = 52)
-    return "<svg width='$Size' height='$Size' viewBox='0 0 100 100' aria-hidden='true' style='flex-shrink:0;'>
+    return "<svg width='44' height='44' viewBox='0 0 100 100' aria-hidden='true' style='flex-shrink:0;'>
   <ellipse cx='50' cy='55' rx='32' ry='28' fill='#FBCFE8' />
   <ellipse cx='50' cy='62' rx='20' ry='15' fill='#FDF2F8' />
   <ellipse cx='18' cy='38' rx='7' ry='3' fill='#F9A8D4' transform='rotate(-30 18 38)' />
@@ -385,34 +310,17 @@ function Get-BrotySvg {
 
 function Get-BlockStructure {
     param([string]$WebpageRoot)
-
-    $descriptions = @{
-        'Endokrin'         = 'Regulasi hormon, tiroid, dan metabolisme.'
-        'Gastrointestinal' = 'Saluran cerna, hepatobilier, dan pankreas.'
-        'Hematoimmuno'     = 'Hematologi klinis, hemostasis, dan imunologi.'
-        'Intergumen'       = 'Morfologi lesi kulit dan korelasi patologi.'
-        'Kardiovaskular'   = 'Hemodinamika, iskemia, aritmia, dan gagal jantung.'
-        'Nefro'            = 'Fisiologi ginjal, elektrolit, dan saluran kemih.'
-        'Neuro'            = 'Lokalisasi lesi saraf dan kegawatan neurologis.'
-        'ObsGyn'           = 'Fisiologi kehamilan, obstetri, dan reproduksi.'
-        'Pulmo'            = 'Mekanika napas dan penyakit paru klinis.'
-    }
-
     $blocks = @()
     $idx = 1
     Get-ChildItem -Path $WebpageRoot -Directory | Sort-Object Name | ForEach-Object {
-        $name    = $_.Name
-        $dirPath = $_.FullName
-        $landing = Get-ChildItem -Path $dirPath -Filter '*Landing*.md' | Select-Object -First 1
+        $landing = Get-ChildItem -Path $_.FullName -Filter '*Landing*.md' | Select-Object -First 1
         if (-not $landing) { return }
-
         $blocks += [pscustomobject]@{
             Number      = $idx.ToString('00')
-            Name        = $name
-            Path        = $dirPath
+            Name        = $_.Name
+            Path        = $_.FullName
             LandingFile = $landing
             LandingBase = $landing.BaseName
-            Description = if ($descriptions.ContainsKey($name)) { $descriptions[$name] } else { "Catatan klinis sistem $name." }
         }
         $idx++
     }
@@ -428,6 +336,24 @@ function Resolve-SessionTest {
         if ($exact) { return $exact }
     }
     return $null
+}
+
+function Get-ChapterTitleFromTest {
+    param([System.IO.FileInfo]$TestFile, [string]$FallbackTitle)
+    if (-not $TestFile) { return $FallbackTitle }
+    $raw = [System.IO.File]::ReadAllText($TestFile.FullName)
+    $m = [regex]::Match($raw, 'berdasarkan bab \*\*([^*]+)\*\*')
+    if ($m.Success) { return $m.Groups[1].Value.Trim() }
+    return $FallbackTitle
+}
+
+function Get-QuestionCountFromTest {
+    param([System.IO.FileInfo]$TestFile)
+    if (-not $TestFile) { return 0 }
+    $raw   = [System.IO.File]::ReadAllText($TestFile.FullName)
+    $qPart = ($raw -split '(?i)Kunci\s*Jawaban')[0]
+    $qNums = [regex]::Matches($qPart, '(?m)^\d+\.\s+')
+    return $qNums.Count
 }
 
 function Get-LearningSessions {
@@ -448,52 +374,69 @@ function Get-LearningSessions {
 
     $sessions = @()
     for ($i = 0; $i -lt $matFiles.Count; $i++) {
-        $mat  = $matFiles[$i]
-        $test = Resolve-SessionTest -MaterialFile $mat -TestFiles $testFiles
-        $cat  = if ($mat.DirectoryName -match 'Pato$') { 'Patologi' } else { 'Dasar' }
+        $mat       = $matFiles[$i]
+        $test      = Resolve-SessionTest -MaterialFile $mat -TestFiles $testFiles
+        $cat       = if ($mat.DirectoryName -match 'Pato$') { 'Patologi' } else { 'Dasar' }
+        $chapTitle = Get-ChapterTitleFromTest -TestFile $test -FallbackTitle $mat.BaseName
+        $qCount    = Get-QuestionCountFromTest -TestFile $test
 
         $sessions += [pscustomobject]@{
-            SessionNum  = $i + 1
-            TotalCount  = $matFiles.Count
-            Title       = $mat.BaseName
-            Category    = $cat
-            Material    = $mat
-            Test        = $test
-            HasTest     = ($null -ne $test)
-            EntryTarget = if ($test) { $test.BaseName } else { $mat.BaseName }
+            SessionNum    = $i + 1
+            TotalCount    = $matFiles.Count
+            FileTitle     = $mat.BaseName
+            DisplayTitle  = $chapTitle
+            QuestionCount = $qCount
+            Category      = $cat
+            Material      = $mat
+            Test          = $test
+            HasTest       = ($null -ne $test)
+            EntryTarget   = if ($test) { $test.BaseName } else { $mat.BaseName }
         }
     }
     return $sessions
 }
 
-function Update-SessionNavigation {
+function Update-SessionFiles {
     param([pscustomobject]$Block, [array]$Sessions)
 
     for ($i = 0; $i -lt $Sessions.Count; $i++) {
         $s       = $Sessions[$i]
         $nextSes = if (($i + 1) -lt $Sessions.Count) { $Sessions[$i + 1] } else { $null }
+        $sesCode = $s.SessionNum.ToString('00')
 
-        $nextRoute = if ($nextSes) {
-            "Lanjut ke [[$($nextSes.EntryTarget)|Sesi $($nextSes.SessionNum.ToString('00')) $EmDash $($nextSes.Title) $Arrow]]"
+        $nextText = if ($nextSes) {
+            "[[$($nextSes.EntryTarget)|Sesi berikutnya $Arrow]]"
         } else {
-            "Sesi terakhir di blok ini. Kembali ke [[$($Block.LandingBase)|Blok $($Block.Name) $Arrow]]"
+            "[[$($Block.LandingBase)|Kembali ke blok]]"
         }
 
         if ($s.HasTest) {
-            $testNav = "$NavBegin`n`n---`n`n> [!info] Sesi $($s.SessionNum.ToString('00')) / $($s.TotalCount.ToString('00')) $MidDot Blok $($Block.Name)`n> **Langkah:** ``01 PRETEST`` $Arrow ``02 MATERI`` $Arrow ``03 POSTTEST```n>`n> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[$($s.Material.BaseName)|Materi: $($s.Material.BaseName) $Arrow]]`n> - **Selesai evaluasi akhir (Posttest):** $nextRoute`n> - [[$($Block.LandingBase)|Daftar Sesi $($Block.Name)]] $MidDot [[index|Beranda]]`n`n$NavEnd"
             $rawTest   = [System.IO.File]::ReadAllText($s.Test.FullName)
-            $cleanTest = Remove-ExistingNav -Raw $rawTest
-            Write-Utf8File -Path $s.Test.FullName -Content ($cleanTest + "`n`n" + $testNav)
+            $cleanTest = Repair-MojibakeText -Text (Remove-GeneratedWrappers -Raw $rawTest)
 
-            $matNav = "$NavBegin`n`n---`n`n> [!info] Sesi $($s.SessionNum.ToString('00')) / $($s.TotalCount.ToString('00')) $MidDot Blok $($Block.Name)`n> **Langkah:** ~~01 Pretest~~ $Arrow **``02 MATERI (SEDANG DIBACA)``** $Arrow ``03 POSTTEST```n>`n> - **Tahap berikutnya:** [[$($s.Test.BaseName)|Lanjut ke Posttest Sesi $($s.SessionNum.ToString('00')) $Arrow]]`n> - [[$($Block.LandingBase)|Daftar Sesi $($Block.Name)]] $MidDot [[index|Beranda]]`n`n$NavEnd"
+            $testHeader = "$HeadBegin`n[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / Sesi $sesCode`n`n# Sebelum belajar`n**$($s.DisplayTitle)** $MidDot ``$($s.QuestionCount) soal`` $MidDot ``Pretest```n`nCoba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.`n`n---`n$HeadEnd"
+
+            $testFooter = "$NavBegin`n`n---`n`n### Satu sesi selesai.`n**$($s.DisplayTitle)**`n`n- **Baru selesai pretest?** [[$($s.Material.BaseName)|Lanjut ke materi inti $Arrow]]`n- **Baru selesai posttest?** $nextText$MidDot [[$($Block.LandingBase)|Kembali ke blok]]`n`n$NavEnd"
+
+            Write-Utf8File -Path $s.Test.FullName -Content ($testHeader + "`n`n" + $cleanTest + "`n`n" + $testFooter)
+
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
-            $cleanMat = Remove-ExistingNav -Raw $rawMat
-            Write-Utf8File -Path $s.Material.FullName -Content ($cleanMat + "`n`n" + $matNav)
+            $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw$rawMat)
+
+            $matHeader = "$HeadBegin`n[[index\vert{}sjawatdh.]] / [[$($Block.LandingBase)\vert{}$($Block.Name)]] / Sesi $sesCode`n`n# $($s.DisplayTitle)`n``$($s.Category)`` $MidDot ``Sesi $sesCode dari $($s.TotalCount.ToString('00'))```n`n---`n$HeadEnd"
+
+            $matFooter = "$NavBegin`n`n---`n`n[[$($s.Test.BaseName)|$LeftArrow Pretest]] $MidDot **Materi inti** $MidDot [[$($s.Test.BaseName)|Lanjut posttest $Arrow]]`n`n$NavEnd"
+
+            Write-Utf8File -Path $s.Material.FullName -Content ($matHeader + "`n`n" + $cleanMat + "`n`n" + $matFooter)
         } else {
-            $matOnlyNav = "$NavBegin`n`n---`n`n> [!info] Sesi $($s.SessionNum.ToString('00')) / $($s.TotalCount.ToString('00')) $MidDot Blok $($Block.Name)`n> **Langkah:** **``01 MATERI INTI``** *(Evaluasi pretest/posttest belum tersedia pada sesi ini)*`n>`n> - **Tahap berikutnya:** $nextRoute`n> - [[$($Block.LandingBase)|Daftar Sesi $($Block.Name)]] $MidDot [[index|Beranda]]`n`n$NavEnd"
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
-            $cleanMat = Remove-ExistingNav -Raw $rawMat
-            Write-Utf8File -Path $s.Material.FullName -Content ($cleanMat + "`n`n" + $matOnlyNav)
+            $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw $rawMat)
+
+            $matHeader = "$HeadBegin`n[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / Sesi $sesCode`n`n# $($s.DisplayTitle)`n``$($s.Category)`` $MidDot ``Materi inti```n`n---`n$HeadEnd"
+
+            $matFooter = "$NavBegin`n`n---`n`n**Materi inti** $MidDot $nextText $MidDot [[$($Block.LandingBase)|Kembali ke blok]]`n`n$NavEnd"
+
+            Write-Utf8File -Path $s.Material.FullName -Content ($matHeader + "`n`n" + $cleanMat + "`n`n" + $matFooter)
         }
     }
 }
@@ -506,75 +449,55 @@ function New-BlockLandingContent {
         ($skdiMatch.Value -replace '(?s)---\s*> \[!abstract\].*Progress Bar.*$', '').Trim()
     } else { '' }
 
-    $firstTarget = if ($Sessions.Count -gt 0) { $Sessions[0].EntryTarget } else { 'index' }
-    $brotySvg    = Get-BrotySvg -Size 46
-    $css         = Get-SharedEditorialCss
+    $css  = Get-SharedCss
+    $rows = @()
 
-    $sessionItems = @()
     foreach ($s in $Sessions) {
-        $flowLabel = if ($s.HasTest) { "01 Pretest $Arrow 02 Materi $Arrow 03 Posttest" } else { "Materi Inti" }
-        $ctaText   = if ($s.HasTest) { "Mulai sesi $Arrow" } else { "Baca materi $Arrow" }
-        $sessionItems += "<a class='sj-session-row' href='$($s.EntryTarget)'>
-  <div class='sj-session-left'>
-    <span class='sj-session-idx'>$($s.SessionNum.ToString('00'))</span>
-    <div>
-      <div class='sj-session-title'>$($s.Title)</div>
-      <div class='sj-session-sub'>$($s.Category) $MidDot $flowLabel</div>
-    </div>
+        $sesCode  = $s.SessionNum.ToString('00')
+        $subLabel = if ($s.DisplayTitle -ne $s.FileTitle) { "$($s.Category) $MidDot $($s.DisplayTitle)" } else { $s.Category }
+        $rows += "<a class='sj-index-row' href='$($s.EntryTarget)'>
+  <span class='sj-row-num'>$sesCode</span>
+  <div>
+    <div class='sj-row-title'>$($s.FileTitle)</div>
+    <div class='sj-mono'>$subLabel</div>
   </div>
-  <span class='sj-session-cta'>$ctaText</span>
+  <span class='sj-row-meta'>$(if ($s.HasTest) { "$($s.QuestionCount) soal" } else { "materi" })</span>
+  <span class='sj-row-arrow'>$Arrow</span>
 </a>"
     }
 
-    $clinicalBlock = if ($clinicalSection) { "`n---`n`n$clinicalSection`n" } else { '' }
+    $clinicalPart = if ($clinicalSection) { "`n---`n`n$clinicalSection`n" } else { '' }
 
     return "---
-title: Blok $($Block.Name) $EmDash sjawatdh.
-description: $($Block.Description)
+title: $($Block.Name) $EmDash sjawatdh.
 showToc: false
 showLinkPreviews: false
 ---
 
 $css
 
-<div class='sj-shell'>
-  <header class='sj-topbar'>
-    <a class='sj-brand' href='./'>sjawatdh.</a>
-    <nav class='sj-navlinks'>
-      <a href='./'>Semua Blok</a>
-      <a href='Untuk%20Sjawatdh%20(Landing)'>Tentang</a>
+<div class='sj-wrap'>
+  <header class='sj-nav'>
+    <a class='sj-logo' href='./'>sjawatdh.</a>
+    <nav class='sj-nav-right'>
+      <a href='./'>blok</a>
+      <a href='Untuk%20Sjawatdh%20(Landing)'>tentang</a>
     </nav>
   </header>
 
-  <section class='sj-hero'>
-    <div>
-      <span class='sj-eyebrow'>BLOK $($Block.Number) $MidDot $($Sessions.Count) SESI</span>
-      <h1 class='sj-hero-title'>$($Block.Name)</h1>
-      <p class='sj-hero-desc'>$($Block.Description)</p>
-      <a class='sj-cta-primary' href='$firstTarget'>Mulai dari Sesi 01 $Arrow</a>
-    </div>
-
-    <div class='sj-broty-card'>
-      <div class='sj-broty-header'>
-        $brotySvg
-        <span class='sj-broty-name'>broty // catatan sesi</span>
-      </div>
-      <p class='sj-broty-text'>Kerjakan pretest dulu buat lihat bagian mana yang masih kosong, lanjut baca materi pelan-pelan, lalu tutup dengan posttest.</p>
-    </div>
-  </section>
-
-  <div class='sj-section-head'>
-    <h2 class='sj-section-title'>Daftar Sesi</h2>
-    <span class='sj-section-meta'>$($Sessions.Count) modul</span>
+  <div style='margin-bottom:2.25rem;'>
+    <span class='sj-mono'>$($Block.Name.ToUpper()) $MidDot $($Block.Number)</span>
+    <h1 class='sj-h1' style='margin-top:0.35rem !important;'>$($Block.Name)</h1>
+    <span class='sj-mono'>$($Sessions.Count) sesi</span>
   </div>
 
-  <div class='sj-session-list'>
-$($sessionItems -join "`n")
+  <div class='sj-index-list'>
+$($rows -join "`n")
   </div>
-$clinicalBlock
-  <footer class='sj-footer'>
-    <span><a href='./'>$LeftArrow Kembali ke semua blok</a></span>
-    <span>sjawatdh. $MidDot personal medical study space</span>
+$clinicalPart
+  <footer class='sj-foot'>
+    <a href='./'>$LeftArrow kembali ke blok</a>
+    <span>sjawatdh.</span>
   </footer>
 </div>"
 }
@@ -583,84 +506,72 @@ function New-HomepageContent {
     param([array]$BlockItems)
 
     $totalSessions = ($BlockItems | Measure-Object -Property SessionCount -Sum).Sum
-    $brotySvg      = Get-BrotySvg -Size 50
-    $css           = Get-SharedEditorialCss
-    $tiles         = @()
+    $brotySvg      = Get-BrotySvg
+    $css           = Get-SharedCss
+    $rows          = @()
 
     foreach ($item in $BlockItems) {
         $b = $item.Block
-        $tiles += "<a class='sj-block-tile' href='$($b.LandingBase)'>
-  <div>
-    <div class='sj-tile-top'>
-      <span class='sj-tile-num'>$($b.Number)</span>
-      <span class='sj-tile-count'>$($item.SessionCount) sesi</span>
-    </div>
-    <div class='sj-tile-name'>$($b.Name)</div>
-    <div class='sj-tile-desc'>$($b.Description)</div>
-  </div>
-  <span class='sj-tile-action'>Buka blok $Arrow</span>
+        $rows += "<a class='sj-index-row' href='$($b.LandingBase)'>
+  <span class='sj-row-num'>$($b.Number)</span>
+  <span class='sj-row-title'>$($b.Name)</span>
+  <span class='sj-row-meta'>$($item.SessionCount) sesi</span>
+  <span class='sj-row-arrow'>$Arrow</span>
 </a>"
     }
 
     return "---
-title: sjawatdh. $EmDash catatan belajar kedokteran
-description: Tempat buat belajar blok tanpa ribet. Materi, pretest, dan posttest dari dasar sampai klinis.
+title: sjawatdh.
+description: belajar blok, pelan-pelan sampai paham.
 showToc: false
 showLinkPreviews: false
 ---
 
 $css
 
-<div class='sj-shell'>
-  <header class='sj-topbar'>
-    <a class='sj-brand' href='./'>sjawatdh.</a>
-    <nav class='sj-navlinks'>
-      <a href='#blok'>Blok Sistem</a>
-      <a href='Untuk%20Sjawatdh%20(Landing)'>Tentang</a>
+<div class='sj-wrap'>
+  <header class='sj-nav'>
+    <a class='sj-logo' href='./'>sjawatdh.</a>
+    <nav class='sj-nav-right'>
+      <a href='#blok'>blok</a>
+      <a href='Untuk%20Sjawatdh%20(Landing)'>tentang</a>
     </nav>
   </header>
 
   <section class='sj-hero'>
     <div>
-      <span class='sj-eyebrow'>$($BlockItems.Count) BLOK $MidDot $totalSessions SESI BELAJAR</span>
-      <h1 class='sj-hero-title'>belajar blok, pelan-pelan sampai paham.</h1>
-      <p class='sj-hero-desc'>Catatan belajar kedokteran dari dasar sampai klinis. Lengkap dengan pretest dan posttest buat nemenin kamu ngejar pemahaman tanpa ribet.</p>
-      <a class='sj-cta-primary' href='#blok'>Pilih blok hari ini $Arrow</a>
+      <h1 class='sj-h1'>belajar blok,<br>pelan-pelan sampai paham.</h1>
+      <p class='sj-lead'>Materi dan latihan belajar kedokteran.</p>
+      <a class='sj-btn' href='#blok'>mulai belajar $DownArrow</a>
     </div>
 
-    <div class='sj-broty-card'>
-      <div class='sj-broty-header'>
-        $brotySvg
-        <span class='sj-broty-name'>broty // study companion</span>
-      </div>
-      <p class='sj-broty-text'>Hai! Mau mulai dari blok mana hari ini? Tiap sesi udah disusun berurutan dari pretest, materi, sampai posttest biar kamu tinggal ngikutin alurnya.</p>
+    <div class='sj-broty-note'>
+      $brotySvg
+      <p class='sj-broty-copy'><strong>hai, aku Broty.</strong><br>mau belajar apa hari ini?</p>
     </div>
   </section>
 
-  <div id='blok' class='sj-section-head'>
-    <h2 class='sj-section-title'>Mau belajar blok apa hari ini?</h2>
-    <span class='sj-section-meta'>$($BlockItems.Count) sistem organ</span>
+  <div id='blok' class='sj-index-head'>
+    <h2 class='sj-h2'>pilih blok.</h2>
+    <span class='sj-mono'>$($BlockItems.Count) blok $MidDot $totalSessions sesi</span>
   </div>
 
-  <div class='sj-block-grid'>
-$($tiles -join "`n")
+  <div class='sj-index-list'>
+$($rows -join "`n")
   </div>
 
-  <footer class='sj-footer'>
-    <span>sjawatdh. $MidDot disarikan dari Harrison's &amp; referensi klinis untuk studi personal.</span>
-    <a href='Untuk%20Sjawatdh%20(Landing)'>Tentang &amp; Manifesto $Arrow</a>
+  <footer class='sj-foot'>
+    <span>sjawatdh. $MidDot catatan belajar kedokteran</span>
+    <a href='Untuk%20Sjawatdh%20(Landing)'>tentang ruang belajar ini $Arrow</a>
   </footer>
 </div>"
 }
 
 function Test-InternalLinks {
     param([string]$WebpageRoot)
-
     $allFiles = Get-ChildItem -Path $WebpageRoot -Recurse -Filter '*.md'
     $validTargets = @{}
-    foreach ($f in $allFiles) {
-        $validTargets[$f.BaseName.ToLower()] = $true
-    }
+    foreach ($f in $allFiles) { $validTargets[$f.BaseName.ToLower()] = $true }
 
     $broken = @()
     foreach ($f in $allFiles) {
@@ -685,7 +596,7 @@ foreach ($b in $blocks) {
     $sessions    = @(Get-LearningSessions -Block $b)
     $existingRaw = [System.IO.File]::ReadAllText($b.LandingFile.FullName)
 
-    Update-SessionNavigation -Block $b -Sessions $sessions
+    Update-SessionFiles -Block $b -Sessions $sessions
     $landingMd = New-BlockLandingContent -Block $b -Sessions $sessions -ExistingRaw $existingRaw
     Write-Utf8File -Path $b.LandingFile.FullName -Content $landingMd
 
@@ -698,7 +609,7 @@ foreach ($b in $blocks) {
 
 $homepageMd = New-HomepageContent -BlockItems $blockSummary
 Write-Utf8File -Path (Join-Path $webpageRoot 'index.md') -Content $homepageMd
-Write-Host "[OK] Homepage Webpage\index.md (Editorial Digital Study Space) berhasil diperbarui" -ForegroundColor Green
+Write-Host "[OK] Homepage Webpage\index.md diperbarui" -ForegroundColor Green
 
 $brokenLinks = @(Test-InternalLinks -WebpageRoot $webpageRoot)
 if ($brokenLinks.Count -gt 0) {
@@ -708,5 +619,5 @@ if ($brokenLinks.Count -gt 0) {
     Write-Host "[OK] Validasi tautan selesai: 0 tautan rusak di seluruh Webpage/" -ForegroundColor Cyan
 }
 
-Write-Host "`n--- Status Git (siap direview sebelum commit) ---" -ForegroundColor Yellow
+Write-Host "`n--- Status Git ---" -ForegroundColor Yellow
 git status -sb

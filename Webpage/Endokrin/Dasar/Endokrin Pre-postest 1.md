@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Endokrin Landing|Endokrin]] / Sesi 01
+
+# Sebelum belajar
+**Approach to the Patient with Endocrine Disorders** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan bab **Approach to the Patient with Endocrine Disorders**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. Fungsi ovarium
 
 ---
 
-> [!info] Sesi 01 / 03 · Blok Endokrin
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Endokrin 1|Materi: Endokrin 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Endokrin Pre-postest 2|Sesi 02 — Endokrin 2 →]]
-> - [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Approach to the Patient with Endocrine Disorders**
+
+- **Baru selesai pretest?** [[Endokrin 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Endokrin Pre-postest 2|Sesi berikutnya →]]· [[Endokrin Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

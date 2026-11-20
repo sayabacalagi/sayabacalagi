@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[ObsGyn Landing|ObsGyn]] / Sesi 01
+
+# Sebelum belajar
+**Maternal Anatomy** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan bab **Maternal Anatomy**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. 20 cm atau lebih
 
 ---
 
-> [!info] Sesi 01 / 02 · Blok ObsGyn
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Obsgyn 1|Materi: Obsgyn 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Obsgyn Pre-postest 2|Sesi 02 — Obsgyn 2 →]]
-> - [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Maternal Anatomy**
+
+- **Baru selesai pretest?** [[Obsgyn 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Obsgyn Pre-postest 2|Sesi berikutnya →]]· [[ObsGyn Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

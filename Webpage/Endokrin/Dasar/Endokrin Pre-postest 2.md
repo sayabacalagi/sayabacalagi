@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Endokrin Landing|Endokrin]] / Sesi 02
+
+# Sebelum belajar
+**Mechanisms of Hormone Action** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan bab **Mechanisms of Hormone Action**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. Selalu merupakan mekanisme positif feedback
 
 ---
 
-> [!info] Sesi 02 / 03 · Blok Endokrin
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Endokrin 2|Materi: Endokrin 2 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Endokrin Pre-postest 3|Sesi 03 — Endokrin 3 →]]
-> - [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Mechanisms of Hormone Action**
+
+- **Baru selesai pretest?** [[Endokrin 2|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Endokrin Pre-postest 3|Sesi berikutnya →]]· [[Endokrin Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

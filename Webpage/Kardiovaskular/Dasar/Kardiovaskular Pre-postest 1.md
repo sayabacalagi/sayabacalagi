@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Kardiovaskular Landing|Kardiovaskular]] / Sesi 01
+
+# Sebelum belajar
+**Kardiovaskular 1** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 22: Atopic Dermatitis**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -377,11 +388,10 @@ Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 232: Basi
 
 ---
 
-> [!info] Sesi 01 / 02 · Blok Kardiovaskular
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Kardiovaskular 1|Materi: Kardiovaskular 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Kardiovaskular Pre-postest 2|Sesi 02 — Kardiovaskular 2 →]]
-> - [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Kardiovaskular 1**
+
+- **Baru selesai pretest?** [[Kardiovaskular 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Kardiovaskular Pre-postest 2|Sesi berikutnya →]]· [[Kardiovaskular Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

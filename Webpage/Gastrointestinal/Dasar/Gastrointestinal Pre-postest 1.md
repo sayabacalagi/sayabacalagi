@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Gastrointestinal Landing|Gastrointestinal]] / Sesi 01
+
+# Sebelum belajar
+**Gastrointestinal 1** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 318: Disorders of Absorption**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. Peningkatan asam empedu di kolon
 
 ---
 
-> [!info] Sesi 01 / 01 · Blok Gastrointestinal
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Gastrointestinal 1|Materi: Gastrointestinal 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Gastrointestinal Landing|Blok Gastrointestinal →]]
-> - [[Gastrointestinal Landing|Daftar Sesi Gastrointestinal]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Gastrointestinal 1**
+
+- **Baru selesai pretest?** [[Gastrointestinal 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Gastrointestinal Landing|Kembali ke blok]]· [[Gastrointestinal Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

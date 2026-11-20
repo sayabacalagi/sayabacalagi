@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Intergumen Landing|Intergumen]] / Sesi 04
+
+# Sebelum belajar
+**Intergumen 4** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Pretest (jangan nyontek) // POSTEst boleh nyontek dikit2
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 5: Growth and Differentiation of the Epidermis**.
 
@@ -129,11 +140,10 @@ E. Klf4
 
 ---
 
-> [!info] Sesi 04 / 06 · Blok Intergumen
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 4|Materi: Intergumen 4 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 5|Sesi 05 — Intergumen 5 →]]
-> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Intergumen 4**
+
+- **Baru selesai pretest?** [[Intergumen 4|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Intergumen Pre-postest 5|Sesi berikutnya →]]· [[Intergumen Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

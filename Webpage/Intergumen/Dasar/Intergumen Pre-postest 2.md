@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Intergumen Landing|Intergumen]] / Sesi 02
+
+# Sebelum belajar
+**Intergumen 2** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Pretest (jangan nyontek) // POSTEst boleh nyontek dikit2
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 2: Pathology of Skin Lesions**.
 
@@ -129,11 +140,10 @@ E. Desmin positif, SMA negatif
 
 ---
 
-> [!info] Sesi 02 / 06 · Blok Intergumen
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 2|Materi: Intergumen 2 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 3|Sesi 03 — Intergumen 3 →]]
-> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Intergumen 2**
+
+- **Baru selesai pretest?** [[Intergumen 2|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Intergumen Pre-postest 3|Sesi berikutnya →]]· [[Intergumen Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

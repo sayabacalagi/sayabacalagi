@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Neuro Landing|Neuro]] / Sesi 01
+
+# Sebelum belajar
+**Approach to the Patient with Neurologic Disease** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan bab **Approach to the Patient with Neurologic Disease**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. Pemeriksaan neurologis hanya untuk spesialis saraf
 
 ---
 
-> [!info] Sesi 01 / 01 · Blok Neuro
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Neuro 1|Materi: Neuro 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Neuro Landing|Blok Neuro →]]
-> - [[Neuro Landing|Daftar Sesi Neuro]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Approach to the Patient with Neurologic Disease**
+
+- **Baru selesai pretest?** [[Neuro 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Neuro Landing|Kembali ke blok]]· [[Neuro Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

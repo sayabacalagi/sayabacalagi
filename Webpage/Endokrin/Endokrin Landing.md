@@ -1,22 +1,21 @@
 ---
-title: Blok Endokrin — sjawatdh.
-description: Regulasi hormon, tiroid, dan metabolisme.
+title: Endokrin — sjawatdh.
 showToc: false
 showLinkPreviews: false
 ---
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
 
 :root {
   --bg-paper: #FAF7F2;
-  --surface-card: #FFFFFF;
-  --surface-tint: #F3EDE2;
-  --ink-primary: #1C1917;
-  --ink-secondary: #57534E;
+  --surface: #FFFFFF;
+  --surface-subtle: #F3EDE2;
+  --ink: #1C1917;
+  --ink-soft: #57534E;
   --ink-muted: #78716C;
-  --accent-teal: #115E59;
-  --border-hairline: #E7E0D5;
+  --accent: #3F6212;
+  --line: #E7E0D5;
 }
 
 aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] {
@@ -25,401 +24,255 @@ aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backl
 
 body, main {
   background-color: var(--bg-paper) !important;
-  color: var(--ink-primary) !important;
+  color: var(--ink) !important;
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
-.sj-shell {
-  max-width: 960px;
+.sj-wrap {
+  max-width: 880px;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 4rem;
 }
 
-.sj-topbar {
+.sj-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border-hairline);
-  margin-bottom: 2.75rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3rem;
 }
 
-.sj-brand {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink-primary) !important;
+.sj-logo {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink) !important;
   text-decoration: none !important;
 }
 
-.sj-navlinks {
+.sj-nav-right {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.4rem;
   font-size: 0.9rem;
 }
 
-.sj-navlinks a {
-  color: var(--ink-secondary) !important;
+.sj-nav-right a {
+  color: var(--ink-soft) !important;
   text-decoration: none !important;
-  transition: color 0.15s ease;
 }
 
-.sj-navlinks a:hover {
-  color: var(--accent-teal) !important;
+.sj-nav-right a:hover {
+  color: var(--accent) !important;
 }
 
 .sj-hero {
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 3.5rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: end;
+  margin-bottom: 3.75rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .sj-hero {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 }
 
-.sj-eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--accent-teal);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.75rem;
-  display: block;
-}
-
-.sj-hero-title {
-  font-family: 'Fraunces', Georgia, serif !important;
-  font-size: clamp(2.1rem, 4.2vw, 3.1rem) !important;
-  line-height: 1.12 !important;
-  font-weight: 500 !important;
-  letter-spacing: -0.025em !important;
-  color: var(--ink-primary) !important;
+.sj-h1 {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: clamp(2.25rem, 4.6vw, 3.25rem) !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ink) !important;
   margin: 0 0 1rem 0 !important;
   border: none !important;
 }
 
-.sj-hero-desc {
+.sj-lead {
   font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--ink-secondary);
+  line-height: 1.55;
+  color: var(--ink-soft);
   margin: 0 0 1.5rem 0;
-  max-width: 46ch;
+  max-width: 42ch;
 }
 
-.sj-cta-primary {
+.sj-btn {
   display: inline-block;
-  background-color: var(--ink-primary);
-  color: var(--bg-paper) !important;
-  padding: 0.65rem 1.25rem;
-  border-radius: 6px;
   font-size: 0.92rem;
   font-weight: 500;
+  color: var(--ink) !important;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 0.2rem;
   text-decoration: none !important;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.sj-cta-primary:hover {
-  background-color: var(--accent-teal);
-  transform: translateY(-1px);
+.sj-btn:hover {
+  color: var(--accent) !important;
+  border-color: var(--accent);
 }
 
-.sj-broty-card {
-  background-color: var(--surface-card);
-  border: 1px solid var(--border-hairline);
-  border-radius: 12px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 10px rgba(28, 25, 23, 0.03);
-}
-
-.sj-broty-header {
+.sj-broty-note {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 0.65rem;
+  gap: 0.9rem;
+  padding: 0.95rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
 }
 
-.sj-broty-name {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--ink-muted);
-}
-
-.sj-broty-text {
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: var(--ink-secondary);
+.sj-broty-copy {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
   margin: 0;
 }
 
-.sj-section-head {
+.sj-broty-copy strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.sj-index-head {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-bottom: 1px solid var(--border-hairline);
-  padding-bottom: 0.65rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.sj-section-title {
-  font-family: 'Fraunces', Georgia, serif !important;
-  font-size: 1.35rem !important;
-  font-weight: 500 !important;
+.sj-h2 {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
   margin: 0 !important;
   border: none !important;
 }
 
-.sj-section-meta {
+.sj-mono {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.78rem;
   color: var(--ink-muted);
 }
 
-.sj-block-grid {
+.sj-index-list {
+  border-top: 1px solid var(--line);
+  margin-bottom: 3.5rem;
+}
+
+.sj-index-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.9rem;
-  margin-bottom: 3rem;
-}
-
-@media (max-width: 820px) {
-  .sj-block-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 540px) {
-  .sj-block-grid { grid-template-columns: 1fr; }
-}
-
-.sj-block-tile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: var(--surface-card);
-  border: 1px solid var(--border-hairline);
-  border-radius: 10px;
-  padding: 1.1rem 1.15rem;
-  text-decoration: none !important;
-  color: inherit !important;
-  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.sj-block-tile:hover {
-  border-color: var(--accent-teal);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(17, 94, 89, 0.07);
-}
-
-.sj-tile-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.55rem;
-}
-
-.sj-tile-num {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--accent-teal);
-}
-
-.sj-tile-count {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.74rem;
-  color: var(--ink-muted);
-  background: var(--surface-tint);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-}
-
-.sj-tile-name {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.18rem;
-  font-weight: 500;
-  color: var(--ink-primary);
-  margin-bottom: 0.35rem;
-}
-
-.sj-tile-desc {
-  font-size: 0.85rem;
-  line-height: 1.45;
-  color: var(--ink-secondary);
-  margin-bottom: 0.85rem;
-}
-
-.sj-tile-action {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--accent-teal);
-}
-
-.sj-session-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  margin-bottom: 2.5rem;
-}
-
-.sj-session-row {
-  display: flex;
-  justify-content: space-between;
+  grid-template-columns: 3.2rem 1fr auto auto;
   align-items: center;
   gap: 1rem;
-  background: var(--surface-card);
-  border: 1px solid var(--border-hairline);
-  border-radius: 9px;
-  padding: 0.95rem 1.15rem;
+  padding: 1.05rem 0.4rem;
+  border-bottom: 1px solid var(--line);
   text-decoration: none !important;
   color: inherit !important;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: background-color 0.15s ease, padding-left 0.15s ease;
 }
 
-.sj-session-row:hover {
-  border-color: var(--accent-teal);
-  background: #FFFEFC;
+.sj-index-row:hover {
+  background-color: var(--surface-subtle);
+  padding-left: 0.85rem;
 }
 
-@media (max-width: 600px) {
-  .sj-session-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.sj-session-left {
-  display: flex;
-  align-items: baseline;
-  gap: 0.85rem;
-}
-
-.sj-session-idx {
+.sj-row-num {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.82rem;
-  color: var(--accent-teal);
+  color: var(--accent);
 }
 
-.sj-session-title {
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--ink-primary);
+.sj-row-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--ink);
 }
 
-.sj-session-sub {
-  font-size: 0.82rem;
+.sj-row-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
   color: var(--ink-muted);
-  margin-top: 0.15rem;
 }
 
-.sj-session-cta {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
-  color: var(--accent-teal);
-  white-space: nowrap;
+.sj-row-arrow {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  transition: transform 0.15s ease, color 0.15s ease;
 }
 
-.sj-footer {
-  border-top: 1px solid var(--border-hairline);
+.sj-index-row:hover .sj-row-arrow {
+  transform: translateX(3px);
+  color: var(--accent);
+}
+
+.sj-foot {
+  border-top: 1px solid var(--line);
   padding-top: 1.25rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem;
   font-size: 0.84rem;
   color: var(--ink-muted);
 }
 
-.sj-footer a {
-  color: var(--ink-secondary) !important;
+.sj-foot a {
+  color: var(--ink-soft) !important;
   text-decoration: none !important;
 }
 
-.sj-footer a:hover {
-  color: var(--accent-teal) !important;
+.sj-foot a:hover {
+  color: var(--accent) !important;
 }
 </style>
 
-<div class='sj-shell'>
-  <header class='sj-topbar'>
-    <a class='sj-brand' href='./'>sjawatdh.</a>
-    <nav class='sj-navlinks'>
-      <a href='./'>Semua Blok</a>
-      <a href='Untuk%20Sjawatdh%20(Landing)'>Tentang</a>
+<div class='sj-wrap'>
+  <header class='sj-nav'>
+    <a class='sj-logo' href='./'>sjawatdh.</a>
+    <nav class='sj-nav-right'>
+      <a href='./'>blok</a>
+      <a href='Untuk%20Sjawatdh%20(Landing)'>tentang</a>
     </nav>
   </header>
 
-  <section class='sj-hero'>
-    <div>
-      <span class='sj-eyebrow'>BLOK 01 · 3 SESI</span>
-      <h1 class='sj-hero-title'>Endokrin</h1>
-      <p class='sj-hero-desc'>Regulasi hormon, tiroid, dan metabolisme.</p>
-      <a class='sj-cta-primary' href='Endokrin Pre-postest 1'>Mulai dari Sesi 01 →</a>
-    </div>
-
-    <div class='sj-broty-card'>
-      <div class='sj-broty-header'>
-        <svg width='46' height='46' viewBox='0 0 100 100' aria-hidden='true' style='flex-shrink:0;'>
-  <ellipse cx='50' cy='55' rx='32' ry='28' fill='#FBCFE8' />
-  <ellipse cx='50' cy='62' rx='20' ry='15' fill='#FDF2F8' />
-  <ellipse cx='18' cy='38' rx='7' ry='3' fill='#F9A8D4' transform='rotate(-30 18 38)' />
-  <ellipse cx='15' cy='45' rx='7' ry='3' fill='#F9A8D4' transform='rotate(-10 15 45)' />
-  <ellipse cx='16' cy='52' rx='7' ry='3' fill='#F9A8D4' transform='rotate(10 16 52)' />
-  <ellipse cx='82' cy='38' rx='7' ry='3' fill='#F9A8D4' transform='rotate(30 82 38)' />
-  <ellipse cx='85' cy='45' rx='7' ry='3' fill='#F9A8D4' transform='rotate(10 85 45)' />
-  <ellipse cx='84' cy='52' rx='7' ry='3' fill='#F9A8D4' transform='rotate(-10 84 52)' />
-  <circle cx='40' cy='48' r='4.5' fill='#1C1917' />
-  <circle cx='60' cy='48' r='4.5' fill='#1C1917' />
-  <circle cx='41.5' cy='46.5' r='1.5' fill='#FFFFFF' />
-  <circle cx='61.5' cy='46.5' r='1.5' fill='#FFFFFF' />
-  <circle cx='30' cy='58' r='3' fill='#FB7185' opacity='0.45' />
-  <circle cx='70' cy='58' r='3' fill='#FB7185' opacity='0.45' />
-  <path d='M45 60 Q50 64 55 60' stroke='#1C1917' stroke-width='1.8' fill='none' stroke-linecap='round' />
-</svg>
-        <span class='sj-broty-name'>broty // catatan sesi</span>
-      </div>
-      <p class='sj-broty-text'>Kerjakan pretest dulu buat lihat bagian mana yang masih kosong, lanjut baca materi pelan-pelan, lalu tutup dengan posttest.</p>
-    </div>
-  </section>
-
-  <div class='sj-section-head'>
-    <h2 class='sj-section-title'>Daftar Sesi</h2>
-    <span class='sj-section-meta'>3 modul</span>
+  <div style='margin-bottom:2.25rem;'>
+    <span class='sj-mono'>ENDOKRIN · 01</span>
+    <h1 class='sj-h1' style='margin-top:0.35rem !important;'>Endokrin</h1>
+    <span class='sj-mono'>3 sesi</span>
   </div>
 
-  <div class='sj-session-list'>
-<a class='sj-session-row' href='Endokrin Pre-postest 1'>
-  <div class='sj-session-left'>
-    <span class='sj-session-idx'>01</span>
-    <div>
-      <div class='sj-session-title'>Endokrin 1</div>
-      <div class='sj-session-sub'>Dasar · 01 Pretest → 02 Materi → 03 Posttest</div>
-    </div>
+  <div class='sj-index-list'>
+<a class='sj-index-row' href='Endokrin Pre-postest 1'>
+  <span class='sj-row-num'>01</span>
+  <div>
+    <div class='sj-row-title'>Endokrin 1</div>
+    <div class='sj-mono'>Dasar · Approach to the Patient with Endocrine Disorders</div>
   </div>
-  <span class='sj-session-cta'>Mulai sesi →</span>
+  <span class='sj-row-meta'>15 soal</span>
+  <span class='sj-row-arrow'>→</span>
 </a>
-<a class='sj-session-row' href='Endokrin Pre-postest 2'>
-  <div class='sj-session-left'>
-    <span class='sj-session-idx'>02</span>
-    <div>
-      <div class='sj-session-title'>Endokrin 2</div>
-      <div class='sj-session-sub'>Dasar · 01 Pretest → 02 Materi → 03 Posttest</div>
-    </div>
+<a class='sj-index-row' href='Endokrin Pre-postest 2'>
+  <span class='sj-row-num'>02</span>
+  <div>
+    <div class='sj-row-title'>Endokrin 2</div>
+    <div class='sj-mono'>Dasar · Mechanisms of Hormone Action</div>
   </div>
-  <span class='sj-session-cta'>Mulai sesi →</span>
+  <span class='sj-row-meta'>15 soal</span>
+  <span class='sj-row-arrow'>→</span>
 </a>
-<a class='sj-session-row' href='Endokrin Pre-postest 3'>
-  <div class='sj-session-left'>
-    <span class='sj-session-idx'>03</span>
-    <div>
-      <div class='sj-session-title'>Endokrin 3</div>
-      <div class='sj-session-sub'>Dasar · 01 Pretest → 02 Materi → 03 Posttest</div>
-    </div>
+<a class='sj-index-row' href='Endokrin Pre-postest 3'>
+  <span class='sj-row-num'>03</span>
+  <div>
+    <div class='sj-row-title'>Endokrin 3</div>
+    <div class='sj-mono'>Dasar · Mechanisms of Hormone Action</div>
   </div>
-  <span class='sj-session-cta'>Mulai sesi →</span>
+  <span class='sj-row-meta'>15 soal</span>
+  <span class='sj-row-arrow'>→</span>
 </a>
   </div>
 
@@ -482,5 +335,11 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
   <footer class='sj-footer'>
     <span><a href='./'>← Kembali ke semua blok</a></span>
     <span>sjawatdh. · personal medical study space</span>
+  </footer>
+</div>
+
+  <footer class='sj-foot'>
+    <a href='./'>← kembali ke blok</a>
+    <span>sjawatdh.</span>
   </footer>
 </div>

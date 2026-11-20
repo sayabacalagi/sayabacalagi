@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Hematoimmuno Landing|Hematoimmuno]] / Sesi 01
+
+# Sebelum belajar
+**Introduction to the Immune System** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan bab **Introduction to the Immune System**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. CD4 menghambat aktivasi sel T
 
 ---
 
-> [!info] Sesi 01 / 01 · Blok Hematoimmuno
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Hematoimmuno 1|Materi: Hematoimmuno 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Hematoimmuno Landing|Blok Hematoimmuno →]]
-> - [[Hematoimmuno Landing|Daftar Sesi Hematoimmuno]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Introduction to the Immune System**
+
+- **Baru selesai pretest?** [[Hematoimmuno 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Hematoimmuno Landing|Kembali ke blok]]· [[Hematoimmuno Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

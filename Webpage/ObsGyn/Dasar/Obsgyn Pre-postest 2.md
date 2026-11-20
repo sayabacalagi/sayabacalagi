@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[ObsGyn Landing|ObsGyn]] / Sesi 02
+
+# Sebelum belajar
+**Maternal Physiology** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan bab **Maternal Physiology**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. Selalu menurun pada trimester ketiga
 
 ---
 
-> [!info] Sesi 02 / 02 · Blok ObsGyn
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Obsgyn 2|Materi: Obsgyn 2 →]]
-> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[ObsGyn Landing|Blok ObsGyn →]]
-> - [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Maternal Physiology**
+
+- **Baru selesai pretest?** [[Obsgyn 2|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[ObsGyn Landing|Kembali ke blok]]· [[ObsGyn Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

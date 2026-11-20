@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Pulmo Landing|Pulmo]] / Sesi 01
+
+# Sebelum belajar
+**Pulmo 1** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 279: Disturbances of Respiratory Function**.
 
 **Pilih satu jawaban yang paling tepat.**
@@ -128,11 +139,10 @@ E. FEV1/FVC meningkat
 
 ---
 
-> [!info] Sesi 01 / 01 · Blok Pulmo
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Pulmo 1|Materi: Pulmo 1 →]]
-> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Pulmo Landing|Blok Pulmo →]]
-> - [[Pulmo Landing|Daftar Sesi Pulmo]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Pulmo 1**
+
+- **Baru selesai pretest?** [[Pulmo 1|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Pulmo Landing|Kembali ke blok]]· [[Pulmo Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->

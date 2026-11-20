@@ -1,3 +1,14 @@
+<!-- SJAWATDH-HEAD:BEGIN -->
+[[index|sjawatdh.]] / [[Intergumen Landing|Intergumen]] / Sesi 03
+
+# Sebelum belajar
+**Intergumen 3** · `15 soal` · `Pretest`
+
+Coba kerjakan sebelum membaca materi. Jika sudah selesai membaca materi, kerjakan ulang sebagai **posttest**.
+
+---
+<!-- SJAWATDH-HEAD:END -->
+
 Pretest (jangan nyontek) // POSTEst boleh nyontek dikit2
 Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 4: Developmental Biology of the Skin**.
 
@@ -129,11 +140,10 @@ E. SOX10+ dan DCT+
 
 ---
 
-> [!info] Sesi 03 / 06 · Blok Intergumen
-> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
->
-> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 3|Materi: Intergumen 3 →]]
-> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 4|Sesi 04 — Intergumen 4 →]]
-> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+### Satu sesi selesai.
+**Intergumen 3**
+
+- **Baru selesai pretest?** [[Intergumen 3|Lanjut ke materi inti →]]
+- **Baru selesai posttest?** [[Intergumen Pre-postest 4|Sesi berikutnya →]]· [[Intergumen Landing|Kembali ke blok]]
 
 <!-- SJAWATDH-NAV:END -->
