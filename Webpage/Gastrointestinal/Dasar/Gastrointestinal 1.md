@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Gastrointestinal Landing\vert{}Gastrointestinal]] / Sesi 01
+[[index|sjawatdh.]] / [[Gastrointestinal Landing|Gastrointestinal]] / Sesi 01
 
 # Gastrointestinal 1
 `Dasar` · `Sesi 01 dari 01`

@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Kardiovaskular Landing\vert{}Kardiovaskular]] / Sesi 01
+[[index|sjawatdh.]] / [[Kardiovaskular Landing|Kardiovaskular]] / Sesi 01
 
 # Kardiovaskular 1
 `Dasar` · `Sesi 01 dari 02`

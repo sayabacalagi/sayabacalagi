@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Endokrin Landing\vert{}Endokrin]] / Sesi 01
+[[index|sjawatdh.]] / [[Endokrin Landing|Endokrin]] / Sesi 01
 
 # Approach to the Patient with Endocrine Disorders
 `Dasar` · `Sesi 01 dari 03`

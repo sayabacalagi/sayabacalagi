@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Intergumen Landing\vert{}Intergumen]] / Sesi 06
+[[index|sjawatdh.]] / [[Intergumen Landing|Intergumen]] / Sesi 06
 
 # Intergumen 6
 `Patologi` · `Sesi 06 dari 06`

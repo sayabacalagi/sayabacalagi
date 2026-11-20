@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Intergumen Landing\vert{}Intergumen]] / Sesi 03
+[[index|sjawatdh.]] / [[Intergumen Landing|Intergumen]] / Sesi 03
 
 # Intergumen 3
 `Dasar` · `Sesi 03 dari 06`

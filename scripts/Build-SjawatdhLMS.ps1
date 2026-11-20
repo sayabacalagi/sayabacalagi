@@ -423,7 +423,7 @@ function Update-SessionFiles {
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
             $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw$rawMat)
 
-            $matHeader = "$HeadBegin`n[[index\vert{}sjawatdh.]] / [[$($Block.LandingBase)\vert{}$($Block.Name)]] / Sesi $sesCode`n`n# $($s.DisplayTitle)`n``$($s.Category)`` $MidDot ``Sesi $sesCode dari $($s.TotalCount.ToString('00'))```n`n---`n$HeadEnd"
+            $matHeader = "$HeadBegin`n[[index|sjawatdh.]] / [[$($Block.LandingBase)|$($Block.Name)]] / Sesi $sesCode`n`n# $($s.DisplayTitle)`n``$($s.Category)`` $MidDot ``Sesi $sesCode dari $($s.TotalCount.ToString('00'))```n`n---`n$HeadEnd"
 
             $matFooter = "$NavBegin`n`n---`n`n[[$($s.Test.BaseName)|$LeftArrow Pretest]] $MidDot **Materi inti** $MidDot [[$($s.Test.BaseName)|Lanjut posttest $Arrow]]`n`n$NavEnd"
 

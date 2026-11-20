@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[ObsGyn Landing\vert{}ObsGyn]] / Sesi 01
+[[index|sjawatdh.]] / [[ObsGyn Landing|ObsGyn]] / Sesi 01
 
 # Maternal Anatomy
 `Dasar` · `Sesi 01 dari 02`

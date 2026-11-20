@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Pulmo Landing\vert{}Pulmo]] / Sesi 01
+[[index|sjawatdh.]] / [[Pulmo Landing|Pulmo]] / Sesi 01
 
 # Pulmo 1
 `Dasar` · `Sesi 01 dari 01`

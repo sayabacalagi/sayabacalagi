@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Neuro Landing\vert{}Neuro]] / Sesi 01
+[[index|sjawatdh.]] / [[Neuro Landing|Neuro]] / Sesi 01
 
 # Approach to the Patient with Neurologic Disease
 `Dasar` · `Sesi 01 dari 01`

@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Endokrin Landing\vert{}Endokrin]] / Sesi 03
+[[index|sjawatdh.]] / [[Endokrin Landing|Endokrin]] / Sesi 03
 
 # Mechanisms of Hormone Action
 `Dasar` · `Sesi 03 dari 03`

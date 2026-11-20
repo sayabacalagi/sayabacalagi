@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[Hematoimmuno Landing\vert{}Hematoimmuno]] / Sesi 01
+[[index|sjawatdh.]] / [[Hematoimmuno Landing|Hematoimmuno]] / Sesi 01
 
 # Introduction to the Immune System
 `Dasar` · `Sesi 01 dari 01`

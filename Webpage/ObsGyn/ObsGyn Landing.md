@@ -331,3 +331,9 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
     <span>sjawatdh.</span>
   </footer>
 </div>
+
+  <footer class='sj-foot'>
+    <a href='./'>← kembali ke blok</a>
+    <span>sjawatdh.</span>
+  </footer>
+</div>

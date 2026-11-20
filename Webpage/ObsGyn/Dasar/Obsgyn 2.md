@@ -1,5 +1,5 @@
 <!-- SJAWATDH-HEAD:BEGIN -->
-[[index\vert{}sjawatdh.]] / [[ObsGyn Landing\vert{}ObsGyn]] / Sesi 02
+[[index|sjawatdh.]] / [[ObsGyn Landing|ObsGyn]] / Sesi 02
 
 # Maternal Physiology
 `Dasar` · `Sesi 02 dari 02`
