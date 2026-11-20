@@ -19,11 +19,12 @@ function Write-Utf8File {
     [System.IO.File]::WriteAllText($Path, $Content,$Utf8NoBom)
 }
 
-function Repair-MojibakeText {
+function Repair-LanguageAndTypography {
     param([string]$Text)
     $t =$Text
-    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash);
-    $t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
+
+    # 1. Pemulihan karakter UTF-8 yang rusak (mojibake)
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)$t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
     $t = [regex]::Replace($t, '\u00E2\u20AC\u00A6', '...')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u0153', '"')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u009D', '"')
@@ -36,6 +37,16 @@ function Repair-MojibakeText {
     $t = [regex]::Replace($t, '\u00CE\u00B2', ([string][char]0x03B2))
     $t = [regex]::Replace($t, '\u00CE\u00B3', ([string][char]0x03B3))
     $t = [regex]::Replace($t, '\u00C2[\u00A0 ]', ' ')
+
+    # 2. Perbaikan pemenggalan kata akibat ekstraksi PDF (contoh: "endokrin- ologi" -> "endokrinologi")
+    $t = [regex]::Replace($t, '([a-z]{3,})-\s+([a-z]{3,})', '$1$2')
+
+    # 3. Perbaikan spasi tanda baca & penyeragaman istilah
+    $t = [regex]::Replace($t, '[ \t]+([,\.;:\?\!])', '$1')
+    $t = [regex]::Replace($t, '(?i)\bpre-?post\s*test\b', 'Pretest & Posttest')
+    $t = [regex]::Replace($t, '(?i)\bpre-?test\b', 'Pretest')
+    $t = [regex]::Replace($t, '(?i)\bpost-?test\b', 'Posttest')
+
     return $t
 }
 
@@ -51,12 +62,30 @@ function Remove-GeneratedWrappers {
     return $c.Trim()
 }
 
+function Format-HeadingCase {
+    param([string]$RawHeading)
+    $clean =$RawHeading.Trim()
+    if ($clean -cmatch '^[A-Z0-9\s,\-\(\)\/]+$' -and $clean.Length -gt 4) {$textInfo = (Get-Culture).TextInfo
+        $title = $textInfo.ToTitleCase($clean.ToLower())
+        foreach ($abbr in @('Dna', 'Rna', 'Atp', 'Camp', 'Igf', 'Tsh', 'Acth', 'Fsh', 'Lh', 'Gh', 'Adh', 'Pth', 'Hiv', 'Cns', 'Gi', 'Cvd', 'Ecg', 'Mri', 'Ct', 'Usg', 'Who', 'Skdi')) {
+            $title = [regex]::Replace($title, "\b$abbr\b", $abbr.ToUpper())
+        }
+        foreach ($prep in @('Of', 'And', 'The', 'In', 'To', 'For', 'With', 'On', 'At', 'By', 'Dan', 'Di', 'Ke', 'Dari', 'Pada', 'Untuk', 'Dengan', 'Yang')) {
+            $title = [regex]::Replace($title, "(?<=\s)$prep(?=\s)", $prep.ToLower())
+        }
+        return $title
+    }
+    return $clean
+}
+
 function Split-LongParagraphs {
     param([string]$Paragraph)
-    if ($Paragraph.Length -lt 520) { return$Paragraph }
+    if ($Paragraph.Length -lt 480) { return$Paragraph }
     if ($Paragraph -match '^(#|>|\||-|\*|\d+\.|```|<)') { return $Paragraph }
 
-    $sentences = [regex]::Split($Paragraph, '(?<=(?<!\b(?:Dr|Mr|Mrs|Ms|Prof|Fig|Chap|Chaps|vs|et\s+al|e\.g|i\.e|approx))\.)\s+(?=[A-Z0-9"(\[])')
+    # Pemecahan per 3 kalimat dengan perlindungan singkatan klinis & akademis
+    $abbrPattern = '(?<!\b(?:Dr|Mr|Mrs|Ms|Prof|Fig|Figs|Tab|Chap|Chaps|vs|approx|ca|cf|al|e\.g|i\.e|i\.v|i\.m|s\.c|p\.o|b\.i\.d|t\.i\.d|q\.d|sp|spp))'
+    $sentences = [regex]::Split($Paragraph, "(?<=$abbrPattern\.)\s+(?=[A-Z0-9`"(\[])")
     if ($sentences.Count -le 3) { return $Paragraph }
 
     $chunks = @()
@@ -69,14 +98,22 @@ function Split-LongParagraphs {
 
 function Format-MaterialBody {
     param([string]$Body)
-    $clean = Repair-MojibakeText -Text $Body
+    $clean = Repair-LanguageAndTypography -Text $Body
 
-    $sqPattern = '\s*\u25A0\s*([A-Z][A-Z0-9\s,\-\(\)\/]{3,65})(?=\s+[A-Z][a-z])'
-    $clean = [regex]::Replace($clean, $sqPattern, ("`n`n## " + '$1' + "`n`n"))
+    # 1. Ekstrak penanda bagian utama (■) menjadi subbab H2 dengan kapitalisasi rapi
+    $sqRegex = [regex]'\s*\u25A0\s*([A-Z][A-Z0-9\s,\-\(\)\/]{3,70})(?=\s+[A-Z][a-z])'
+    $clean = $sqRegex.Replace($clean, {
+        param($m)
+        $headingTitle = Format-HeadingCase -RawHeading $m.Groups[1].Value
+        return "`n`n## $headingTitle`n`n"
+    })
 
-    $clean = [regex]::Replace($clean, '\s+(TABLE\s+\d+[\-\.]\d+[^\r\n]{0,90})', ("`n`n> **" + '$1' + "**`n`n"))
-    $clean = [regex]::Replace($clean, '\s+(Abbreviations:\s+)', "`n`n> *Abbreviations:* ")
+    # 2. Pisahkan blok Referensi Tabel dan Keterangan Singkatan agar tidak menyatu dengan narasi
+    $clean = [regex]::Replace($clean, '\s+(TABLE\s+\d+[\-\.]\d+[^\r\n]{0,100})', ("`n`n> **Referensi Tabel:** " + '$1' + "`n`n"))
+    $clean = [regex]::Replace($clean, '\s+(FIGURE\s+\d+[\-\.]\d+[^\r\n]{0,100})', ("`n`n> **Referensi Gambar:** " + '$1' + "`n`n"))
+    $clean = [regex]::Replace($clean, '\s+(Abbreviations:\s+)', "`n`n> **Keterangan Singkatan:** ")
 
+    # 3. Pecah paragraf panjang menjadi blok baca 3 kalimat
     $blocks = [regex]::Split($clean, '\r?\n\s*\r?\n')
     $formattedBlocks = foreach ($blk in $blocks) {
         $trimmed = $blk.Trim()
@@ -88,7 +125,11 @@ function Format-MaterialBody {
 
 function Format-TestBodyWithSpoiler {
     param([string]$Body)
-    $clean = Repair-MojibakeText -Text $Body
+    $clean = Repair-LanguageAndTypography -Text $Body
+
+    # Pastikan setiap opsi pilihan ganda (A. B. C. D. E.) berada di baris baru yang rapi
+    $clean = [regex]::Replace($clean, '(?<=[^\r\n])\s+([A-E]\.\s+)', "`n   `$1")
+
     $splitMatch = [regex]::Match($clean, '(?im)^(#{1,4}\s*|\*\*)?Kunci\s*Jawaban\b.*$')
     if (-not $splitMatch.Success) { return $clean }
 
@@ -96,7 +137,7 @@ function Format-TestBodyWithSpoiler {
     $questionsPart = $clean.Substring(0, $idx).Trim()
     $answersPart   = $clean.Substring($idx).Trim()
 
-    return "$questionsPart`n`n<details class='sj-spoiler'>`n<summary>Lihat kunci jawaban &amp; pembahasan</summary>`n`n$answersPart`n`n</details>"
+    return "$questionsPart`n`n<details class='sj-spoiler'>`n<summary>Buka Kunci Jawaban &amp; Pembahasan</summary>`n`n$answersPart`n`n</details>"
 }
 
 function Get-SharedCss {
@@ -105,7 +146,7 @@ function Get-SharedCss {
         [bool]$AllowToc = $false
     )
 
-    $fontUrl = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap'
+    $fontUrl = '[https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap](https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap)'
 
     $tocHideRule = if ($AllowToc) {
         "[class*='backlinks'], [class*='footer'] { display: none !important; }"
@@ -136,11 +177,16 @@ body, main {
 }
 
 article, .prose, main > div {
-  max-width: 760px !important;
+  max-width: 740px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  line-height: 1.75 !important;
+  line-height: 1.78 !important;
   font-size: 1.02rem !important;
+}
+
+article p, .prose p {
+  margin-bottom: 1.25rem !important;
+  text-align: left !important;
 }
 
 article h1, article h2, article h3, .prose h1, .prose h2, .prose h3 {
@@ -151,7 +197,8 @@ article h1, article h2, article h3, .prose h1, .prose h2, .prose h3 {
 }
 
 article h2, .prose h2 {
-  margin-top: 2.35rem !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.9rem !important;
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--line);
   font-size: 1.42rem !important;
@@ -160,10 +207,12 @@ article h2, .prose h2 {
 article blockquote, .prose blockquote {
   background: var(--surface) !important;
   border-left: 3px solid var(--accent) !important;
-  padding: 0.75rem 1rem !important;
+  padding: 0.85rem 1.1rem !important;
+  margin: 1.35rem 0 !important;
   border-radius: 0 8px 8px 0;
   color: var(--ink-soft) !important;
-  font-size: 0.94rem !important;
+  font-size: 0.93rem !important;
+  line-height: 1.6 !important;
 }
 
 .sj-wrap {
@@ -315,7 +364,7 @@ article blockquote, .prose blockquote {
 
 .sj-index-list {
   border-top: 1px solid var(--line);
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
 }
 
 .sj-index-row {
@@ -364,6 +413,15 @@ article blockquote, .prose blockquote {
   color: var(--accent);
 }
 
+.sj-orient {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 2.25rem;
+}
+
 .sj-stepper {
   margin-top: 3rem;
   padding-top: 1.25rem;
@@ -391,7 +449,7 @@ article blockquote, .prose blockquote {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 0.85rem 1.15rem;
+  padding: 0.9rem 1.2rem;
 }
 
 .sj-spoiler summary {
@@ -501,7 +559,7 @@ function Get-ChapterTitleFromTest {
     if (-not $TestFile) { return $FallbackTitle }
     $raw = [System.IO.File]::ReadAllText($TestFile.FullName)
     $m = [regex]::Match($raw, 'berdasarkan bab \*\*([^*]+)\*\*')
-    if ($m.Success) { return $m.Groups[1].Value.Trim() }
+    if ($m.Success) { return (Repair-LanguageAndTypography -Text $m.Groups[1].Value.Trim()) }
     return $FallbackTitle
 }
 
@@ -534,7 +592,7 @@ function Get-LearningSessions {
     for ($i = 0; $i -lt $matFiles.Count; $i++) {
         $mat       = $matFiles[$i]
         $test      = Resolve-SessionTest -MaterialFile $mat -TestFiles $testFiles
-        $cat       = if ($mat.DirectoryName -match 'Pato$') { 'Patologi' } else { 'Dasar' }
+        $cat       = if ($mat.DirectoryName -match 'Pato$') { 'Patologi & Klinis' } else { 'Ilmu Dasar' }
         $chapTitle = Get-ChapterTitleFromTest -TestFile $test -FallbackTitle $mat.BaseName
         $qCount    = Get-QuestionCountFromTest -TestFile $test
 
@@ -581,10 +639,10 @@ $testCss
 
 <div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
 
-# Sebelum belajar
-**$($s.DisplayTitle)** $MidDot ``$($s.QuestionCount) soal`` $MidDot ``Pretest / Posttest``
+# Evaluasi Awal & Akhir Sesi
+**$($s.DisplayTitle)** $MidDot ``$($s.QuestionCount) soal`` $MidDot ``Pretest & Posttest``
 
-Coba kerjakan sebelum membaca materi. Setelah selesai membaca materi, buka kembali halaman ini sebagai **posttest**.
+Kerjakan seluruh soal berikut secara mandiri sebelum membaca materi inti untuk mengukur pemahaman awal. Setelah selesai mempelajari materi inti, buka kembali halaman ini sebagai **Posttest**.
 
 ---
 $HeadEnd"
@@ -618,7 +676,7 @@ $HeadEnd"
 <div class='sj-stepper'>
   <a href='$($s.Test.BaseName)'>$LeftArrow Pretest</a>
   <span class='sj-mono'>MATERI INTI</span>
-  <a href='$($s.Test.BaseName)'>Lanjut posttest $Arrow</a>
+  <a href='$($s.Test.BaseName)'>Lanjut Posttest $Arrow</a>
 </div>
 $NavEnd"
 
@@ -657,7 +715,8 @@ function New-BlockLandingContent {
 
     $skdiMatch = [regex]::Match($ExistingRaw, '(?s)(## .*Target Kompetensi & Clinical Pearl.*)')
     $clinicalSection = if ($skdiMatch.Success) {
-        ($skdiMatch.Value -replace '(?s)---\s*> \[!abstract\].*Progress Bar.*$', '').Trim()
+        $rawClin = ($skdiMatch.Value -replace '(?s)---\s*> \[!abstract\].*Progress Bar.*$', '').Trim()
+        Repair-LanguageAndTypography -Text $rawClin
     } else { '' }
 
     $css  = Get-SharedCss -AccentColor $Block.Accent -AllowToc $false
@@ -677,7 +736,10 @@ function New-BlockLandingContent {
 </a>"
     }
 
-    $clinicalPart = if ($clinicalSection) { "`n---`n`n$clinicalSection`n" } else { '' }
+    # Penempatan Materi: Orientasi & Target Kompetensi di atas daftar sesi agar jelas arah belajarnya
+    $orientPart = if ($clinicalSection) {
+        "`n<div class='sj-orient'>`n`n$clinicalSection`n`n</div>`n"
+    } else { '' }
 
     return "---
 title: $($Block.Name) $EmDash sjawatdh.
@@ -696,18 +758,23 @@ $css
     </nav>
   </header>
 
-  <div style='margin-bottom:2.25rem; border-left:3px solid $($Block.Accent); padding-left:1rem;'>
+  <div style='margin-bottom:2rem; border-left:3px solid $($Block.Accent); padding-left:1rem;'>
     <span class='sj-mono' style='color:$($Block.Accent);'>$($Block.Name.ToUpper()) $MidDot $($Block.Number)</span>
     <h1 class='sj-h1' style='margin-top:0.25rem !important;'>$($Block.Name)</h1>
-    <span class='sj-mono'>$($Sessions.Count) sesi</span>
+    <span class='sj-mono'>$($Sessions.Count) sesi terstruktur</span>
+  </div>
+$orientPart
+  <div class='sj-index-head'>
+    <h2 class='sj-h2'>Daftar Sesi Belajar</h2>
+    <span class='sj-mono'>Pretest $Arrow Materi Inti $Arrow Posttest</span>
   </div>
 
   <div class='sj-index-list'>
 $($rows -join "`n")
   </div>
-$clinicalPart
+
   <footer class='sj-foot'>
-    <a href='./'>$LeftArrow kembali ke blok</a>
+    <a href='./'>$LeftArrow kembali ke daftar blok</a>
     <span>sjawatdh.</span>
   </footer>
 </div>"
@@ -752,7 +819,7 @@ $css
   <section class='sj-hero'>
     <div>
       <h1 class='sj-h1'>belajar blok,<br>pelan-pelan sampai paham.</h1>
-      <p class='sj-lead'>Materi dan latihan belajar kedokteran.</p>
+      <p class='sj-lead'>Materi inti dan evaluasi terstruktur untuk pembelajaran kedokteran.</p>
       <a class='sj-btn' href='#blok'>mulai belajar $DownArrow</a>
     </div>
 
@@ -784,7 +851,7 @@ function Update-AboutPage {
     if (-not (Test-Path $aboutPath)) { return }
 
     $raw = Remove-GeneratedWrappers -Raw ([System.IO.File]::ReadAllText($aboutPath))
-    $bodyOnly = [regex]::Replace($raw, '(?s)^---.*?---\s*', '').Trim()
+    $bodyOnly = Repair-LanguageAndTypography -Text ([regex]::Replace($raw, '(?s)^---.*?---\s*', '').Trim())
     $css = Get-SharedCss -AccentColor '#3F6212' -AllowToc $false
 
     $content = "---
