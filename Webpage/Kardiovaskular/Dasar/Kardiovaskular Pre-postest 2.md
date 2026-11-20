@@ -124,13 +124,15 @@ E. ST elevasi difus
 14. B  
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 2 dari 2**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Kardiovaskular 2|📖 Masuk ke Materi: Kardiovaskular 2 →]]**
-> *(Kembali ke [[Kardiovaskular Landing|Daftar Sesi Blok Kardiovaskular]])*
+> [!info] Navigasi Sesi 2 dari 2 · Blok Kardiovaskular
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Kardiovaskular 2|Buka Materi: Kardiovaskular 2 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Kardiovaskular Landing|Ringkasan Blok Kardiovaskular →]]
+> - **Navigasi Blok:** [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

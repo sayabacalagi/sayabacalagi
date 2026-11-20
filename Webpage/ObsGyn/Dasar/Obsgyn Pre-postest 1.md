@@ -124,13 +124,15 @@ E. 20 cm atau lebih
 14. A  
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 1 dari 2**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Obsgyn 1|📖 Masuk ke Materi: Obsgyn 1 →]]**
-> *(Kembali ke [[ObsGyn Landing|Daftar Sesi Blok ObsGyn]])*
+> [!info] Navigasi Sesi 1 dari 2 · Blok ObsGyn
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Obsgyn 1|Buka Materi: Obsgyn 1 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Obsgyn Pre-postest 2|Sesi 2 — Obsgyn 2 →]]
+> - **Navigasi Blok:** [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

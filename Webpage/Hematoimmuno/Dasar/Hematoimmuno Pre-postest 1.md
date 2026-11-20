@@ -124,13 +124,15 @@ E. CD4 menghambat aktivasi sel T
 14. B  
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 1 dari 1**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Hematoimmuno 1|📖 Masuk ke Materi: Hematoimmuno 1 →]]**
-> *(Kembali ke [[Hematoimmuno Landing|Daftar Sesi Blok Hematoimmuno]])*
+> [!info] Navigasi Sesi 1 dari 1 · Blok Hematoimmuno
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Hematoimmuno 1|Buka Materi: Hematoimmuno 1 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Hematoimmuno Landing|Ringkasan Blok Hematoimmuno →]]
+> - **Navigasi Blok:** [[Hematoimmuno Landing|Daftar Sesi Hematoimmuno]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

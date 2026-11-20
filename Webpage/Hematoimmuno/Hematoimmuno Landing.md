@@ -3,19 +3,36 @@ title: Blok Hematoimmuno — Blood, Immunity & Autoimmune Disorders
 description: Kupas tuntas anemia, hemostasis, infeksi sistemik, dan spektrum autoimun dari sel ke klinik.
 ---
 
-<div align="center">
+[[index|Beranda]] / [[Hematoimmuno Landing|Blok Hematoimmuno]]
 
-# 🧠 Blok Hematoimmuno
-**Simposium Pembelajaran Terstruktur**
+# Blok 03 — Hematoimmuno
 
-[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+Hematologi klinis, gangguan hemostasis, serta penyakit imunologi.
 
-</div>
+- **Jumlah Sesi:** 1 sesi pembelajaran terstruktur
+- **Alur Belajar:** `01 Pretest` → `02 Materi` → `03 Posttest`
+- **Akses Cepat:** [[Hematoimmuno Pre-postest 1|Mulai dari Sesi 01 →]]
 
 ---
 
-> [!tip] 🦎 Broty
-> *"Kalau capek, berhenti di sesi mana aja aman. Lanjutin lagi pas udah seger."*
+> [!tip] Catatan Pendamping — Broty
+> *"Selesaikan pretest terlebih dahulu untuk melihat gambaran awal pemahamanmu. Setelah itu, pelajari materi inti secara bertahap dan tutup dengan posttest."*
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Hematoimmuno 1** | Dasar | Pretest → Materi → Posttest | [[Hematoimmuno Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Hematoimmuno 1** | Dasar | Pretest → Materi → Posttest | [[Hematoimmuno Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
 
 ## 📋 Daftar Sesi Blok Hematoimmuno
 
@@ -43,7 +60,8 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
 
 ---
 
-> [!abstract] 📊 Progress Bar Blok Hematoimmuno
-> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
-> `Sesi 1`  
-> [[index|← Pilih Blok Lainnya]]
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]
+
+---
+
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]

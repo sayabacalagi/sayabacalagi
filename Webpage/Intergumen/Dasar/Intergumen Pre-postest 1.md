@@ -125,13 +125,15 @@ E. Tinea korporis dan tinea versikolor
 14. C  
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 1 dari 6**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Intergumen 1|📖 Masuk ke Materi: Intergumen 1 →]]**
-> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+> [!info] Navigasi Sesi 1 dari 6 · Blok Intergumen
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 1|Buka Materi: Intergumen 1 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Intergumen Pre-postest 2|Sesi 2 — Intergumen 2 →]]
+> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

@@ -6,13 +6,16 @@ INTRODUCTION TO MORPHOLOGY Joseph Jakob von Plenck’s (1738–1807) and Robert 
 
 ==POSTEST==
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 1 dari 6**
-> Tahap 2/3: Materi $bar $pct%$broty
-> **[[Intergumen Pre-postest 1|🎯 Lanjut ke Posttest Sesi 1 →]]**
-> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+> [!info] Navigasi Sesi 1 dari 6 · Blok Intergumen
+> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+>
+> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
+>
+> - **Langkah Selanjutnya:** [[Intergumen Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
+> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

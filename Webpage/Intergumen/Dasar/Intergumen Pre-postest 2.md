@@ -125,13 +125,15 @@ E. Desmin positif, SMA negatif
 14. A  
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 2 dari 6**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Intergumen 2|📖 Masuk ke Materi: Intergumen 2 →]]**
-> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+> [!info] Navigasi Sesi 2 dari 6 · Blok Intergumen
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 2|Buka Materi: Intergumen 2 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Intergumen Pre-postest 3|Sesi 3 — Intergumen 3 →]]
+> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

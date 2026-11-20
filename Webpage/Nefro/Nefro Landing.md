@@ -3,19 +3,36 @@ title: Blok Nefro — Renal Physiology, Electrolytes & Urinary Tract
 description: Pahami arsitektur nefron, keseimbangan asam-basa, AKI/CKD, hingga kegawatan urologi.
 ---
 
-<div align="center">
+[[index|Beranda]] / [[Nefro Landing|Blok Nefro]]
 
-# 🧠 Blok Nefro
-**Simposium Pembelajaran Terstruktur**
+# Blok 06 — Nefro
 
-[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+Fisiologi ginjal, keseimbangan cairan-elektrolit, dan saluran kemih.
 
-</div>
+- **Jumlah Sesi:** 1 sesi pembelajaran terstruktur
+- **Alur Belajar:** `01 Pretest` → `02 Materi` → `03 Posttest`
+- **Akses Cepat:** [[Nefro 1|Mulai dari Sesi 01 →]]
 
 ---
 
-> [!tip] 🦎 Broty
-> *"Materi udah kelar? Yuk ukur pemahamanmu di Posttest—biar tahu yang mana yang masih bolong."*
+> [!tip] Catatan Pendamping — Broty
+> *"Selesaikan pretest terlebih dahulu untuk melihat gambaran awal pemahamanmu. Setelah itu, pelajari materi inti secara bertahap dan tutup dengan posttest."*
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Nefro 1** | Dasar | Materi Inti | [[Nefro 1\|Baca Materi 1 →]] |
+
+---
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Nefro 1** | Dasar | Materi Inti | [[Nefro 1\|Baca Materi 1 →]] |
+
+---
 
 ## 📋 Daftar Sesi Blok Nefro
 
@@ -43,7 +60,8 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
 
 ---
 
-> [!abstract] 📊 Progress Bar Blok Nefro
-> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
-> `Sesi 1`  
-> [[index|← Pilih Blok Lainnya]]
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]
+
+---
+
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]

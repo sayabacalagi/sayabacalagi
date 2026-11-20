@@ -3,19 +3,38 @@ title: Blok ObsGyn — Obstetrics, Gynecology & Reproductive Health
 description: Pelajari fisiologi kehamilan, kegawatan obstetri, hingga patologi ginekologi secara terstruktur.
 ---
 
-<div align="center">
+[[index|Beranda]] / [[ObsGyn Landing|Blok ObsGyn]]
 
-# 🧠 Blok ObsGyn
-**Simposium Pembelajaran Terstruktur**
+# Blok 08 — ObsGyn
 
-[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+Fisiologi kehamilan, komplikasi obstetri, dan kesehatan reproduksi.
 
-</div>
+- **Jumlah Sesi:** 2 sesi pembelajaran terstruktur
+- **Alur Belajar:** `01 Pretest` → `02 Materi` → `03 Posttest`
+- **Akses Cepat:** [[Obsgyn Pre-postest 1|Mulai dari Sesi 01 →]]
 
 ---
 
-> [!tip] 🦎 Broty
-> *"Nggak perlu bingung milih mana dulu—klik Mulai Sesi, alurnya langsung jalan."*
+> [!tip] Catatan Pendamping — Broty
+> *"Selesaikan pretest terlebih dahulu untuk melihat gambaran awal pemahamanmu. Setelah itu, pelajari materi inti secara bertahap dan tutup dengan posttest."*
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Obsgyn 1** | Dasar | Pretest → Materi → Posttest | [[Obsgyn Pre-postest 1\|Mulai Sesi 1 →]] |
+| 02 | **Obsgyn 2** | Dasar | Pretest → Materi → Posttest | [[Obsgyn Pre-postest 2\|Mulai Sesi 2 →]] |
+
+---
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Obsgyn 1** | Dasar | Pretest → Materi → Posttest | [[Obsgyn Pre-postest 1\|Mulai Sesi 1 →]] |
+| 02 | **Obsgyn 2** | Dasar | Pretest → Materi → Posttest | [[Obsgyn Pre-postest 2\|Mulai Sesi 2 →]] |
+
+---
 
 ## 📋 Daftar Sesi Blok ObsGyn
 
@@ -44,7 +63,8 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
 
 ---
 
-> [!abstract] 📊 Progress Bar Blok ObsGyn
-> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (2 Sesi Tersedia)**  
-> `Sesi 1` ➔ `Sesi 2`  
-> [[index|← Pilih Blok Lainnya]]
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]
+
+---
+
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]

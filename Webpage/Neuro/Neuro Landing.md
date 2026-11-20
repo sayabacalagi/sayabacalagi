@@ -3,19 +3,36 @@ title: Blok Neuro — Neuroanatomy, Localization & Clinical Neurology
 description: Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan neuromuskuler.
 ---
 
-<div align="center">
+[[index|Beranda]] / [[Neuro Landing|Blok Neuro]]
 
-# 🧠 Blok Neuro
-**Simposium Pembelajaran Terstruktur**
+# Blok 07 — Neuro
 
-[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+Neuroanatomi fungsional, lokalisasi lesi, dan kegawatan neurologis.
 
-</div>
+- **Jumlah Sesi:** 1 sesi pembelajaran terstruktur
+- **Alur Belajar:** `01 Pretest` → `02 Materi` → `03 Posttest`
+- **Akses Cepat:** [[Neuro Pre-postest 1|Mulai dari Sesi 01 →]]
 
 ---
 
-> [!tip] 🦎 Broty
-> *"Pilih Sesi 1 dulu ya. Di bawah tiap halaman udah gue siapin tombol lanjut otomatis."*
+> [!tip] Catatan Pendamping — Broty
+> *"Selesaikan pretest terlebih dahulu untuk melihat gambaran awal pemahamanmu. Setelah itu, pelajari materi inti secara bertahap dan tutup dengan posttest."*
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Neuro 1** | Dasar | Pretest → Materi → Posttest | [[Neuro Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Neuro 1** | Dasar | Pretest → Materi → Posttest | [[Neuro Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
 
 ## 📋 Daftar Sesi Blok Neuro
 
@@ -43,7 +60,8 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
 
 ---
 
-> [!abstract] 📊 Progress Bar Blok Neuro
-> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
-> `Sesi 1`  
-> [[index|← Pilih Blok Lainnya]]
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]
+
+---
+
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]

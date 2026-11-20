@@ -125,13 +125,15 @@ E. Tidak menimbulkan efek samping sistemik
 14. A  
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 6 dari 6**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Intergumen 6|📖 Masuk ke Materi: Intergumen 6 →]]**
-> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+> [!info] Navigasi Sesi 6 dari 6 · Blok Intergumen
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 6|Buka Materi: Intergumen 6 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Intergumen Landing|Ringkasan Blok Intergumen →]]
+> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

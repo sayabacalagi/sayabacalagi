@@ -4,13 +4,16 @@ Chapter 6 :: Skin Glands: Sebaceous, Eccrine, and Apocrine Glands :: Christos C.
 
 ==POSTEST==
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 5 dari 6**
-> Tahap 2/3: Materi $bar $pct%$broty
-> **[[Intergumen Pre-postest 5|🎯 Lanjut ke Posttest Sesi 5 →]]**
-> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+> [!info] Navigasi Sesi 5 dari 6 · Blok Intergumen
+> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+>
+> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
+>
+> - **Langkah Selanjutnya:** [[Intergumen Pre-postest 5|Lanjut ke Posttest Sesi 5 →]]
+> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

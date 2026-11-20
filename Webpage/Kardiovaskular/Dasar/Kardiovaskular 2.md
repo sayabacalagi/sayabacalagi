@@ -4,13 +4,16 @@
 
 ==POSTEST==
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 2 dari 2**
-> Tahap 2/3: Materi $bar $pct%$broty
-> **[[Kardiovaskular Pre-postest 2|🎯 Lanjut ke Posttest Sesi 2 →]]**
-> *(Kembali ke [[Kardiovaskular Landing|Daftar Sesi Blok Kardiovaskular]])*
+> [!info] Navigasi Sesi 2 dari 2 · Blok Kardiovaskular
+> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+>
+> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
+>
+> - **Langkah Selanjutnya:** [[Kardiovaskular Pre-postest 2|Lanjut ke Posttest Sesi 2 →]]
+> - **Navigasi Blok:** [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

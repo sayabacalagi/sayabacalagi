@@ -3,19 +3,36 @@ title: Blok Gastrointestinal — Lumen, Hepatobilier & Pankreas
 description: Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags perdarahan GI secara sistematis.
 ---
 
-<div align="center">
+[[index|Beranda]] / [[Gastrointestinal Landing|Blok Gastrointestinal]]
 
-# 🧠 Blok Gastrointestinal
-**Simposium Pembelajaran Terstruktur**
+# Blok 02 — Gastrointestinal
 
-[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+Pendekatan klinis saluran cerna, hepatobilier, dan pankreas.
 
-</div>
+- **Jumlah Sesi:** 1 sesi pembelajaran terstruktur
+- **Alur Belajar:** `01 Pretest` → `02 Materi` → `03 Posttest`
+- **Akses Cepat:** [[Gastrointestinal Pre-postest 1|Mulai dari Sesi 01 →]]
 
 ---
 
-> [!tip] 🦎 Broty
-> *"Nggak perlu bingung milih mana dulu—klik Mulai Sesi, alurnya langsung jalan."*
+> [!tip] Catatan Pendamping — Broty
+> *"Selesaikan pretest terlebih dahulu untuk melihat gambaran awal pemahamanmu. Setelah itu, pelajari materi inti secara bertahap dan tutup dengan posttest."*
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Gastrointestinal 1** | Dasar | Pretest → Materi → Posttest | [[Gastrointestinal Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Gastrointestinal 1** | Dasar | Pretest → Materi → Posttest | [[Gastrointestinal Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
 
 ## 📋 Daftar Sesi Blok Gastrointestinal
 
@@ -43,7 +60,8 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
 
 ---
 
-> [!abstract] 📊 Progress Bar Blok Gastrointestinal
-> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
-> `Sesi 1`  
-> [[index|← Pilih Blok Lainnya]]
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]
+
+---
+
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]

@@ -124,13 +124,15 @@ E. Selalu menurun pada trimester ketiga
 14. B  
 15. C
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 2 dari 2**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Obsgyn 2|📖 Masuk ke Materi: Obsgyn 2 →]]**
-> *(Kembali ke [[ObsGyn Landing|Daftar Sesi Blok ObsGyn]])*
+> [!info] Navigasi Sesi 2 dari 2 · Blok ObsGyn
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Obsgyn 2|Buka Materi: Obsgyn 2 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[ObsGyn Landing|Ringkasan Blok ObsGyn →]]
+> - **Navigasi Blok:** [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

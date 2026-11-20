@@ -4,13 +4,16 @@ Chapter 2 :: Pathology of Skin Lesions :: Rosalie Elenitsas & Emily Y. Chu AT-A-
 
 ==POSTEST==
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 2 dari 6**
-> Tahap 2/3: Materi $bar $pct%$broty
-> **[[Intergumen Pre-postest 2|🎯 Lanjut ke Posttest Sesi 2 →]]**
-> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+> [!info] Navigasi Sesi 2 dari 6 · Blok Intergumen
+> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+>
+> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
+>
+> - **Langkah Selanjutnya:** [[Intergumen Pre-postest 2|Lanjut ke Posttest Sesi 2 →]]
+> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

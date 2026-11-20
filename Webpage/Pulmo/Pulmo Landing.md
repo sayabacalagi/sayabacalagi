@@ -3,19 +3,36 @@ title: Blok Pulmo — Respiratory Mechanics, Obstructive & Restrictive
 description: Bedakan pola obstruktif vs restriktif, analisis auskultasi paru, hingga kegawatan gagal napas.
 ---
 
-<div align="center">
+[[index|Beranda]] / [[Pulmo Landing|Blok Pulmo]]
 
-# 🧠 Blok Pulmo
-**Simposium Pembelajaran Terstruktur**
+# Blok 09 — Pulmo
 
-[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+Mekanika respirasi, pola obstruktif-restriktif, dan kegawatan napas.
 
-</div>
+- **Jumlah Sesi:** 1 sesi pembelajaran terstruktur
+- **Alur Belajar:** `01 Pretest` → `02 Materi` → `03 Posttest`
+- **Akses Cepat:** [[Pulmo Pre-postest 1|Mulai dari Sesi 01 →]]
 
 ---
 
-> [!tip] 🦎 Broty
-> *"Kalau capek, berhenti di sesi mana aja aman. Lanjutin lagi pas udah seger."*
+> [!tip] Catatan Pendamping — Broty
+> *"Selesaikan pretest terlebih dahulu untuk melihat gambaran awal pemahamanmu. Setelah itu, pelajari materi inti secara bertahap dan tutup dengan posttest."*
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Pulmo 1** | Dasar | Pretest → Materi → Posttest | [[Pulmo Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Pulmo 1** | Dasar | Pretest → Materi → Posttest | [[Pulmo Pre-postest 1\|Mulai Sesi 1 →]] |
+
+---
 
 ## 📋 Daftar Sesi Blok Pulmo
 
@@ -43,7 +60,8 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
 
 ---
 
-> [!abstract] 📊 Progress Bar Blok Pulmo
-> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
-> `Sesi 1`  
-> [[index|← Pilih Blok Lainnya]]
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]
+
+---
+
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]

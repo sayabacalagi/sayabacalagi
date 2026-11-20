@@ -4,13 +4,16 @@
 
 ==POSTEST==
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 1 dari 1**
-> Tahap 2/3: Materi $bar $pct%$broty
-> **[[Pulmo Pre-postest 1|🎯 Lanjut ke Posttest Sesi 1 →]]**
-> *(Kembali ke [[Pulmo Landing|Daftar Sesi Blok Pulmo]])*
+> [!info] Navigasi Sesi 1 dari 1 · Blok Pulmo
+> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+>
+> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
+>
+> - **Langkah Selanjutnya:** [[Pulmo Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
+> - **Navigasi Blok:** [[Pulmo Landing|Daftar Sesi Pulmo]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

@@ -4,13 +4,16 @@ DEVELOPMENTAL BIOLOGY OF THE CARDIOVASCULAR SYSTEM The heart forms early during 
 
 ==POSTEST==
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 1 dari 2**
-> Tahap 2/3: Materi $bar $pct%$broty
-> **[[Kardiovaskular Pre-postest 1|🎯 Lanjut ke Posttest Sesi 1 →]]**
-> *(Kembali ke [[Kardiovaskular Landing|Daftar Sesi Blok Kardiovaskular]])*
+> [!info] Navigasi Sesi 1 dari 2 · Blok Kardiovaskular
+> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+>
+> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
+>
+> - **Langkah Selanjutnya:** [[Kardiovaskular Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
+> - **Navigasi Blok:** [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

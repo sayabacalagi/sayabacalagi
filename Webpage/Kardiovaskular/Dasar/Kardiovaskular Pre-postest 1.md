@@ -373,13 +373,15 @@ Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 232: Basi
     
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 1 dari 2**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Kardiovaskular 1|📖 Masuk ke Materi: Kardiovaskular 1 →]]**
-> *(Kembali ke [[Kardiovaskular Landing|Daftar Sesi Blok Kardiovaskular]])*
+> [!info] Navigasi Sesi 1 dari 2 · Blok Kardiovaskular
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Kardiovaskular 1|Buka Materi: Kardiovaskular 1 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Kardiovaskular Pre-postest 2|Sesi 2 — Kardiovaskular 2 →]]
+> - **Navigasi Blok:** [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->

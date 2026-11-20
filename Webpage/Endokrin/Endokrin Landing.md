@@ -3,19 +3,40 @@ title: Blok Endokrin — Hormones, Metabolism & Clinical Approach
 description: Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — pahami feedback loop-nya biar nggak ketuker.
 ---
 
-<div align="center">
+[[index|Beranda]] / [[Endokrin Landing|Blok Endokrin]]
 
-# 🧠 Blok Endokrin
-**Simposium Pembelajaran Terstruktur**
+# Blok 01 — Endokrin
 
-[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+Regulasi hormonal, aksis hipotalamus-hipofisis, dan gangguan metabolik.
 
-</div>
+- **Jumlah Sesi:** 3 sesi pembelajaran terstruktur
+- **Alur Belajar:** `01 Pretest` → `02 Materi` → `03 Posttest`
+- **Akses Cepat:** [[Endokrin Pre-postest 1|Mulai dari Sesi 01 →]]
 
 ---
 
-> [!tip] 🦎 Broty
-> *"Pilih Sesi 1 dulu ya. Di bawah tiap halaman udah gue siapin tombol lanjut otomatis."*
+> [!tip] Catatan Pendamping — Broty
+> *"Selesaikan pretest terlebih dahulu untuk melihat gambaran awal pemahamanmu. Setelah itu, pelajari materi inti secara bertahap dan tutup dengan posttest."*
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Endokrin 1** | Dasar | Pretest → Materi → Posttest | [[Endokrin Pre-postest 1\|Mulai Sesi 1 →]] |
+| 02 | **Endokrin 2** | Dasar | Pretest → Materi → Posttest | [[Endokrin Pre-postest 2\|Mulai Sesi 2 →]] |
+| 03 | **Endokrin 3** | Dasar | Pretest → Materi → Posttest | [[Endokrin Pre-postest 3\|Mulai Sesi 3 →]] |
+
+---
+
+## Daftar Sesi Pembelajaran
+
+| Sesi | Topik Pembelajaran | Kategori | Alur | Aksi |
+| :---: | :--- | :---: | :--- | :---: |
+| 01 | **Endokrin 1** | Dasar | Pretest → Materi → Posttest | [[Endokrin Pre-postest 1\|Mulai Sesi 1 →]] |
+| 02 | **Endokrin 2** | Dasar | Pretest → Materi → Posttest | [[Endokrin Pre-postest 2\|Mulai Sesi 2 →]] |
+| 03 | **Endokrin 3** | Dasar | Pretest → Materi → Posttest | [[Endokrin Pre-postest 3\|Mulai Sesi 3 →]] |
+
+---
 
 ## 📋 Daftar Sesi Blok Endokrin
 
@@ -45,7 +66,8 @@ Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewa
 
 ---
 
-> [!abstract] 📊 Progress Bar Blok Endokrin
-> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (3 Sesi Tersedia)**  
-> `Sesi 1` ➔ `Sesi 2` ➔ `Sesi 3`  
-> [[index|← Pilih Blok Lainnya]]
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]
+
+---
+
+[[index|← Kembali ke Daftar Blok]] · [[Untuk Sjawatdh (Landing)|Tentang Sjawatdh]]

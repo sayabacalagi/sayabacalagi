@@ -124,13 +124,15 @@ E. Selalu merupakan mekanisme positif feedback
 14. A  
 15. B
 
-<!-- LMS-NAV:BEGIN -->
+<!-- SJAWATDH-NAV:BEGIN -->
 
 ---
 
-> [!info] **Navigasi Sesi LMS — Sesi 2 dari 3**
-> Tahap 1/3: Pretest $bar $pct%$broty
-> **[[Endokrin 2|📖 Masuk ke Materi: Endokrin 2 →]]**
-> *(Kembali ke [[Endokrin Landing|Daftar Sesi Blok Endokrin]])*
+> [!info] Navigasi Sesi 2 dari 3 · Blok Endokrin
+> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+>
+> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Endokrin 2|Buka Materi: Endokrin 2 →]]
+> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Endokrin Pre-postest 3|Sesi 3 — Endokrin 3 →]]
+> - **Navigasi Blok:** [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
 
-<!-- LMS-NAV:END -->
+<!-- SJAWATDH-NAV:END -->
