@@ -16,15 +16,16 @@ $BlackSquare = [string][char]0x25A0;
 
 function Write-Utf8File {
     param([string]$Path, [string]$Content)
-    [System.IO.File]::WriteAllText($Path, $Content,$Utf8NoBom)
+    [System.IO.File]::WriteAllText($Path, $Content, $Utf8NoBom)
 }
 
 function Repair-LanguageAndTypography {
     param([string]$Text)
-    $t =$Text
+    $t = $Text
 
-    # 1. Pemulihan karakter UTF-8 yang rusak (mojibake)
-    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)$t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
+    # 1. Pemulihan karakter UTF-8 rusak (mojibake)
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201D', $EmDash)
+    $t = [regex]::Replace($t, '\u00E2\u20AC\u201C', $EnDash)
     $t = [regex]::Replace($t, '\u00E2\u20AC\u00A6', '...')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u0153', '"')
     $t = [regex]::Replace($t, '\u00E2\u20AC\u009D', '"')
@@ -38,7 +39,7 @@ function Repair-LanguageAndTypography {
     $t = [regex]::Replace($t, '\u00CE\u00B3', ([string][char]0x03B3))
     $t = [regex]::Replace($t, '\u00C2[\u00A0 ]', ' ')
 
-    # 2. Perbaikan pemenggalan kata akibat ekstraksi PDF (contoh: "endokrin- ologi" -> "endokrinologi")
+    # 2. Perbaikan pemenggalan kata akibat ekstraksi PDF
     $t = [regex]::Replace($t, '([a-z]{3,})-\s+([a-z]{3,})', '$1$2')
 
     # 3. Perbaikan spasi tanda baca & penyeragaman istilah
@@ -52,11 +53,11 @@ function Repair-LanguageAndTypography {
 
 function Remove-GeneratedWrappers {
     param([string]$Raw)
-    $c =$Raw
+    $c = $Raw
     $c = [regex]::Replace($c, "(?s)^$([regex]::Escape($HeadBegin)).*?$([regex]::Escape($HeadEnd))\r?\n*", '')
     $c = [regex]::Replace($c, "(?s)\r?\n?$([regex]::Escape($NavBegin)).*?$([regex]::Escape($NavEnd))\r?\n?", '')
     $c = [regex]::Replace($c, '(?s)\r?\n?<!-- LMS-NAV:BEGIN -->.*?<!-- LMS-NAV:END -->\r?\n?', '')
-    $c = [regex]::Replace($c, '(?s)\r?\n---\r?\n> [!info] \*\*Navigasi Sesi LMS\*\*.*$', '')
+    $c = [regex]::Replace($c, '(?s)\r?\n---\r?\n> \[!info\] \*\*Navigasi Sesi LMS\*\*.*$', '')
     $c = [regex]::Replace($c, '(?m)^==NILAI PRETEST[^\r\n]*\r?\n*', '')
     $c = [regex]::Replace($c, '(?s)<details class=[''"]sj-spoiler[''"]>\s*<summary>.*?</summary>\s*(.*?)\s*</details>', '$1')
     return $c.Trim()
@@ -64,8 +65,9 @@ function Remove-GeneratedWrappers {
 
 function Format-HeadingCase {
     param([string]$RawHeading)
-    $clean =$RawHeading.Trim()
-    if ($clean -cmatch '^[A-Z0-9\s,\-\(\)\/]+$' -and $clean.Length -gt 4) {$textInfo = (Get-Culture).TextInfo
+    $clean = $RawHeading.Trim()
+    if ($clean -cmatch '^[A-Z0-9\s,\-\(\)\/]+$' -and $clean.Length -gt 4) {
+        $textInfo = (Get-Culture).TextInfo
         $title = $textInfo.ToTitleCase($clean.ToLower())
         foreach ($abbr in @('Dna', 'Rna', 'Atp', 'Camp', 'Igf', 'Tsh', 'Acth', 'Fsh', 'Lh', 'Gh', 'Adh', 'Pth', 'Hiv', 'Cns', 'Gi', 'Cvd', 'Ecg', 'Mri', 'Ct', 'Usg', 'Who', 'Skdi')) {
             $title = [regex]::Replace($title, "\b$abbr\b", $abbr.ToUpper())
@@ -80,27 +82,32 @@ function Format-HeadingCase {
 
 function Split-LongParagraphs {
     param([string]$Paragraph)
-    if ($Paragraph.Length -lt 480) { return$Paragraph }
+    if ($Paragraph.Length -lt 460) { return $Paragraph }
     if ($Paragraph -match '^(#|>|\||-|\*|\d+\.|```|<)') { return $Paragraph }
 
-    # Pemecahan per 3 kalimat dengan perlindungan singkatan klinis & akademis
-    $abbrPattern = '(?<!\b(?:Dr|Mr|Mrs|Ms|Prof|Fig|Figs|Tab|Chap|Chaps|vs|approx|ca|cf|al|e\.g|i\.e|i\.v|i\.m|s\.c|p\.o|b\.i\.d|t\.i\.d|q\.d|sp|spp))'
-    $sentences = [regex]::Split($Paragraph, "(?<=$abbrPattern\.)\s+(?=[A-Z0-9`"(\[])")
-    if ($sentences.Count -le 3) { return $Paragraph }
+    $abbrPattern = '(?<!\b(?:Dr\vert{}Mr\vert{}Mrs\vert{}Ms\vert{}Prof\vert{}Fig\vert{}Figs\vert{}Tab\vert{}Chap\vert{}Chaps\vert{}vs\vert{}approx\vert{}ca\vert{}cf\vert{}al\vert{}e\.g\vert{}i\.e\vert{}i\.v\vert{}i\.m\vert{}s\.c\vert{}p\.o\vert{}b\.i\.d\vert{}t\.i\.d\vert{}q\.d\vert{}sp\vert{}spp))'$sentences = [regex]::Split($Paragraph, "(?<=$abbrPattern\.)\s+(?=[A-Z0-9`"(\[])")
+    if ($sentences.Count -le 3) { return$Paragraph }
 
     $chunks = @()
-    for ($i = 0; $i -lt $sentences.Count; $i += 3) {
-        $end = [Math]::Min($i + 2, $sentences.Count - 1)
+    for ($i = 0; $i -lt$sentences.Count; $i += 3) {$end = [Math]::Min($i + 2,$sentences.Count - 1)
         $chunks += ($sentences[$i..$end] -join ' ')
     }
     return ($chunks -join "`n`n")
+}
+
+function Add-UpToDateBoldLeadIns {
+    param([string]$Paragraph)
+    if ($Paragraph -match '^(#|>|\||-|\*|\d+\.|```|<|\*\*)') { return $Paragraph }
+    # Tebalkan frasa definisi/kunci di awal kalimat jika mengikuti pola "Istilah — penjelasan" atau "Istilah is defined as..."
+    $p = [regex]::Replace($Paragraph, '^([A-Z][A-Za-z0-9\s\-\(\)]{3,42})(\s+(?:—|–|is defined as|refers to|adalah|merupakan)\b)', '**$1**$2')
+    return $p
 }
 
 function Format-MaterialBody {
     param([string]$Body)
     $clean = Repair-LanguageAndTypography -Text $Body
 
-    # 1. Ekstrak penanda bagian utama (■) menjadi subbab H2 dengan kapitalisasi rapi
+    # 1. Ekstrak penanda bagian utama (■) menjadi subbab H2
     $sqRegex = [regex]'\s*\u25A0\s*([A-Z][A-Z0-9\s,\-\(\)\/]{3,70})(?=\s+[A-Z][a-z])'
     $clean = $sqRegex.Replace($clean, {
         param($m)
@@ -108,26 +115,36 @@ function Format-MaterialBody {
         return "`n`n## $headingTitle`n`n"
     })
 
-    # 2. Pisahkan blok Referensi Tabel dan Keterangan Singkatan agar tidak menyatu dengan narasi
+    # 2. Pisahkan blok Referensi Tabel, Gambar, dan Singkatan
     $clean = [regex]::Replace($clean, '\s+(TABLE\s+\d+[\-\.]\d+[^\r\n]{0,100})', ("`n`n> **Referensi Tabel:** " + '$1' + "`n`n"))
     $clean = [regex]::Replace($clean, '\s+(FIGURE\s+\d+[\-\.]\d+[^\r\n]{0,100})', ("`n`n> **Referensi Gambar:** " + '$1' + "`n`n"))
     $clean = [regex]::Replace($clean, '\s+(Abbreviations:\s+)', "`n`n> **Keterangan Singkatan:** ")
 
-    # 3. Pecah paragraf panjang menjadi blok baca 3 kalimat
+    # 3. Pecah paragraf panjang & terapkan bold lead-ins ala UpToDate
     $blocks = [regex]::Split($clean, '\r?\n\s*\r?\n')
     $formattedBlocks = foreach ($blk in $blocks) {
         $trimmed = $blk.Trim()
-        if ($trimmed) { Split-LongParagraphs -Paragraph $trimmed }
+        if ($trimmed) {
+            $splitText = Split-LongParagraphs -Paragraph $trimmed
+            $subParas = [regex]::Split($splitText, '\r?\n\s*\r?\n')
+            $styledSubs = foreach ($sp in $subParas) { Add-UpToDateBoldLeadIns -Paragraph $sp.Trim() }
+            ($styledSubs -join "`n`n")
+        }
     }
 
     return ($formattedBlocks -join "`n`n").Trim()
 }
 
+function Get-EstimatedReadingMinutes {
+    param([string]$Text)
+    $words = ([regex]::Matches($Text, '\b\w+\b')).Count
+    $mins = [Math]::Max(3, [Math]::Ceiling($words / 210))
+    return $mins
+}
+
 function Format-TestBodyWithSpoiler {
     param([string]$Body)
     $clean = Repair-LanguageAndTypography -Text $Body
-
-    # Pastikan setiap opsi pilihan ganda (A. B. C. D. E.) berada di baris baru yang rapi
     $clean = [regex]::Replace($clean, '(?<=[^\r\n])\s+([A-E]\.\s+)', "`n   `$1")
 
     $splitMatch = [regex]::Match($clean, '(?im)^(#{1,4}\s*|\*\*)?Kunci\s*Jawaban\b.*$')
@@ -146,10 +163,19 @@ function Get-SharedCss {
         [bool]$AllowToc = $false
     )
 
-    $fontUrl = '[https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap](https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap)'
+    $fontUrl = 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap'
 
-    $tocHideRule = if ($AllowToc) {
-        "[class*='backlinks'], [class*='footer'] { display: none !important; }"
+    $tocRule = if ($AllowToc) {
+        "[class*='backlinks'], [class*='footer'] { display: none !important; }
+aside, nav[aria-label='Table of contents'], .toc {
+  font-size: 0.82rem !important;
+  color: var(--ink-soft) !important;
+  border-left: 1px solid var(--line) !important;
+  padding-left: 1rem !important;
+}
+aside a:hover, nav[aria-label='Table of contents'] a:hover, .toc a:hover {
+  color: var(--accent) !important;
+}"
     } else {
         "aside, nav[aria-label='Table of contents'], .toc, [class*='toc'], [class*='backlinks'], [class*='footer'] { display: none !important; }"
     }
@@ -168,7 +194,7 @@ function Get-SharedCss {
   --line: #E7E0D5;
 }
 
-$tocHideRule
+$tocRule
 
 body, main {
   background-color: var(--bg-paper) !important;
@@ -213,6 +239,33 @@ article blockquote, .prose blockquote {
   color: var(--ink-soft) !important;
   font-size: 0.93rem !important;
   line-height: 1.6 !important;
+}
+
+.sj-utd-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 0 0 10px 10px;
+  padding: 0.95rem 1.15rem;
+  margin: 1rem 0 1.75rem;
+  font-size: 0.84rem;
+}
+
+.sj-utd-meta-label {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+.sj-utd-meta-val {
+  font-weight: 500;
+  color: var(--ink);
 }
 
 .sj-wrap {
@@ -640,9 +693,13 @@ $testCss
 <div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
 
 # Evaluasi Awal & Akhir Sesi
-**$($s.DisplayTitle)** $MidDot ``$($s.QuestionCount) soal`` $MidDot ``Pretest & Posttest``
+<div class='sj-utd-meta'>
+  <div><span class='sj-utd-meta-label'>Topik Bahasan</span><span class='sj-utd-meta-val'>$($s.DisplayTitle)</span></div>
+  <div><span class='sj-utd-meta-label'>Jumlah Butir</span><span class='sj-utd-meta-val'>$($s.QuestionCount) Soal Pilihan Ganda</span></div>
+  <div><span class='sj-utd-meta-label'>Fungsi Evaluasi</span><span class='sj-utd-meta-val'>Pretest &amp; Posttest</span></div>
+</div>
 
-Kerjakan seluruh soal berikut secara mandiri sebelum membaca materi inti untuk mengukur pemahaman awal. Setelah selesai mempelajari materi inti, buka kembali halaman ini sebagai **Posttest**.
+Kerjakan seluruh soal secara mandiri sebelum membaca materi inti. Setelah selesai mempelajari materi inti, buka kembali halaman ini sebagai **Posttest**.
 
 ---
 $HeadEnd"
@@ -659,6 +716,7 @@ $NavEnd"
 
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
             $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw $rawMat)
+            $readMins = Get-EstimatedReadingMinutes -Text $cleanMat
 
             $matHeader = "$HeadBegin
 $matCss
@@ -666,7 +724,13 @@ $matCss
 <div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
 
 # $($s.DisplayTitle)
-``$($s.Category)`` $MidDot ``Sesi $sesCode dari $($s.TotalCount.ToString('00'))``
+<div class='sj-utd-meta'>
+  <div><span class='sj-utd-meta-label'>Blok Sistem</span><span class='sj-utd-meta-val'>$($Block.Name) $MidDot $($s.Category)</span></div>
+  <div><span class='sj-utd-meta-label'>Urutan Sesi</span><span class='sj-utd-meta-val'>Sesi $sesCode dari $($s.TotalCount.ToString('00'))</span></div>
+  <div><span class='sj-utd-meta-label'>Estimasi Baca</span><span class='sj-utd-meta-val'>~$readMins menit</span></div>
+</div>
+
+> **Panduan Fokus Baca:** Gunakan daftar isi (*Topic Outline*) di sisi halaman untuk melompat antar-subbab, perhatikan istilah kunci yang dicetak tebal di awal paragraf, lalu uji pemahaman melalui **Posttest** di akhir sesi.
 
 ---
 $HeadEnd"
@@ -684,6 +748,7 @@ $NavEnd"
         } else {
             $rawMat   = [System.IO.File]::ReadAllText($s.Material.FullName)
             $cleanMat = Format-MaterialBody -Body (Remove-GeneratedWrappers -Raw $rawMat)
+            $readMins = Get-EstimatedReadingMinutes -Text $cleanMat
 
             $matHeader = "$HeadBegin
 $matCss
@@ -691,7 +756,11 @@ $matCss
 <div class='sj-crumb'><a href='./'>sjawatdh.</a> / <a href='$($Block.LandingBase)'>$($Block.Name)</a> / Sesi $sesCode</div>
 
 # $($s.DisplayTitle)
-``$($s.Category)`` $MidDot ``Materi inti``
+<div class='sj-utd-meta'>
+  <div><span class='sj-utd-meta-label'>Blok Sistem</span><span class='sj-utd-meta-val'>$($Block.Name) $MidDot $($s.Category)</span></div>
+  <div><span class='sj-utd-meta-label'>Urutan Sesi</span><span class='sj-utd-meta-val'>Sesi $sesCode dari $($s.TotalCount.ToString('00'))</span></div>
+  <div><span class='sj-utd-meta-label'>Estimasi Baca</span><span class='sj-utd-meta-val'>~$readMins menit</span></div>
+</div>
 
 ---
 $HeadEnd"
@@ -736,7 +805,6 @@ function New-BlockLandingContent {
 </a>"
     }
 
-    # Penempatan Materi: Orientasi & Target Kompetensi di atas daftar sesi agar jelas arah belajarnya
     $orientPart = if ($clinicalSection) {
         "`n<div class='sj-orient'>`n`n$clinicalSection`n`n</div>`n"
     } else { '' }
@@ -919,7 +987,7 @@ foreach ($b in $blocks) {
         Block        = $b
         SessionCount = $sessions.Count
     }
-    Write-Host "[OK] [$($b.Number)] $($b.Name): $($sessions.Count) sesi ditingkatkan" -ForegroundColor Green
+    Write-Host "[OK] [$($b.Number)] $($b.Name): $($sessions.Count) sesi diperbarui (UpToDate clinical format)" -ForegroundColor Green
 }
 
 Update-AboutPage -WebpageRoot $webpageRoot;
