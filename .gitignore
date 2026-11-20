@@ -1,0 +1,11 @@
+﻿# Obsidian per-device UI state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace
+
+# OS / Google Drive junk
+desktop.ini
+Thumbs.db
+.DS_Store
+*.tmp
+*.lock

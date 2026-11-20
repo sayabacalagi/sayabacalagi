@@ -1,0 +1,11 @@
+{
+	"id": "copy-contents",
+	"name": "Copy Contents",
+	"version": "1.0.3",
+	"minAppVersion": "1.12.7",
+	"description": "Copy or export file and folder contents in Markdown, plain text, or JSON formats.",
+	"author": "Richard Jones",
+	"authorUrl": "https://github.com/Accsimplify",
+	"fundingUrl": "https://buymeacoffee.com/accsimplify",
+	"isDesktopOnly": false
+}
