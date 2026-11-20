@@ -4,12 +4,10 @@ Maternal Physiology REPRODUCTIVE TRACT BREASTS SKIN METABOLIC CHANGES HEMATOLOGI
 
 ---
 
-> [!info] Navigasi Sesi 2 dari 2 · Blok ObsGyn
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 02 / 02 · Blok ObsGyn
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Obsgyn Pre-postest 2|Lanjut ke Posttest Sesi 2 →]]
-> - **Navigasi Blok:** [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Obsgyn Pre-postest 2|Lanjut ke Posttest Sesi 02 →]]
+> - [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

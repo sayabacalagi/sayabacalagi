@@ -377,11 +377,11 @@ Berikut 15 soal pilihan ganda dalam bahasa Indonesia berdasarkan **Bab 232: Basi
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 2 · Blok Kardiovaskular
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 01 / 02 · Blok Kardiovaskular
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Kardiovaskular 1|Buka Materi: Kardiovaskular 1 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Kardiovaskular Pre-postest 2|Sesi 2 — Kardiovaskular 2 →]]
-> - **Navigasi Blok:** [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Kardiovaskular 1|Materi: Kardiovaskular 1 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Kardiovaskular Pre-postest 2|Sesi 02 — Kardiovaskular 2 →]]
+> - [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

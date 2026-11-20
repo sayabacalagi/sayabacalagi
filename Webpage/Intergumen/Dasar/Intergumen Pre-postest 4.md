@@ -129,11 +129,11 @@ E. Klf4
 
 ---
 
-> [!info] Navigasi Sesi 4 dari 6 · Blok Intergumen
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 04 / 06 · Blok Intergumen
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 4|Buka Materi: Intergumen 4 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Intergumen Pre-postest 5|Sesi 5 — Intergumen 5 →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 4|Materi: Intergumen 4 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 5|Sesi 05 — Intergumen 5 →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

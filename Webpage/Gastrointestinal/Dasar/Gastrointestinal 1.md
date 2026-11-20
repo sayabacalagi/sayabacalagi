@@ -8,12 +8,10 @@
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 1 · Blok Gastrointestinal
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 01 / 01 · Blok Gastrointestinal
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Gastrointestinal Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
-> - **Navigasi Blok:** [[Gastrointestinal Landing|Daftar Sesi Gastrointestinal]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Gastrointestinal Pre-postest 1|Lanjut ke Posttest Sesi 01 →]]
+> - [[Gastrointestinal Landing|Daftar Sesi Gastrointestinal]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

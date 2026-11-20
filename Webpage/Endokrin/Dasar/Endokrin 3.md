@@ -6,12 +6,10 @@
 
 ---
 
-> [!info] Navigasi Sesi 3 dari 3 · Blok Endokrin
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 03 / 03 · Blok Endokrin
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Endokrin Pre-postest 3|Lanjut ke Posttest Sesi 3 →]]
-> - **Navigasi Blok:** [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Endokrin Pre-postest 3|Lanjut ke Posttest Sesi 03 →]]
+> - [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

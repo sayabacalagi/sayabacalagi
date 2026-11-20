@@ -129,11 +129,11 @@ E. Sebum
 
 ---
 
-> [!info] Navigasi Sesi 5 dari 6 · Blok Intergumen
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 05 / 06 · Blok Intergumen
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 5|Buka Materi: Intergumen 5 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Intergumen Pre-postest 6|Sesi 6 — Intergumen 6 →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 5|Materi: Intergumen 5 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 6|Sesi 06 — Intergumen 6 →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

@@ -8,10 +8,10 @@ EMBRYOLOGIC DEVELOPMENT Kidneys develop from intermediate mesoderm under the tim
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 1 · Blok Nefro
-> **Alur Sesi:** **`01 MATERI INTI (AKTIF)`** *(Evaluasi pretest/posttest belum tersedia untuk sesi ini)*
+> [!info] Sesi 01 / 01 · Blok Nefro
+> **Langkah:** **`01 MATERI INTI`** *(Evaluasi pretest/posttest belum tersedia pada sesi ini)*
 >
-> - **Langkah Selanjutnya:** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Nefro Landing|Ringkasan Blok Nefro →]]
-> - **Navigasi Blok:** [[Nefro Landing|Daftar Sesi Nefro]] · [[index|Beranda]]
+> - **Tahap berikutnya:** Sesi terakhir di blok ini. Kembali ke [[Nefro Landing|Blok Nefro →]]
+> - [[Nefro Landing|Daftar Sesi Nefro]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

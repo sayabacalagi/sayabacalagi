@@ -8,12 +8,10 @@
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 1 · Blok Pulmo
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 01 / 01 · Blok Pulmo
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Pulmo Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
-> - **Navigasi Blok:** [[Pulmo Landing|Daftar Sesi Pulmo]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Pulmo Pre-postest 1|Lanjut ke Posttest Sesi 01 →]]
+> - [[Pulmo Landing|Daftar Sesi Pulmo]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

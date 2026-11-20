@@ -128,11 +128,11 @@ E. Fungsi ovarium
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 3 · Blok Endokrin
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 01 / 03 · Blok Endokrin
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Endokrin 1|Buka Materi: Endokrin 1 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Endokrin Pre-postest 2|Sesi 2 — Endokrin 2 →]]
-> - **Navigasi Blok:** [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Endokrin 1|Materi: Endokrin 1 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Endokrin Pre-postest 2|Sesi 02 — Endokrin 2 →]]
+> - [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

@@ -6,12 +6,10 @@ Maternal Anatomy ANTERIOR ABDOMINAL WALL EXTERNAL GENERATIVE ORGANS INTERNAL GEN
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 2 · Blok ObsGyn
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 01 / 02 · Blok ObsGyn
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Obsgyn Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
-> - **Navigasi Blok:** [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Obsgyn Pre-postest 1|Lanjut ke Posttest Sesi 01 →]]
+> - [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

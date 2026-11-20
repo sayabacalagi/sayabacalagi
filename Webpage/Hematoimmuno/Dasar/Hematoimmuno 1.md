@@ -6,12 +6,10 @@
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 1 · Blok Hematoimmuno
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 01 / 01 · Blok Hematoimmuno
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Hematoimmuno Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
-> - **Navigasi Blok:** [[Hematoimmuno Landing|Daftar Sesi Hematoimmuno]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Hematoimmuno Pre-postest 1|Lanjut ke Posttest Sesi 01 →]]
+> - [[Hematoimmuno Landing|Daftar Sesi Hematoimmuno]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

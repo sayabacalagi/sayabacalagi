@@ -128,11 +128,11 @@ E. Peningkatan asam empedu di kolon
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 1 · Blok Gastrointestinal
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 01 / 01 · Blok Gastrointestinal
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Gastrointestinal 1|Buka Materi: Gastrointestinal 1 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Gastrointestinal Landing|Ringkasan Blok Gastrointestinal →]]
-> - **Navigasi Blok:** [[Gastrointestinal Landing|Daftar Sesi Gastrointestinal]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Gastrointestinal 1|Materi: Gastrointestinal 1 →]]
+> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Gastrointestinal Landing|Blok Gastrointestinal →]]
+> - [[Gastrointestinal Landing|Daftar Sesi Gastrointestinal]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

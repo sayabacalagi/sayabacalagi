@@ -129,11 +129,11 @@ E. Desmin positif, SMA negatif
 
 ---
 
-> [!info] Navigasi Sesi 2 dari 6 · Blok Intergumen
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 02 / 06 · Blok Intergumen
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 2|Buka Materi: Intergumen 2 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Intergumen Pre-postest 3|Sesi 3 — Intergumen 3 →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 2|Materi: Intergumen 2 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 3|Sesi 03 — Intergumen 3 →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

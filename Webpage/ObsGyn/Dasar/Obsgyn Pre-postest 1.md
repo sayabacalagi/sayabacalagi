@@ -128,11 +128,11 @@ E. 20 cm atau lebih
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 2 · Blok ObsGyn
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 01 / 02 · Blok ObsGyn
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Obsgyn 1|Buka Materi: Obsgyn 1 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Obsgyn Pre-postest 2|Sesi 2 — Obsgyn 2 →]]
-> - **Navigasi Blok:** [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Obsgyn 1|Materi: Obsgyn 1 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Obsgyn Pre-postest 2|Sesi 02 — Obsgyn 2 →]]
+> - [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

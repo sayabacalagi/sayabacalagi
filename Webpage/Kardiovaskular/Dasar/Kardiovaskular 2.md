@@ -8,12 +8,10 @@
 
 ---
 
-> [!info] Navigasi Sesi 2 dari 2 · Blok Kardiovaskular
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 02 / 02 · Blok Kardiovaskular
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Kardiovaskular Pre-postest 2|Lanjut ke Posttest Sesi 2 →]]
-> - **Navigasi Blok:** [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Kardiovaskular Pre-postest 2|Lanjut ke Posttest Sesi 02 →]]
+> - [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

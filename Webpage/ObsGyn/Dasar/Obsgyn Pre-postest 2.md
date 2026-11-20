@@ -128,11 +128,11 @@ E. Selalu menurun pada trimester ketiga
 
 ---
 
-> [!info] Navigasi Sesi 2 dari 2 · Blok ObsGyn
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 02 / 02 · Blok ObsGyn
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Obsgyn 2|Buka Materi: Obsgyn 2 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[ObsGyn Landing|Ringkasan Blok ObsGyn →]]
-> - **Navigasi Blok:** [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Obsgyn 2|Materi: Obsgyn 2 →]]
+> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[ObsGyn Landing|Blok ObsGyn →]]
+> - [[ObsGyn Landing|Daftar Sesi ObsGyn]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

@@ -128,11 +128,11 @@ E. ST elevasi difus
 
 ---
 
-> [!info] Navigasi Sesi 2 dari 2 · Blok Kardiovaskular
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 02 / 02 · Blok Kardiovaskular
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Kardiovaskular 2|Buka Materi: Kardiovaskular 2 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Kardiovaskular Landing|Ringkasan Blok Kardiovaskular →]]
-> - **Navigasi Blok:** [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Kardiovaskular 2|Materi: Kardiovaskular 2 →]]
+> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Kardiovaskular Landing|Blok Kardiovaskular →]]
+> - [[Kardiovaskular Landing|Daftar Sesi Kardiovaskular]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

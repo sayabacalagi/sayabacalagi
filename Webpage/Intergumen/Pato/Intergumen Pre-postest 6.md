@@ -129,11 +129,11 @@ E. Tidak menimbulkan efek samping sistemik
 
 ---
 
-> [!info] Navigasi Sesi 6 dari 6 · Blok Intergumen
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 06 / 06 · Blok Intergumen
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 6|Buka Materi: Intergumen 6 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Intergumen Landing|Ringkasan Blok Intergumen →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 6|Materi: Intergumen 6 →]]
+> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Intergumen Landing|Blok Intergumen →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

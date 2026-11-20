@@ -128,11 +128,11 @@ E. Selalu merupakan mekanisme positif feedback
 
 ---
 
-> [!info] Navigasi Sesi 3 dari 3 · Blok Endokrin
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 03 / 03 · Blok Endokrin
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Endokrin 3|Buka Materi: Endokrin 3 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Endokrin Landing|Ringkasan Blok Endokrin →]]
-> - **Navigasi Blok:** [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Endokrin 3|Materi: Endokrin 3 →]]
+> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Endokrin Landing|Blok Endokrin →]]
+> - [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

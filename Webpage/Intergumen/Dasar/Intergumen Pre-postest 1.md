@@ -129,11 +129,11 @@ E. Tinea korporis dan tinea versikolor
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 6 · Blok Intergumen
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 01 / 06 · Blok Intergumen
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 1|Buka Materi: Intergumen 1 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Intergumen Pre-postest 2|Sesi 2 — Intergumen 2 →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 1|Materi: Intergumen 1 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 2|Sesi 02 — Intergumen 2 →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

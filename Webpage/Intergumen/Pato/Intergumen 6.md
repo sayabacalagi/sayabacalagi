@@ -7,12 +7,10 @@ Dermatitis PART Chapter 22 :: Atopic Dermatitis :: Eric L. Simpson, Donald Y. M.
 
 ---
 
-> [!info] Navigasi Sesi 6 dari 6 · Blok Intergumen
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 06 / 06 · Blok Intergumen
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Intergumen Pre-postest 6|Lanjut ke Posttest Sesi 6 →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Intergumen Pre-postest 6|Lanjut ke Posttest Sesi 06 →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

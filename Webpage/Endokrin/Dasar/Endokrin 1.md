@@ -6,12 +6,10 @@ Section 1 Endocrinology 369 Approach to the Patient with Endocrine Disorders J. 
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 3 · Blok Endokrin
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 01 / 03 · Blok Endokrin
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Endokrin Pre-postest 1|Lanjut ke Posttest Sesi 1 →]]
-> - **Navigasi Blok:** [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Endokrin Pre-postest 1|Lanjut ke Posttest Sesi 01 →]]
+> - [[Endokrin Landing|Daftar Sesi Endokrin]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

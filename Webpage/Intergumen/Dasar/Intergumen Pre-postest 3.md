@@ -129,11 +129,11 @@ E. SOX10+ dan DCT+
 
 ---
 
-> [!info] Navigasi Sesi 3 dari 6 · Blok Intergumen
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 03 / 06 · Blok Intergumen
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Intergumen 3|Buka Materi: Intergumen 3 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Sesi berikutnya: [[Intergumen Pre-postest 4|Sesi 4 — Intergumen 4 →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Intergumen 3|Materi: Intergumen 3 →]]
+> - **Selesai evaluasi akhir (Posttest):** Lanjut ke [[Intergumen Pre-postest 4|Sesi 04 — Intergumen 4 →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

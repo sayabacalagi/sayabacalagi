@@ -128,11 +128,11 @@ E. FEV1/FVC meningkat
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 1 · Blok Pulmo
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 01 / 01 · Blok Pulmo
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Pulmo 1|Buka Materi: Pulmo 1 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Pulmo Landing|Ringkasan Blok Pulmo →]]
-> - **Navigasi Blok:** [[Pulmo Landing|Daftar Sesi Pulmo]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Pulmo 1|Materi: Pulmo 1 →]]
+> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Pulmo Landing|Blok Pulmo →]]
+> - [[Pulmo Landing|Daftar Sesi Pulmo]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

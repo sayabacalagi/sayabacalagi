@@ -128,11 +128,11 @@ E. Pemeriksaan neurologis hanya untuk spesialis saraf
 
 ---
 
-> [!info] Navigasi Sesi 1 dari 1 · Blok Neuro
-> **Alur Sesi:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
+> [!info] Sesi 01 / 01 · Blok Neuro
+> **Langkah:** `01 PRETEST` → `02 MATERI` → `03 POSTTEST`
 >
-> - **Jika baru memulai sesi (Pretest):** Lanjutkan membaca materi setelah menyelesaikan soal di atas: [[Neuro 1|Buka Materi: Neuro 1 →]]
-> - **Jika baru menyelesaikan evaluasi akhir (Posttest):** Seluruh sesi pada blok ini telah tercapai. Kembali ke [[Neuro Landing|Ringkasan Blok Neuro →]]
-> - **Navigasi Blok:** [[Neuro Landing|Daftar Sesi Neuro]] · [[index|Beranda]]
+> - **Baru mulai sesi (Pretest):** Setelah menjawab soal di atas, lanjut ke [[Neuro 1|Materi: Neuro 1 →]]
+> - **Selesai evaluasi akhir (Posttest):** Sesi terakhir di blok ini. Kembali ke [[Neuro Landing|Blok Neuro →]]
+> - [[Neuro Landing|Daftar Sesi Neuro]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->

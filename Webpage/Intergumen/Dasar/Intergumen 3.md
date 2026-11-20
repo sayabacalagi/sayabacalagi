@@ -8,12 +8,10 @@ Chapter 4 :: Developmental Biology of the Skin :: Luis Garza AT-A-GLANCE ■ The
 
 ---
 
-> [!info] Navigasi Sesi 3 dari 6 · Blok Intergumen
-> **Alur Sesi:** ~~01 Pretest~~ → **`02 MATERI (AKTIF)`** → `03 POSTTEST`
+> [!info] Sesi 03 / 06 · Blok Intergumen
+> **Langkah:** ~~01 Pretest~~ → **`02 MATERI (SEDANG DIBACA)`** → `03 POSTTEST`
 >
-> > *Broty: "Materi selesai dibaca. Lanjutkan ke posttest untuk mengevaluasi pemahamanmu pada sesi ini."*
->
-> - **Langkah Selanjutnya:** [[Intergumen Pre-postest 3|Lanjut ke Posttest Sesi 3 →]]
-> - **Navigasi Blok:** [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
+> - **Tahap berikutnya:** [[Intergumen Pre-postest 3|Lanjut ke Posttest Sesi 03 →]]
+> - [[Intergumen Landing|Daftar Sesi Intergumen]] · [[index|Beranda]]
 
 <!-- SJAWATDH-NAV:END -->
