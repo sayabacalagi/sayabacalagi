@@ -1,50 +1,40 @@
 ---
-title: Sjawatdh — Med-Study Hub & Clinical Notes
-description: Ruang belajar mahasiswa kedokteran dengan alur Pretest → Materi → Posttest yang santai dan bebas tekanan.
+title: Sjawatdh — Simposium & LMS Belajar Klinis
+description: Platform belajar kedokteran bergaya LMS Simposium — pilih blok, ikuti sesi berurutan dari Pretest, Materi, hingga Posttest.
 ---
 
 <div align="center">
 
-# 🩺 Sjawatdh — Med-Study Hub
-**Dibuat "bodoh" dulu lewat Pretest, pahami pelan-pelan di Materi, lalu ukur ulang di Posttest.**
+# 🩺 Sjawatdh — Simposium Belajar Klinis
+**Pilih blok sistem organ di bawah, lalu ikuti alur belajar berurutan secara otomatis.**
 
-`9 Organ Systems` · `Harrison's Core` · `Pretest → Materi → Posttest`
+`9 Blok Simposium` · `Alur Otomatis: Pretest → Materi → Posttest` · `100% Free`
 
 </div>
 
 ---
 
 > [!tip] 🦎 Broty says:
-> *"Gue axolotl—secara anatomi gue nggak bisa cemberut, dan kalau kehilangan ekor bisa tumbuh ulang. Di sini juga sama: salah pas Pretest itu wajar banget. Alir aja pelan-pelan, nggak ada yang ngejar."*
+> *"Anggap aja lagi ikut simposium santai. Pilih satu blok di bawah, masuk ke Sesi 1, nanti alurnya ngalir sendiri dari Pretest, baca materi bareng gue, sampai Posttest. Nggak ada yang ngejar!"*
 
-## 🧭 Alur Belajar (Ala LMS Kemenkes, Versi Nyaman)
+## 📚 Pilih Blok Simposium
 
-1. **Tahap 1 — Pretest (Pemetaan Awal):** Kerjakan soal **Pre/Post-Test** *sebelum* baca bab biar otak sadar bagian mana yang masih kosong.
-2. **Tahap 2 — Materi Inti (`Dasar` & `Patologi`):** Baca bab **Harrison's** dengan santai untuk menambal bagian yang tadi belum kejawab.
-3. **Tahap 3 — Posttest (Refleksi Pertumbuhan):** Ulangi soal yang sama sesudah baca. Nggak ada vonis lulus/gagal—kalau masih kurang pas, tinggal baca ulang bagiannya.
-
----
-
-## 📚 Direktori Sistem Organ
-
-| # | Sistem Organ | Akses Modul | Isi Blok |
-| :-: | :--- | :--- | :--- |
-| **01** | **Endokrin** | [[Endokrin Landing\|Masuk Blok Endokrin →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **02** | **Gastrointestinal** | [[Gastrointestinal Landing\|Masuk Blok Gastro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **03** | **Hematoimmuno** | [[Hematoimmuno Landing\|Masuk Blok Hematoimmuno →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **04** | **Intergumen** | [[Intergumen Landing\|Masuk Blok Intergumen →]] | `🟢 Dasar` · `🟣 Patologi` · `📝 Pre/Post-Test` |
-| **05** | **Kardiovaskular** | [[Kardiovaskular Landing\|Masuk Blok Kardiovaskular →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **06** | **Nefro** | [[Nefro Landing\|Masuk Blok Nefro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **07** | **Neuro** | [[Neuro Landing\|Masuk Blok Neuro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **08** | **ObsGyn** | [[ObsGyn Landing\|Masuk Blok ObsGyn →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **09** | **Pulmo** | [[Pulmo Landing\|Masuk Blok Pulmo →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| Blok | Sistem Organ | Jumlah Sesi | Akses Kelas | Status |
+| :---: | :--- | :---: | :--- | :---: |
+| **01** | **Endokrin** | `3 Sesi` | [[Endokrin Landing\|Masuk Kelas Endokrin →]] | `░░░░░░░░░░` **Siap** |
+| **02** | **Gastrointestinal** | `3 Sesi` | [[Gastrointestinal Landing\|Masuk Kelas Gastro →]] | `░░░░░░░░░░` **Siap** |
+| **03** | **Hematoimmuno** | `3 Sesi` | [[Hematoimmuno Landing\|Masuk Kelas Hematoimmuno →]] | `░░░░░░░░░░` **Siap** |
+| **04** | **Intergumen** | `4 Sesi` | [[Intergumen Landing\|Masuk Kelas Intergumen →]] | `░░░░░░░░░░` **Siap** |
+| **05** | **Kardiovaskular** | `3 Sesi` | [[Kardiovaskular Landing\|Masuk Kelas Kardiovaskular →]] | `░░░░░░░░░░` **Siap** |
+| **06** | **Nefro** | `3 Sesi` | [[Nefro Landing\|Masuk Kelas Nefro →]] | `░░░░░░░░░░` **Siap** |
+| **07** | **Neuro** | `3 Sesi` | [[Neuro Landing\|Masuk Kelas Neuro →]] | `░░░░░░░░░░` **Siap** |
+| **08** | **ObsGyn** | `3 Sesi` | [[ObsGyn Landing\|Masuk Kelas ObsGyn →]] | `░░░░░░░░░░` **Siap** |
+| **09** | **Pulmo** | `3 Sesi` | [[Pulmo Landing\|Masuk Kelas Pulmo →]] | `░░░░░░░░░░` **Siap** |
 
 ---
 
 <div align="center">
 
-📖 [[Untuk Sjawatdh (Landing)\|Tentang Sjawatdh & Manifesto Belajar]]
-
-*Curated for personal medical study — adapted from Harrison's Principles of Internal Medicine.*
+📖 [[Untuk Sjawatdh (Landing)\|Tentang Platform & Manifesto Belajar]]
 
 </div>
