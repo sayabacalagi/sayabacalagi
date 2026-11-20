@@ -6,28 +6,24 @@ description: Bedakan pola obstruktif vs restriktif, analisis auskultasi paru, hi
 <div align="center">
 
 # 🧠 Blok Pulmo
-**Alur Belajar: Pretest → Materi → Posttest**
+**Simposium Pembelajaran Terstruktur**
 
-[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
 </div>
 
 ---
 
-> [!tip] 🦎 Celetukan Broty
-> *"Nggak perlu dilawan. Baca pelan-pelan aja, kayak air."*
+> [!tip] 🦎 Broty
+> *"Kalau capek, berhenti di sesi mana aja aman. Lanjutin lagi pas udah seger."*
 
-## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
-*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
-- 📝 **Pretest:** [[Pulmo Pre-postest 1|Kerjakan Pulmo Pre-postest 1 dulu (sebelum baca)]]
+## 📋 Daftar Sesi Blok Pulmo
 
-## 2️⃣ Tahap 2 — Materi Inti
-*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
-- 🟢 **Dasar:** [[Pulmo 1|Baca Pulmo 1]]
+Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewat **Pretest → Materi → Posttest** melalui bilah navigasi di bawah halaman.
 
-## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
-*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
-- 🎯 **Posttest:** [[Pulmo Pre-postest 1|Ulangi Pulmo Pre-postest 1 sesudah baca materi]]
+| Sesi | Topik Pembelajaran | Alur Otomatis | Aksi |
+| :---: | :--- | :--- | :---: |
+| **Sesi 1** | **Pulmo 1** (🟢 Dasar) | Pretest → Materi → Posttest | [[Pulmo Pre-postest 1|▶️ Mulai Sesi 1 →]] |
 
 ---
 
@@ -44,3 +40,10 @@ description: Bedakan pola obstruktif vs restriktif, analisis auskultasi paru, hi
 [[index|← Kembali ke Direktori Sistem Organ]]
 
 </div>
+
+---
+
+> [!abstract] 📊 Progress Bar Blok Pulmo
+> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
+> `Sesi 1`  
+> [[index|← Pilih Blok Lainnya]]

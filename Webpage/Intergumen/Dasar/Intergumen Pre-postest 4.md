@@ -124,3 +124,14 @@ E. Klf4
 13. B  
 14. B  
 15. A
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 4 dari 6**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Intergumen 4|📖 Masuk ke Materi: Intergumen 4 →]]**
+> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+
+<!-- LMS-NAV:END -->

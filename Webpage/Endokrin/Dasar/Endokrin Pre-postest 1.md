@@ -123,3 +123,14 @@ E. Fungsi ovarium
 13. A  
 14. A  
 15. A
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 1 dari 3**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Endokrin 1|📖 Masuk ke Materi: Endokrin 1 →]]**
+> *(Kembali ke [[Endokrin Landing|Daftar Sesi Blok Endokrin]])*
+
+<!-- LMS-NAV:END -->

@@ -123,3 +123,14 @@ E. FEV1/FVC meningkat
 13. A  
 14. A  
 15. A
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 1 dari 1**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Pulmo 1|📖 Masuk ke Materi: Pulmo 1 →]]**
+> *(Kembali ke [[Pulmo Landing|Daftar Sesi Blok Pulmo]])*
+
+<!-- LMS-NAV:END -->

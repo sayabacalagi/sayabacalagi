@@ -6,28 +6,24 @@ description: Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan n
 <div align="center">
 
 # 🧠 Blok Neuro
-**Alur Belajar: Pretest → Materi → Posttest**
+**Simposium Pembelajaran Terstruktur**
 
-[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
 </div>
 
 ---
 
-> [!tip] 🦎 Celetukan Broty
-> *"Kalau bagian ini terasa berat, istirahat sebentar terus balik lagi. Nggak ada timer di sini."*
+> [!tip] 🦎 Broty
+> *"Pilih Sesi 1 dulu ya. Di bawah tiap halaman udah gue siapin tombol lanjut otomatis."*
 
-## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
-*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
-- 📝 **Pretest:** [[Neuro Pre-postest 1|Kerjakan Neuro Pre-postest 1 dulu (sebelum baca)]]
+## 📋 Daftar Sesi Blok Neuro
 
-## 2️⃣ Tahap 2 — Materi Inti
-*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
-- 🟢 **Dasar:** [[Neuro 1|Baca Neuro 1]]
+Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewat **Pretest → Materi → Posttest** melalui bilah navigasi di bawah halaman.
 
-## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
-*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
-- 🎯 **Posttest:** [[Neuro Pre-postest 1|Ulangi Neuro Pre-postest 1 sesudah baca materi]]
+| Sesi | Topik Pembelajaran | Alur Otomatis | Aksi |
+| :---: | :--- | :--- | :---: |
+| **Sesi 1** | **Neuro 1** (🟢 Dasar) | Pretest → Materi → Posttest | [[Neuro Pre-postest 1|▶️ Mulai Sesi 1 →]] |
 
 ---
 
@@ -44,3 +40,10 @@ description: Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan n
 [[index|← Kembali ke Direktori Sistem Organ]]
 
 </div>
+
+---
+
+> [!abstract] 📊 Progress Bar Blok Neuro
+> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
+> `Sesi 1`  
+> [[index|← Pilih Blok Lainnya]]

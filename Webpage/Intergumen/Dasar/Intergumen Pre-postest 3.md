@@ -124,3 +124,14 @@ E. SOX10+ dan DCT+
 13. B  
 14. C  
 15. A
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 3 dari 6**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Intergumen 3|📖 Masuk ke Materi: Intergumen 3 →]]**
+> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+
+<!-- LMS-NAV:END -->

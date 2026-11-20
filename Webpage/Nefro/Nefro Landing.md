@@ -6,28 +6,24 @@ description: Pahami arsitektur nefron, keseimbangan asam-basa, AKI/CKD, hingga k
 <div align="center">
 
 # 🧠 Blok Nefro
-**Alur Belajar: Pretest → Materi → Posttest**
+**Simposium Pembelajaran Terstruktur**
 
-[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
 </div>
 
 ---
 
-> [!tip] 🦎 Celetukan Broty
-> *"Salah di Pretest itu informasi, bukan vonis. Justru biar tahu harus fokus baca di mana."*
+> [!tip] 🦎 Broty
+> *"Materi udah kelar? Yuk ukur pemahamanmu di Posttest—biar tahu yang mana yang masih bolong."*
 
-## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
-*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
-- *Belum ada soal Pretest di blok ini.*
+## 📋 Daftar Sesi Blok Nefro
 
-## 2️⃣ Tahap 2 — Materi Inti
-*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
-- 🟢 **Dasar:** [[Nefro 1|Baca Nefro 1]]
+Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewat **Pretest → Materi → Posttest** melalui bilah navigasi di bawah halaman.
 
-## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
-*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
-- *Belum ada soal Posttest di blok ini.*
+| Sesi | Topik Pembelajaran | Alur Otomatis | Aksi |
+| :---: | :--- | :--- | :---: |
+| **Sesi 1** | **Nefro 1** (🟢 Dasar) | Materi Inti | [[Nefro 1|▶️ Mulai Sesi 1 →]] |
 
 ---
 
@@ -44,3 +40,10 @@ description: Pahami arsitektur nefron, keseimbangan asam-basa, AKI/CKD, hingga k
 [[index|← Kembali ke Direktori Sistem Organ]]
 
 </div>
+
+---
+
+> [!abstract] 📊 Progress Bar Blok Nefro
+> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
+> `Sesi 1`  
+> [[index|← Pilih Blok Lainnya]]

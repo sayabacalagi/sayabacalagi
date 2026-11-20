@@ -123,3 +123,14 @@ E. Selalu merupakan mekanisme positif feedback
 13. B  
 14. A  
 15. B
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 2 dari 3**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Endokrin 2|📖 Masuk ke Materi: Endokrin 2 →]]**
+> *(Kembali ke [[Endokrin Landing|Daftar Sesi Blok Endokrin]])*
+
+<!-- LMS-NAV:END -->

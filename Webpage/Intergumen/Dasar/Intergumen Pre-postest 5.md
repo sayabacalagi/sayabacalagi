@@ -124,3 +124,14 @@ E. Sebum
 13. B  
 14. B  
 15. C
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 5 dari 6**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Intergumen 5|📖 Masuk ke Materi: Intergumen 5 →]]**
+> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+
+<!-- LMS-NAV:END -->

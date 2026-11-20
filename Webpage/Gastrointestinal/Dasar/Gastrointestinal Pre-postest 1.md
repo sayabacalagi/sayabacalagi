@@ -123,3 +123,14 @@ E. Peningkatan asam empedu di kolon
 13. A  
 14. A  
 15. B
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 1 dari 1**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Gastrointestinal 1|📖 Masuk ke Materi: Gastrointestinal 1 →]]**
+> *(Kembali ke [[Gastrointestinal Landing|Daftar Sesi Blok Gastrointestinal]])*
+
+<!-- LMS-NAV:END -->

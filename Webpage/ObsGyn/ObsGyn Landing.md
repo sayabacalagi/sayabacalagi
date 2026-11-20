@@ -6,31 +6,25 @@ description: Pelajari fisiologi kehamilan, kegawatan obstetri, hingga patologi g
 <div align="center">
 
 # 🧠 Blok ObsGyn
-**Alur Belajar: Pretest → Materi → Posttest**
+**Simposium Pembelajaran Terstruktur**
 
-[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
 </div>
 
 ---
 
-> [!tip] 🦎 Celetukan Broty
-> *"Gue tinggal di air, jadi gue tenang. Kamu juga boleh tenang ngerjain blok ini."*
+> [!tip] 🦎 Broty
+> *"Nggak perlu bingung milih mana dulu—klik Mulai Sesi, alurnya langsung jalan."*
 
-## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
-*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
-- 📝 **Pretest:** [[Obsgyn Pre-postest 1|Kerjakan Obsgyn Pre-postest 1 dulu (sebelum baca)]]
-- 📝 **Pretest:** [[Obsgyn Pre-postest 2|Kerjakan Obsgyn Pre-postest 2 dulu (sebelum baca)]]
+## 📋 Daftar Sesi Blok ObsGyn
 
-## 2️⃣ Tahap 2 — Materi Inti
-*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
-- 🟢 **Dasar:** [[Obsgyn 1|Baca Obsgyn 1]]
-- 🟢 **Dasar:** [[Obsgyn 2|Baca Obsgyn 2]]
+Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewat **Pretest → Materi → Posttest** melalui bilah navigasi di bawah halaman.
 
-## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
-*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
-- 🎯 **Posttest:** [[Obsgyn Pre-postest 1|Ulangi Obsgyn Pre-postest 1 sesudah baca materi]]
-- 🎯 **Posttest:** [[Obsgyn Pre-postest 2|Ulangi Obsgyn Pre-postest 2 sesudah baca materi]]
+| Sesi | Topik Pembelajaran | Alur Otomatis | Aksi |
+| :---: | :--- | :--- | :---: |
+| **Sesi 1** | **Obsgyn 1** (🟢 Dasar) | Pretest → Materi → Posttest | [[Obsgyn Pre-postest 1|▶️ Mulai Sesi 1 →]] |
+| **Sesi 2** | **Obsgyn 2** (🟢 Dasar) | Pretest → Materi → Posttest | [[Obsgyn Pre-postest 2|▶️ Mulai Sesi 2 →]] |
 
 ---
 
@@ -47,3 +41,10 @@ description: Pelajari fisiologi kehamilan, kegawatan obstetri, hingga patologi g
 [[index|← Kembali ke Direktori Sistem Organ]]
 
 </div>
+
+---
+
+> [!abstract] 📊 Progress Bar Blok ObsGyn
+> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (2 Sesi Tersedia)**  
+> `Sesi 1` ➔ `Sesi 2`  
+> [[index|← Pilih Blok Lainnya]]

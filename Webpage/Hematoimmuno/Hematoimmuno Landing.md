@@ -6,28 +6,24 @@ description: Kupas tuntas anemia, hemostasis, infeksi sistemik, dan spektrum aut
 <div align="center">
 
 # 🧠 Blok Hematoimmuno
-**Alur Belajar: Pretest → Materi → Posttest**
+**Simposium Pembelajaran Terstruktur**
 
-[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
 </div>
 
 ---
 
-> [!tip] 🦎 Celetukan Broty
-> *"Kalau bagian ini terasa berat, istirahat sebentar terus balik lagi. Nggak ada timer di sini."*
+> [!tip] 🦎 Broty
+> *"Kalau capek, berhenti di sesi mana aja aman. Lanjutin lagi pas udah seger."*
 
-## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
-*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
-- 📝 **Pretest:** [[Hematoimmuno Pre-postest 1|Kerjakan Hematoimmuno Pre-postest 1 dulu (sebelum baca)]]
+## 📋 Daftar Sesi Blok Hematoimmuno
 
-## 2️⃣ Tahap 2 — Materi Inti
-*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
-- 🟢 **Dasar:** [[Hematoimmuno 1|Baca Hematoimmuno 1]]
+Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewat **Pretest → Materi → Posttest** melalui bilah navigasi di bawah halaman.
 
-## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
-*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
-- 🎯 **Posttest:** [[Hematoimmuno Pre-postest 1|Ulangi Hematoimmuno Pre-postest 1 sesudah baca materi]]
+| Sesi | Topik Pembelajaran | Alur Otomatis | Aksi |
+| :---: | :--- | :--- | :---: |
+| **Sesi 1** | **Hematoimmuno 1** (🟢 Dasar) | Pretest → Materi → Posttest | [[Hematoimmuno Pre-postest 1|▶️ Mulai Sesi 1 →]] |
 
 ---
 
@@ -44,3 +40,10 @@ description: Kupas tuntas anemia, hemostasis, infeksi sistemik, dan spektrum aut
 [[index|← Kembali ke Direktori Sistem Organ]]
 
 </div>
+
+---
+
+> [!abstract] 📊 Progress Bar Blok Hematoimmuno
+> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
+> `Sesi 1`  
+> [[index|← Pilih Blok Lainnya]]

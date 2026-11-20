@@ -124,3 +124,14 @@ E. Desmin positif, SMA negatif
 13. B  
 14. A  
 15. B
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 2 dari 6**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Intergumen 2|📖 Masuk ke Materi: Intergumen 2 →]]**
+> *(Kembali ke [[Intergumen Landing|Daftar Sesi Blok Intergumen]])*
+
+<!-- LMS-NAV:END -->

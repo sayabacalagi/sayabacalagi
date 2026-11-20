@@ -6,34 +6,26 @@ description: Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — paha
 <div align="center">
 
 # 🧠 Blok Endokrin
-**Alur Belajar: Pretest → Materi → Posttest**
+**Simposium Pembelajaran Terstruktur**
 
-[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
 </div>
 
 ---
 
-> [!tip] 🦎 Celetukan Broty
-> *"Nggak perlu dilawan. Baca pelan-pelan aja, kayak air."*
+> [!tip] 🦎 Broty
+> *"Pilih Sesi 1 dulu ya. Di bawah tiap halaman udah gue siapin tombol lanjut otomatis."*
 
-## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
-*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
-- 📝 **Pretest:** [[Endokrin Pre-postest 1|Kerjakan Endokrin Pre-postest 1 dulu (sebelum baca)]]
-- 📝 **Pretest:** [[Endokrin Pre-postest 2|Kerjakan Endokrin Pre-postest 2 dulu (sebelum baca)]]
-- 📝 **Pretest:** [[Endokrin Pre-postest 3|Kerjakan Endokrin Pre-postest 3 dulu (sebelum baca)]]
+## 📋 Daftar Sesi Blok Endokrin
 
-## 2️⃣ Tahap 2 — Materi Inti
-*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
-- 🟢 **Dasar:** [[Endokrin 1|Baca Endokrin 1]]
-- 🟢 **Dasar:** [[Endokrin 2|Baca Endokrin 2]]
-- 🟢 **Dasar:** [[Endokrin 3|Baca Endokrin 3]]
+Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewat **Pretest → Materi → Posttest** melalui bilah navigasi di bawah halaman.
 
-## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
-*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
-- 🎯 **Posttest:** [[Endokrin Pre-postest 1|Ulangi Endokrin Pre-postest 1 sesudah baca materi]]
-- 🎯 **Posttest:** [[Endokrin Pre-postest 2|Ulangi Endokrin Pre-postest 2 sesudah baca materi]]
-- 🎯 **Posttest:** [[Endokrin Pre-postest 3|Ulangi Endokrin Pre-postest 3 sesudah baca materi]]
+| Sesi | Topik Pembelajaran | Alur Otomatis | Aksi |
+| :---: | :--- | :--- | :---: |
+| **Sesi 1** | **Endokrin 1** (🟢 Dasar) | Pretest → Materi → Posttest | [[Endokrin Pre-postest 1|▶️ Mulai Sesi 1 →]] |
+| **Sesi 2** | **Endokrin 2** (🟢 Dasar) | Pretest → Materi → Posttest | [[Endokrin Pre-postest 2|▶️ Mulai Sesi 2 →]] |
+| **Sesi 3** | **Endokrin 3** (🟢 Dasar) | Pretest → Materi → Posttest | [[Endokrin Pre-postest 3|▶️ Mulai Sesi 3 →]] |
 
 ---
 
@@ -50,3 +42,10 @@ description: Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — paha
 [[index|← Kembali ke Direktori Sistem Organ]]
 
 </div>
+
+---
+
+> [!abstract] 📊 Progress Bar Blok Endokrin
+> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (3 Sesi Tersedia)**  
+> `Sesi 1` ➔ `Sesi 2` ➔ `Sesi 3`  
+> [[index|← Pilih Blok Lainnya]]

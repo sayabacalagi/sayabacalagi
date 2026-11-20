@@ -123,3 +123,14 @@ E. Pemeriksaan neurologis hanya untuk spesialis saraf
 13. B  
 14. B  
 15. B
+
+<!-- LMS-NAV:BEGIN -->
+
+---
+
+> [!info] **Navigasi Sesi LMS — Sesi 1 dari 1**
+> Tahap 1/3: Pretest $bar $pct%$broty
+> **[[Neuro 1|📖 Masuk ke Materi: Neuro 1 →]]**
+> *(Kembali ke [[Neuro Landing|Daftar Sesi Blok Neuro]])*
+
+<!-- LMS-NAV:END -->

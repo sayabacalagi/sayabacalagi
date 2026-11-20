@@ -6,28 +6,24 @@ description: Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags 
 <div align="center">
 
 # 🧠 Blok Gastrointestinal
-**Alur Belajar: Pretest → Materi → Posttest**
+**Simposium Pembelajaran Terstruktur**
 
-[[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
+[[index|🏠 Daftar Blok]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
 </div>
 
 ---
 
-> [!tip] 🦎 Celetukan Broty
-> *"Salah di Pretest itu informasi, bukan vonis. Justru biar tahu harus fokus baca di mana."*
+> [!tip] 🦎 Broty
+> *"Nggak perlu bingung milih mana dulu—klik Mulai Sesi, alurnya langsung jalan."*
 
-## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
-*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
-- 📝 **Pretest:** [[Gastrointestinal Pre-postest 1|Kerjakan Gastrointestinal Pre-postest 1 dulu (sebelum baca)]]
+## 📋 Daftar Sesi Blok Gastrointestinal
 
-## 2️⃣ Tahap 2 — Materi Inti
-*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
-- 🟢 **Dasar:** [[Gastrointestinal 1|Baca Gastrointestinal 1]]
+Klik **Mulai Sesi** pada topik di bawah. Setiap sesi memandu kamu berurutan lewat **Pretest → Materi → Posttest** melalui bilah navigasi di bawah halaman.
 
-## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
-*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
-- 🎯 **Posttest:** [[Gastrointestinal Pre-postest 1|Ulangi Gastrointestinal Pre-postest 1 sesudah baca materi]]
+| Sesi | Topik Pembelajaran | Alur Otomatis | Aksi |
+| :---: | :--- | :--- | :---: |
+| **Sesi 1** | **Gastrointestinal 1** (🟢 Dasar) | Pretest → Materi → Posttest | [[Gastrointestinal Pre-postest 1|▶️ Mulai Sesi 1 →]] |
 
 ---
 
@@ -44,3 +40,10 @@ description: Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags 
 [[index|← Kembali ke Direktori Sistem Organ]]
 
 </div>
+
+---
+
+> [!abstract] 📊 Progress Bar Blok Gastrointestinal
+> **Kelengkapan Blok:** `░░░░░░░░░░` **0% (1 Sesi Tersedia)**  
+> `Sesi 1`  
+> [[index|← Pilih Blok Lainnya]]
