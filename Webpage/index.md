@@ -8,14 +8,14 @@ description: Ruang belajar mahasiswa kedokteran berbasis Harrison's Principles o
 # 🩺 Sjawatdh — Med-Study Hub
 **From Basic Mechanisms to Clinical Reasoning — versi anti-burnout.**
 
-`9 Organ Systems` · `Harrison's Core` · `Pre/Post-Test Drill`
+`9 Organ Systems` · `Harrison's Core` · `Pre/Post-Test Drill` · `100% Free`
 
 </div>
 
 ---
 
 > [!abstract] Halo, Sjawatdh! 👋
-> Lagi ngejar materi blok atau *review* buat *exam* tapi *chapter* **Harrison's** terasa tebal banget? **Sjawatdh** ngerangkum konsep fundamental (*basic physiology & pathophysiology*) ke dalam modul sistem organ yang terstruktur, lengkap sama **Pre/Post-Test** buat *recall* cepat biar nggak cuma ngafal mati.
+> Lagi ngejar materi blok atau *review* buat *exam* tapi *chapter* **Harrison's** terasa tebal banget? **Sjawatdh** ngerangkum konsep fundamental (*basic physiology & pathophysiology*) ke dalam modul sistem organ yang terstruktur, lengkap sama **Pre/Post-Test** buat *active recall* biar nggak cuma ngafal mati.
 
 ## 🧭 Study Flow (Biar Nggak *Overwhelmed*)
 
@@ -34,17 +34,17 @@ description: Ruang belajar mahasiswa kedokteran berbasis Harrison's Principles o
 | **02** | **Gastrointestinal** | [[Gastrointestinal Landing\|Gas ke Gastro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
 | **03** | **Hematoimmuno** | [[Hematoimmuno Landing\|Gas ke Hematoimmuno →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
 | **04** | **Intergumen** | [[Intergumen Landing\|Gas ke Intergumen →]] | `🟢 Dasar` · `🟣 Patologi` · `📝 Pre/Post-Test` |
-| **05** | **Kardiovaskular** | [[Kardiovascular Landing\|Gas ke Kardiovaskular →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **05** | **Kardiovaskular** | [[Kardiovaskular Landing\|Gas ke Kardiovaskular →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
 | **06** | **Nefro** | [[Nefro Landing\|Gas ke Nefro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
 | **07** | **Neuro** | [[Neuro Landing\|Gas ke Neuro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **08** | **ObsGyn** | [[Obsgyn Landing 1\|Gas ke ObsGyn →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **08** | **ObsGyn** | [[ObsGyn Landing\|Gas ke ObsGyn →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
 | **09** | **Pulmo** | [[Pulmo Landing\|Gas ke Pulmo →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
 
 ---
 
 <div align="center">
 
-📖 [[Untuk Sjawatdh (Landing)\|Kenalan Lebih Jauh sama Sjawatdh]]
+📖 [[Untuk Sjawatdh (Landing)\|Kenalan Lebih Jauh sama Sjawatdh & Manifesto Belajar]]
 
 *Curated for personal medical study — adapted from Harrison's Principles of Internal Medicine.*
 

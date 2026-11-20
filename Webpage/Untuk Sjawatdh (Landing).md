@@ -33,10 +33,10 @@ description: Catatan pengantar, dedikasi belajar kedokteran, dan Sumpah Hipokrat
 | **Gastrointestinal** | [[Gastrointestinal Landing\|Buka Blok Gastro →]] | `Live` |
 | **Hematoimmuno** | [[Hematoimmuno Landing\|Buka Blok Hematoimmuno →]] | `Live` |
 | **Intergumen** | [[Intergumen Landing\|Buka Blok Intergumen →]] | `Live` |
-| **Kardiovaskular** | [[Kardiovascular Landing\|Buka Blok Kardiovaskular →]] | `Live` |
+| **Kardiovaskular** | [[Kardiovaskular Landing\|Buka Blok Kardiovaskular →]] | `Live` |
 | **Nefro** | [[Nefro Landing\|Buka Blok Nefro →]] | `Live` |
 | **Neuro** | [[Neuro Landing\|Buka Blok Neuro →]] | `Live` |
-| **ObsGyn** | [[Obsgyn Landing 1\|Buka Blok ObsGyn →]] | `Live` |
+| **ObsGyn** | [[ObsGyn Landing\|Buka Blok ObsGyn →]] | `Live` |
 | **Pulmo** | [[Pulmo Landing\|Buka Blok Pulmo →]] | `Live` |
 
 > *Catatan: Blok lanjutan seperti Pediatri, Bedah, Mata, THT, Psikiatri, HKEK-Forensik, dan IKM akan menyusul secara bertahap.*
