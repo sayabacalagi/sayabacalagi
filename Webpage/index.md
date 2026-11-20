@@ -1,51 +1,51 @@
 ---
-title: Sjawatdh — Pusat Studi Klinis & Referensi Medis
-description: Portal pembelajaran kedokteran terstruktur berbasis Harrison's Principles of Internal Medicine dan evaluasi Pre/Post-Test.
+title: Sjawatdh — Med-Study Hub & Clinical Notes
+description: Ruang belajar mahasiswa kedokteran berbasis Harrison's Principles of Internal Medicine & Pre/Post-Test drill.
 ---
 
 <div align="center">
 
-# 🩺 Sjawatdh — Pusat Studi Klinis
-**Dari Mekanisme Dasar Menuju Keputusan Klinis yang Presisi**
+# 🩺 Sjawatdh — Med-Study Hub
+**From Basic Mechanisms to Clinical Reasoning — versi anti-burnout.**
 
-`9 Sistem Organ` · `Referensi Harrison's` · `Evaluasi Pre/Post-Test`
+`9 Organ Systems` · `Harrison's Core` · `Pre/Post-Test Drill`
 
 </div>
 
 ---
 
-> [!abstract] Tentang Ruang Belajar Ini
-> **Sjawatdh** menyusun ulang konsep inti dari *Harrison's Principles of Internal Medicine* ke dalam jalur belajar per sistem organ yang terarah—dipadukan dengan evaluasi mandiri (**Pre/Post-Test**) berbahasa Indonesia untuk menguji pemahaman klinis secara terukur.
+> [!abstract] Halo, Sjawatdh! 👋
+> Lagi ngejar materi blok atau *review* buat *exam* tapi *chapter* **Harrison's** terasa tebal banget? **Sjawatdh** ngerangkum konsep fundamental (*basic physiology & pathophysiology*) ke dalam modul sistem organ yang terstruktur, lengkap sama **Pre/Post-Test** buat *recall* cepat biar nggak cuma ngafal mati.
 
-## 🧭 Cara Menggunakan Portal
+## 🧭 Study Flow (Biar Nggak *Overwhelmed*)
 
-> [!tip] Alur Belajar 3 Langkah
-> 1. **Pilih Sistem Organ** pada direktori di bawah sesuai blok yang sedang dipelajari.
-> 2. **Telaah Materi Inti** (`Dasar` & `Patologi`) untuk memahami fisiologi, mekanisme penyakit, dan pendekatan diagnostik.
-> 3. **Uji Pemahaman** melalui modul **Pre/Post-Test** sebelum dan sesudah membaca bab.
+> [!tip] 3-Step Clinical Study Loop
+> 1. **Pick Your Block** — Pilih sistem organ yang lagi kamu kejar di direktori bawah.
+> 2. **Master the Core (`Dasar` & `Patologi`)** — Pahami *underlying mechanism*, pendekatan klinis (*clinical approach*), dan *red flags* dari rujukan **Harrison's**.
+> 3. **Active Recall (`Pre/Post-Test`)** — Kerjain soal latihan sebelum & sesudah baca bab buat ngecek *retention* dan *clinical reasoning* kamu.
 
 ---
 
 ## 📚 Direktori Sistem Organ
 
-| # | Sistem Organ | Akses Modul | Komponen Tersedia |
+| # | Sistem Organ | Akses Modul | Isi Blok |
 | :-: | :--- | :--- | :--- |
-| **01** | **Endokrin** | [[Endokrin Landing\|Masuk Blok Endokrin →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **02** | **Gastrointestinal** | [[Gastrointestinal Landing\|Masuk Blok Gastro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **03** | **Hematoimmuno** | [[Hematoimmuno Landing\|Masuk Blok Hematoimmuno →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **04** | **Intergumen** | [[Intergumen Landing\|Masuk Blok Intergumen →]] | `🟢 Dasar` · `🟣 Patologi` · `📝 Pre/Post-Test` |
-| **05** | **Kardiovaskular** | [[Kardiovascular Landing\|Masuk Blok Kardiovaskular →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **06** | **Nefro** | [[Nefro Landing\|Masuk Blok Nefro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **07** | **Neuro** | [[Neuro Landing\|Masuk Blok Neuro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **08** | **ObsGyn** | [[Obsgyn Landing 1\|Masuk Blok ObsGyn →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
-| **09** | **Pulmo** | [[Pulmo Landing\|Masuk Blok Pulmo →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **01** | **Endokrin** | [[Endokrin Landing\|Gas ke Endokrin →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **02** | **Gastrointestinal** | [[Gastrointestinal Landing\|Gas ke Gastro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **03** | **Hematoimmuno** | [[Hematoimmuno Landing\|Gas ke Hematoimmuno →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **04** | **Intergumen** | [[Intergumen Landing\|Gas ke Intergumen →]] | `🟢 Dasar` · `🟣 Patologi` · `📝 Pre/Post-Test` |
+| **05** | **Kardiovaskular** | [[Kardiovascular Landing\|Gas ke Kardiovaskular →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **06** | **Nefro** | [[Nefro Landing\|Gas ke Nefro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **07** | **Neuro** | [[Neuro Landing\|Gas ke Neuro →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **08** | **ObsGyn** | [[Obsgyn Landing 1\|Gas ke ObsGyn →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
+| **09** | **Pulmo** | [[Pulmo Landing\|Gas ke Pulmo →]] | `🟢 Dasar` · `📝 Pre/Post-Test` |
 
 ---
 
 <div align="center">
 
-📖 [[Untuk Sjawatdh (Landing)\|Tentang Platform & Metodologi Belajar]]
+📖 [[Untuk Sjawatdh (Landing)\|Kenalan Lebih Jauh sama Sjawatdh]]
 
-*Disarikan untuk keperluan studi personal dari Harrison's Principles of Internal Medicine.*
+*Curated for personal medical study — adapted from Harrison's Principles of Internal Medicine.*
 
 </div>
