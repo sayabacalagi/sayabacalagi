@@ -5,8 +5,8 @@ description: Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags 
 
 <div align="center">
 
-# 🧠 Blok Gastrointestinal — Lumen, Hepatobilier & Pankreas
-*Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags perdarahan GI secara sistematis.*
+# 🧠 Blok Gastrointestinal
+**Alur Belajar: Pretest → Materi → Posttest**
 
 [[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
@@ -14,15 +14,20 @@ description: Bedah tuntas keluhan saluran cerna, hepatobilier, sampai red flags 
 
 ---
 
-## 📚 Daftar Bab & Pre/Post-Test
+> [!tip] 🦎 Celetukan Broty
+> *"Salah di Pretest itu informasi, bukan vonis. Justru biar tahu harus fokus baca di mana."*
 
-> [!tip] Cara Belajar Blok Ini
-> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
+*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
+- 📝 **Pretest:** [[Gastrointestinal Pre-postest 1|Kerjakan Gastrointestinal Pre-postest 1 dulu (sebelum baca)]]
 
-| No | Kategori | Materi & Evaluasi |
-| :-: | :---: | :--- |
-| **1** | 🟢 Dasar | [[Gastrointestinal 1\|📖 Baca Bab: Gastrointestinal 1]] |
-| **2** | 📝 Kuis | [[Gastrointestinal Pre-postest 1\|⚡ Kerjakan: Gastrointestinal Pre-postest 1]] |
+## 2️⃣ Tahap 2 — Materi Inti
+*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
+- 🟢 **Dasar:** [[Gastrointestinal 1|Baca Gastrointestinal 1]]
+
+## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
+*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
+- 🎯 **Posttest:** [[Gastrointestinal Pre-postest 1|Ulangi Gastrointestinal Pre-postest 1 sesudah baca materi]]
 
 ---
 

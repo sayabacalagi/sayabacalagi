@@ -5,8 +5,8 @@ description: Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan n
 
 <div align="center">
 
-# 🧠 Blok Neuro — Neuroanatomy, Localization & Clinical Neurology
-*Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan neuromuskuler.*
+# 🧠 Blok Neuro
+**Alur Belajar: Pretest → Materi → Posttest**
 
 [[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
@@ -14,15 +14,20 @@ description: Mulai dari neuro-lokalisasi lesi, stroke, kejang, hingga gangguan n
 
 ---
 
-## 📚 Daftar Bab & Pre/Post-Test
+> [!tip] 🦎 Celetukan Broty
+> *"Kalau bagian ini terasa berat, istirahat sebentar terus balik lagi. Nggak ada timer di sini."*
 
-> [!tip] Cara Belajar Blok Ini
-> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
+*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
+- 📝 **Pretest:** [[Neuro Pre-postest 1|Kerjakan Neuro Pre-postest 1 dulu (sebelum baca)]]
 
-| No | Kategori | Materi & Evaluasi |
-| :-: | :---: | :--- |
-| **1** | 🟢 Dasar | [[Neuro 1\|📖 Baca Bab: Neuro 1]] |
-| **2** | 📝 Kuis | [[Neuro Pre-postest 1\|⚡ Kerjakan: Neuro Pre-postest 1]] |
+## 2️⃣ Tahap 2 — Materi Inti
+*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
+- 🟢 **Dasar:** [[Neuro 1|Baca Neuro 1]]
+
+## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
+*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
+- 🎯 **Posttest:** [[Neuro Pre-postest 1|Ulangi Neuro Pre-postest 1 sesudah baca materi]]
 
 ---
 

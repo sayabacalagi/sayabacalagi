@@ -5,8 +5,8 @@ description: Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — paha
 
 <div align="center">
 
-# 🧠 Blok Endokrin — Hormones, Metabolism & Clinical Approach
-*Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — pahami feedback loop-nya biar nggak ketuker.*
+# 🧠 Blok Endokrin
+**Alur Belajar: Pretest → Materi → Posttest**
 
 [[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
@@ -14,19 +14,26 @@ description: Dari aksis hipotalamus-hipofisis sampai kegawatan diabetes — paha
 
 ---
 
-## 📚 Daftar Bab & Pre/Post-Test
+> [!tip] 🦎 Celetukan Broty
+> *"Nggak perlu dilawan. Baca pelan-pelan aja, kayak air."*
 
-> [!tip] Cara Belajar Blok Ini
-> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
+*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
+- 📝 **Pretest:** [[Endokrin Pre-postest 1|Kerjakan Endokrin Pre-postest 1 dulu (sebelum baca)]]
+- 📝 **Pretest:** [[Endokrin Pre-postest 2|Kerjakan Endokrin Pre-postest 2 dulu (sebelum baca)]]
+- 📝 **Pretest:** [[Endokrin Pre-postest 3|Kerjakan Endokrin Pre-postest 3 dulu (sebelum baca)]]
 
-| No | Kategori | Materi & Evaluasi |
-| :-: | :---: | :--- |
-| **1** | 🟢 Dasar | [[Endokrin 1\|📖 Baca Bab: Endokrin 1]] |
-| **2** | 🟢 Dasar | [[Endokrin 2\|📖 Baca Bab: Endokrin 2]] |
-| **3** | 🟢 Dasar | [[Endokrin 3\|📖 Baca Bab: Endokrin 3]] |
-| **4** | 📝 Kuis | [[Endokrin Pre-postest 1\|⚡ Kerjakan: Endokrin Pre-postest 1]] |
-| **5** | 📝 Kuis | [[Endokrin Pre-postest 2\|⚡ Kerjakan: Endokrin Pre-postest 2]] |
-| **6** | 📝 Kuis | [[Endokrin Pre-postest 3\|⚡ Kerjakan: Endokrin Pre-postest 3]] |
+## 2️⃣ Tahap 2 — Materi Inti
+*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
+- 🟢 **Dasar:** [[Endokrin 1|Baca Endokrin 1]]
+- 🟢 **Dasar:** [[Endokrin 2|Baca Endokrin 2]]
+- 🟢 **Dasar:** [[Endokrin 3|Baca Endokrin 3]]
+
+## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
+*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
+- 🎯 **Posttest:** [[Endokrin Pre-postest 1|Ulangi Endokrin Pre-postest 1 sesudah baca materi]]
+- 🎯 **Posttest:** [[Endokrin Pre-postest 2|Ulangi Endokrin Pre-postest 2 sesudah baca materi]]
+- 🎯 **Posttest:** [[Endokrin Pre-postest 3|Ulangi Endokrin Pre-postest 3 sesudah baca materi]]
 
 ---
 

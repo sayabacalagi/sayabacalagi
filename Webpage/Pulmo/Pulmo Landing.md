@@ -5,8 +5,8 @@ description: Bedakan pola obstruktif vs restriktif, analisis auskultasi paru, hi
 
 <div align="center">
 
-# 🧠 Blok Pulmo — Respiratory Mechanics, Obstructive & Restrictive
-*Bedakan pola obstruktif vs restriktif, analisis auskultasi paru, hingga kegawatan gagal napas.*
+# 🧠 Blok Pulmo
+**Alur Belajar: Pretest → Materi → Posttest**
 
 [[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
@@ -14,15 +14,20 @@ description: Bedakan pola obstruktif vs restriktif, analisis auskultasi paru, hi
 
 ---
 
-## 📚 Daftar Bab & Pre/Post-Test
+> [!tip] 🦎 Celetukan Broty
+> *"Nggak perlu dilawan. Baca pelan-pelan aja, kayak air."*
 
-> [!tip] Cara Belajar Blok Ini
-> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
+*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
+- 📝 **Pretest:** [[Pulmo Pre-postest 1|Kerjakan Pulmo Pre-postest 1 dulu (sebelum baca)]]
 
-| No | Kategori | Materi & Evaluasi |
-| :-: | :---: | :--- |
-| **1** | 🟢 Dasar | [[Pulmo 1\|📖 Baca Bab: Pulmo 1]] |
-| **2** | 📝 Kuis | [[Pulmo Pre-postest 1\|⚡ Kerjakan: Pulmo Pre-postest 1]] |
+## 2️⃣ Tahap 2 — Materi Inti
+*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
+- 🟢 **Dasar:** [[Pulmo 1|Baca Pulmo 1]]
+
+## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
+*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
+- 🎯 **Posttest:** [[Pulmo Pre-postest 1|Ulangi Pulmo Pre-postest 1 sesudah baca materi]]
 
 ---
 

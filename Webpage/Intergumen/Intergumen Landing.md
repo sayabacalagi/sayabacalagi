@@ -5,8 +5,8 @@ description: Latih ketajaman visual membaca efloresensi primer-sekunder hingga k
 
 <div align="center">
 
-# 🧠 Blok Intergumen — Dermatologic Morphology & Skin Pathology
-*Latih ketajaman visual membaca efloresensi primer-sekunder hingga korelasi histopatologi kulit.*
+# 🧠 Blok Intergumen
+**Alur Belajar: Pretest → Materi → Posttest**
 
 [[index|🏠 Beranda]] · [[Untuk Sjawatdh (Landing)|ℹ️ Tentang Sjawatdh]]
 
@@ -14,25 +14,35 @@ description: Latih ketajaman visual membaca efloresensi primer-sekunder hingga k
 
 ---
 
-## 📚 Daftar Bab & Pre/Post-Test
+> [!tip] 🦎 Celetukan Broty
+> *"Gue tinggal di air, jadi gue tenang. Kamu juga boleh tenang ngerjain blok ini."*
 
-> [!tip] Cara Belajar Blok Ini
-> Mulai dari bab **Dasar** (dan **Patologi** jika tersedia) untuk menguasai mekanisme klinisnya, lalu uji *active recall* kamu lewat modul **Pre/Post-Test**.
+## 1️⃣ Tahap 1 — Pretest (Pemetaan Awal)
+*Kerjakan dulu tanpa beban biar tahu bagian mana yang belum kebayang:*
+- 📝 **Pretest:** [[Intergumen Pre-postest 1|Kerjakan Intergumen Pre-postest 1 dulu (sebelum baca)]]
+- 📝 **Pretest:** [[Intergumen Pre-postest 2|Kerjakan Intergumen Pre-postest 2 dulu (sebelum baca)]]
+- 📝 **Pretest:** [[Intergumen Pre-postest 3|Kerjakan Intergumen Pre-postest 3 dulu (sebelum baca)]]
+- 📝 **Pretest:** [[Intergumen Pre-postest 4|Kerjakan Intergumen Pre-postest 4 dulu (sebelum baca)]]
+- 📝 **Pretest:** [[Intergumen Pre-postest 5|Kerjakan Intergumen Pre-postest 5 dulu (sebelum baca)]]
+- 📝 **Pretest:** [[Intergumen Pre-postest 6|Kerjakan Intergumen Pre-postest 6 dulu (sebelum baca)]]
 
-| No | Kategori | Materi & Evaluasi |
-| :-: | :---: | :--- |
-| **1** | 🟢 Dasar | [[Intergumen 1\|📖 Baca Bab: Intergumen 1]] |
-| **2** | 🟢 Dasar | [[Intergumen 2\|📖 Baca Bab: Intergumen 2]] |
-| **3** | 🟢 Dasar | [[Intergumen 3\|📖 Baca Bab: Intergumen 3]] |
-| **4** | 🟢 Dasar | [[Intergumen 4\|📖 Baca Bab: Intergumen 4]] |
-| **5** | 🟢 Dasar | [[Intergumen 5\|📖 Baca Bab: Intergumen 5]] |
-| **6** | 🟣 Patologi | [[Intergumen 6\|🔬 Baca Bab: Intergumen 6]] |
-| **7** | 📝 Kuis | [[Intergumen Pre-postest 1\|⚡ Kerjakan: Intergumen Pre-postest 1]] |
-| **8** | 📝 Kuis | [[Intergumen Pre-postest 2\|⚡ Kerjakan: Intergumen Pre-postest 2]] |
-| **9** | 📝 Kuis | [[Intergumen Pre-postest 3\|⚡ Kerjakan: Intergumen Pre-postest 3]] |
-| **10** | 📝 Kuis | [[Intergumen Pre-postest 4\|⚡ Kerjakan: Intergumen Pre-postest 4]] |
-| **11** | 📝 Kuis | [[Intergumen Pre-postest 5\|⚡ Kerjakan: Intergumen Pre-postest 5]] |
-| **12** | 📝 Kuis | [[Intergumen Pre-postest 6\|⚡ Kerjakan: Intergumen Pre-postest 6]] |
+## 2️⃣ Tahap 2 — Materi Inti
+*Baca pelan-pelan untuk menjawab kebingungan dari Pretest tadi:*
+- 🟢 **Dasar:** [[Intergumen 1|Baca Intergumen 1]]
+- 🟢 **Dasar:** [[Intergumen 2|Baca Intergumen 2]]
+- 🟢 **Dasar:** [[Intergumen 3|Baca Intergumen 3]]
+- 🟢 **Dasar:** [[Intergumen 4|Baca Intergumen 4]]
+- 🟢 **Dasar:** [[Intergumen 5|Baca Intergumen 5]]
+- 🟣 **Patologi:** [[Intergumen 6|Baca Intergumen 6]]
+
+## 3️⃣ Tahap 3 — Posttest (Cek Pemahaman)
+*Uji ulang pemahamanmu—boleh diulang kapan pun siap:*
+- 🎯 **Posttest:** [[Intergumen Pre-postest 1|Ulangi Intergumen Pre-postest 1 sesudah baca materi]]
+- 🎯 **Posttest:** [[Intergumen Pre-postest 2|Ulangi Intergumen Pre-postest 2 sesudah baca materi]]
+- 🎯 **Posttest:** [[Intergumen Pre-postest 3|Ulangi Intergumen Pre-postest 3 sesudah baca materi]]
+- 🎯 **Posttest:** [[Intergumen Pre-postest 4|Ulangi Intergumen Pre-postest 4 sesudah baca materi]]
+- 🎯 **Posttest:** [[Intergumen Pre-postest 5|Ulangi Intergumen Pre-postest 5 sesudah baca materi]]
+- 🎯 **Posttest:** [[Intergumen Pre-postest 6|Ulangi Intergumen Pre-postest 6 sesudah baca materi]]
 
 ---
 
